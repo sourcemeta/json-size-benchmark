@@ -8,11 +8,13 @@
 NODE ?= node
 NPM ?= npm
 PYTHON ?= python3
+INSTALL ?= install
+SHELLCHECK ?= shellcheck
+
 CAPNP ?= capnp
 GZIP ?= gzip
 LZ4 ?= lz4
 LZMA ?= lzma
-SHELLCHECK ?= shellcheck
 
 #################################################
 # TOP LEVEL INCLUDES
@@ -62,7 +64,7 @@ all: \
 define COPY_FROM_BENCHMARK
 output/%/$1/$2: benchmark/%/$2
 	mkdir -p $$(dir $$@)
-	cp $$< $$@
+	$(INSTALL) -m 0664 $$< $$@
 endef
 $(foreach format,$(ALL_FORMATS),$(eval $(call COPY_FROM_BENCHMARK,$(format),document.json)))
 $(foreach format,$(ALL_FORMATS),$(eval $(call COPY_FROM_BENCHMARK,$(format),NAME)))
@@ -79,7 +81,7 @@ output/%/decode.json: scripts/jsonpatch.js output/%/output.json output/%/post.pa
 	$(NODE) $< $(word 3,$^) < $(word 2,$^) > $@
 output/%/result.json: scripts/json-equals.py output/%/decode.json output/%/document.json
 	$(PYTHON) $< $(word 2,$^) $(word 3,$^)
-	cp $(word 2,$^) $@
+	$(INSTALL) -m 0664 $(word 2,$^) $@
 
 # TODO: Make this rule get the size results for a SINGLE format
 # When we merge the specific CSVs into a master one in another rule
