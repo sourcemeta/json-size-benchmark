@@ -1,4 +1,4 @@
-.PHONY: lint clean all
+.PHONY: lint clean distclean all
 .DEFAULT_GOAL = all
 
 #################################################
@@ -51,6 +51,9 @@ lint: node_modules
 
 clean:
 	exec $(RMRF) $(OUTPUT)
+
+distclean: clean
+	exec $(RMRF) node_modules
 
 all: \
 	$(OUTPUT)/circleciblank/capnproto/result.json \
