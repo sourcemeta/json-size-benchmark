@@ -17,7 +17,9 @@ LZMA ?= lzma
 # TOP LEVEL INCLUDES
 #################################################
 
-include compression/targets.mk
+include compression/gzip/targets.mk
+include compression/lz4/targets.mk
+include compression/lzma/targets.mk
 
 #################################################
 # VARIABLES
