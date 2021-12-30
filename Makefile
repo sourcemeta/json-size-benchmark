@@ -1,16 +1,25 @@
-.PHONY: lint clean
+.PHONY: lint clean all
 
 #################################################
-# PROGRAMS 
+# PROGRAMS
 #################################################
 
 NODE ?= node
 NPM ?= npm
 PYTHON ?= python3
 CAPNP ?= capnp
+GZIP ?= gzip
+LZ4 ?= lz4
+LZMA ?= lzma
 
 #################################################
-# VARIABLES 
+# TOP LEVEL INCLUDES
+#################################################
+
+include compression/targets.mk
+
+#################################################
+# VARIABLES
 #################################################
 
 ALL_FORMATS = $(notdir $(wildcard base/*))
@@ -20,7 +29,7 @@ ALL_DOCUMENTS = $(notdir $(wildcard benchmark/*))
 DOCUMENTS ?= $(ALL_DOCUMENTS)
 
 #################################################
-# PHONY TARGETS 
+# PHONY TARGETS
 #################################################
 
 node_modules: package.json package-lock.json
@@ -32,11 +41,18 @@ lint: node_modules
 clean:
 	rm -rf output
 
+all: \
+	output/circleciblank/capnproto/result.json \
+	output/circleciblank/capnproto/output.bin \
+	output/circleciblank/capnproto/output.bin.gz \
+	output/circleciblank/capnproto/output.bin.lz4 \
+	output/circleciblank/capnproto/output.bin.lzma
+
 #################################################
-# BENCHMARK 
+# BENCHMARK
 #################################################
 
-# We programatically define this rule for every format as it is the 
+# We programatically define this rule for every format as it is the
 # base one that requires two wildcards, which GNU Make doesn't support.
 define RULE_PREPARE_DOCUMENT
 output/%/$1/document.json: benchmark/%/document.json
