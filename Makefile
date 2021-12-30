@@ -79,10 +79,10 @@ $(OUTPUT)/%/post.patch.json:
 	echo "[]" > $@
 
 $(OUTPUT)/%/input.json: scripts/jsonpatch.js \
-	$(OUTPUT)/%/document.json $(OUTPUT)/%/pre.patch.json
+	$(OUTPUT)/%/document.json $(OUTPUT)/%/pre.patch.json node_modules
 	$(NODE) $< $(word 3,$^) < $(word 2,$^) > $@
 $(OUTPUT)/%/decode.json: scripts/jsonpatch.js \
-	$(OUTPUT)/%/output.json $(OUTPUT)/%/post.patch.json
+	$(OUTPUT)/%/output.json $(OUTPUT)/%/post.patch.json node_modules
 	$(NODE) $< $(word 3,$^) < $(word 2,$^) > $@
 $(OUTPUT)/%/result.json: scripts/json-equals.py \
 	$(OUTPUT)/%/decode.json $(OUTPUT)/%/document.json
