@@ -7,8 +7,17 @@
 NODE ?= node
 NPM ?= npm
 PYTHON ?= python3
-
 CAPNP ?= capnp
+
+#################################################
+# VARIABLES 
+#################################################
+
+ALL_FORMATS = $(notdir $(wildcard base/*))
+FORMATS ?= $(ALL_FORMATS)
+
+ALL_DOCUMENTS = $(notdir $(wildcard benchmark/*))
+DOCUMENTS ?= $(ALL_DOCUMENTS)
 
 #################################################
 # PHONY TARGETS 
@@ -22,13 +31,6 @@ lint: node_modules
 
 clean:
 	rm -rf output
-
-#################################################
-# VARIABLES 
-#################################################
-
-ALL_FORMATS = $(notdir $(wildcard base/*))
-FORMATS ?= $(ALL_FORMATS)
 
 #################################################
 # BENCHMARK 
