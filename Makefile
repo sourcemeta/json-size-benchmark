@@ -10,6 +10,7 @@ NPM ?= npm
 PYTHON ?= python3
 INSTALL ?= install
 SHELLCHECK ?= shellcheck
+RMRF ?= rm -rf
 
 CAPNP ?= capnp
 GZIP ?= gzip
@@ -46,7 +47,7 @@ lint: node_modules
 	$(SHELLCHECK) scripts/*.sh
 
 clean:
-	rm -rf output
+	$(RMRF) output
 
 all: \
 	output/circleciblank/capnproto/result.json \
