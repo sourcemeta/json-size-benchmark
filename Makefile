@@ -13,6 +13,7 @@ SHELLCHECK ?= shellcheck
 RMRF ?= rm -rf
 
 CAPNP ?= capnp
+FLATC ?= flatc
 GZIP ?= gzip
 LZ4 ?= lz4
 LZMA ?= lzma
@@ -53,7 +54,9 @@ clean:
 
 all: \
 	$(OUTPUT)/circleciblank/capnproto/result.json \
-	$(OUTPUT)/circleciblank/capnproto/size.txt
+	$(OUTPUT)/circleciblank/capnproto/size.txt \
+	$(OUTPUT)/circleciblank/flatbuffers/result.json \
+	$(OUTPUT)/circleciblank/flatbuffers/size.txt
 
 #################################################
 # BENCHMARK
@@ -93,3 +96,4 @@ $(OUTPUT)/%/size.txt: scripts/size.sh compression/ORDER $(OUTPUT)/%/output.bin \
 	exec $< $(word 2,$^) $(word 3,$^) > $@
 
 include formats/capnproto/targets.mk
+include formats/flatbuffers/targets.mk
