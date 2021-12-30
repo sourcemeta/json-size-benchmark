@@ -21,7 +21,7 @@ LZMA ?= lzma
 # TOP LEVEL INCLUDES
 #################################################
 
-include compression/gzip/targets.mk
+include compression/gz/targets.mk
 include compression/lz4/targets.mk
 include compression/lzma/targets.mk
 
@@ -91,13 +91,8 @@ $(OUTPUT)/%/result.json: scripts/json-equals.py \
 
 # TODO: Make this rule get the size results for a SINGLE format
 # When we merge the specific CSVs into a master one in another rule
-$(OUTPUT)/%/size.csv: \
-	compression/ORDER \
-	$(OUTPUT)/%/NAME \
-	$(OUTPUT)/%/output.bin \
-	$(OUTPUT)/%/output.bin.gz \
-	$(OUTPUT)/%/output.bin.lz4 \
-	$(OUTPUT)/%/output.bin.lzma
-	echo $(dir $@)
+$(OUTPUT)/%/size.txt: scripts/size.sh compression/ORDER $(OUTPUT)/%/output.bin \
+	$(OUTPUT)/%/output.bin.gz $(OUTPUT)/%/output.bin.lz4 $(OUTPUT)/%/output.bin.lzma
+	exec $< $(word 2,$^) $(dir $(word 3,$^)) > $@
 
 include formats/capnproto/targets.mk
