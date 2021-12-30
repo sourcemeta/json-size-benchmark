@@ -63,7 +63,7 @@ all: \
 # base ones that requires two wildcards, which GNU Make doesn't support.
 define COPY_FROM_BENCHMARK
 output/%/$1/$2: benchmark/%/$2
-	mkdir -p $$(dir $$@)
+	$(INSTALL) -d $$(dir $$@)
 	$(INSTALL) -m 0664 $$< $$@
 endef
 $(foreach format,$(ALL_FORMATS),$(eval $(call COPY_FROM_BENCHMARK,$(format),document.json)))
