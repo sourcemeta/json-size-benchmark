@@ -12,6 +12,7 @@ CAPNP ?= capnp
 GZIP ?= gzip
 LZ4 ?= lz4
 LZMA ?= lzma
+SHELLCHECK ?= shellcheck
 
 #################################################
 # TOP LEVEL INCLUDES
@@ -40,6 +41,7 @@ node_modules: package.json package-lock.json
 
 lint: node_modules
 	$(NODE) ./node_modules/.bin/standard scripts/**/*.js
+	$(SHELLCHECK) scripts/*.sh
 
 clean:
 	rm -rf output
