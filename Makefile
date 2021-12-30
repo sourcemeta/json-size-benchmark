@@ -42,14 +42,14 @@ DOCUMENTS ?= $(ALL_DOCUMENTS)
 #################################################
 
 node_modules: package.json package-lock.json
-	$(NPM) ci
+	exec $(NPM) ci
 
 lint: node_modules
 	$(NODE) ./node_modules/.bin/standard scripts/**/*.js
 	$(SHELLCHECK) scripts/*.sh
 
 clean:
-	$(RMRF) $(OUTPUT)
+	exec $(RMRF) $(OUTPUT)
 
 all: \
 	$(OUTPUT)/circleciblank/capnproto/result.json \
@@ -71,9 +71,9 @@ $(foreach format,$(ALL_FORMATS),$(eval $(call COPY_FROM_BENCHMARK,$(format),NAME
 
 # Provide default transformation JSON Patch documents
 $(OUTPUT)/%/pre.patch.json:
-	echo "[]" > $@
+	exec echo "[]" > $@
 $(OUTPUT)/%/post.patch.json:
-	echo "[]" > $@
+	exec echo "[]" > $@
 
 $(OUTPUT)/%/input.json: scripts/jsonpatch.js \
 	$(OUTPUT)/%/document.json $(OUTPUT)/%/pre.patch.json node_modules
