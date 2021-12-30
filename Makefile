@@ -1,4 +1,5 @@
 .PHONY: lint clean all
+.DEFAULT_GOAL = all
 
 #################################################
 # PROGRAMS
