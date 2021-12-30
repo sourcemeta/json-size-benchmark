@@ -1,0 +1,14 @@
+{
+  "name": "json-size-benchmark",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A space-efficiency benchmark of JSON-compatible serialization specifications",
+  "author": "Juan Cruz Viotti <jv@jviotti.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "fast-json-patch": "^3.1.0"
+  },
+  "devDependencies": {
+    "standard": "^16.0.4"
+  }
+}
