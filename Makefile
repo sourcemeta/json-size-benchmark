@@ -53,10 +53,7 @@ clean:
 
 all: \
 	$(OUTPUT)/circleciblank/capnproto/result.json \
-	$(OUTPUT)/circleciblank/capnproto/output.bin \
-	$(OUTPUT)/circleciblank/capnproto/output.bin.gz \
-	$(OUTPUT)/circleciblank/capnproto/output.bin.lz4 \
-	$(OUTPUT)/circleciblank/capnproto/output.bin.lzma
+	$(OUTPUT)/circleciblank/capnproto/size.txt
 
 #################################################
 # BENCHMARK
