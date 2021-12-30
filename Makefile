@@ -29,7 +29,7 @@ include compression/lzma/targets.mk
 # VARIABLES
 #################################################
 
-OUTPUT_DIRECTORY ?= output
+OUTPUT ?= output
 
 ALL_FORMATS = $(filter-out ORDER,$(notdir $(wildcard formats/*)))
 FORMATS ?= $(ALL_FORMATS)
@@ -49,14 +49,14 @@ lint: node_modules
 	$(SHELLCHECK) scripts/*.sh
 
 clean:
-	$(RMRF) $(OUTPUT_DIRECTORY)
+	$(RMRF) $(OUTPUT)
 
 all: \
-	$(OUTPUT_DIRECTORY)/circleciblank/capnproto/result.json \
-	$(OUTPUT_DIRECTORY)/circleciblank/capnproto/output.bin \
-	$(OUTPUT_DIRECTORY)/circleciblank/capnproto/output.bin.gz \
-	$(OUTPUT_DIRECTORY)/circleciblank/capnproto/output.bin.lz4 \
-	$(OUTPUT_DIRECTORY)/circleciblank/capnproto/output.bin.lzma
+	$(OUTPUT)/circleciblank/capnproto/result.json \
+	$(OUTPUT)/circleciblank/capnproto/output.bin \
+	$(OUTPUT)/circleciblank/capnproto/output.bin.gz \
+	$(OUTPUT)/circleciblank/capnproto/output.bin.lz4 \
+	$(OUTPUT)/circleciblank/capnproto/output.bin.lzma
 
 #################################################
 # BENCHMARK
@@ -65,7 +65,7 @@ all: \
 # We programatically define these basic rule for every format as they are the
 # base ones that requires two wildcards, which GNU Make doesn't support.
 define COPY_FROM_BENCHMARK
-$(OUTPUT_DIRECTORY)/%/$1/$2: benchmark/%/$2
+$(OUTPUT)/%/$1/$2: benchmark/%/$2
 	$(INSTALL) -d $$(dir $$@)
 	$(INSTALL) -m 0664 $$< $$@
 endef
@@ -73,31 +73,31 @@ $(foreach format,$(ALL_FORMATS),$(eval $(call COPY_FROM_BENCHMARK,$(format),docu
 $(foreach format,$(ALL_FORMATS),$(eval $(call COPY_FROM_BENCHMARK,$(format),NAME)))
 
 # Provide default transformation JSON Patch documents
-$(OUTPUT_DIRECTORY)/%/pre.patch.json:
+$(OUTPUT)/%/pre.patch.json:
 	echo "[]" > $@
-$(OUTPUT_DIRECTORY)/%/post.patch.json:
+$(OUTPUT)/%/post.patch.json:
 	echo "[]" > $@
 
-$(OUTPUT_DIRECTORY)/%/input.json: scripts/jsonpatch.js \
-	$(OUTPUT_DIRECTORY)/%/document.json $(OUTPUT_DIRECTORY)/%/pre.patch.json
+$(OUTPUT)/%/input.json: scripts/jsonpatch.js \
+	$(OUTPUT)/%/document.json $(OUTPUT)/%/pre.patch.json
 	$(NODE) $< $(word 3,$^) < $(word 2,$^) > $@
-$(OUTPUT_DIRECTORY)/%/decode.json: scripts/jsonpatch.js \
-	$(OUTPUT_DIRECTORY)/%/output.json $(OUTPUT_DIRECTORY)/%/post.patch.json
+$(OUTPUT)/%/decode.json: scripts/jsonpatch.js \
+	$(OUTPUT)/%/output.json $(OUTPUT)/%/post.patch.json
 	$(NODE) $< $(word 3,$^) < $(word 2,$^) > $@
-$(OUTPUT_DIRECTORY)/%/result.json: scripts/json-equals.py \
-	$(OUTPUT_DIRECTORY)/%/decode.json $(OUTPUT_DIRECTORY)/%/document.json
+$(OUTPUT)/%/result.json: scripts/json-equals.py \
+	$(OUTPUT)/%/decode.json $(OUTPUT)/%/document.json
 	$(PYTHON) $< $(word 2,$^) $(word 3,$^)
 	$(INSTALL) -m 0664 $(word 2,$^) $@
 
 # TODO: Make this rule get the size results for a SINGLE format
 # When we merge the specific CSVs into a master one in another rule
-$(OUTPUT_DIRECTORY)/%/size.csv: \
+$(OUTPUT)/%/size.csv: \
 	compression/ORDER \
-	$(OUTPUT_DIRECTORY)/%/NAME \
-	$(OUTPUT_DIRECTORY)/%/output.bin \
-	$(OUTPUT_DIRECTORY)/%/output.bin.gz \
-	$(OUTPUT_DIRECTORY)/%/output.bin.lz4 \
-	$(OUTPUT_DIRECTORY)/%/output.bin.lzma
+	$(OUTPUT)/%/NAME \
+	$(OUTPUT)/%/output.bin \
+	$(OUTPUT)/%/output.bin.gz \
+	$(OUTPUT)/%/output.bin.lz4 \
+	$(OUTPUT)/%/output.bin.lzma
 	echo $(dir $@)
 
 include formats/capnproto/targets.mk
