@@ -59,17 +59,13 @@ all: \
 
 # We programatically define these basic rule for every format as they are the
 # base ones that requires two wildcards, which GNU Make doesn't support.
-define RULE_PREPARE_DOCUMENT
-output/%/$1/document.json: benchmark/%/document.json
+define COPY_FROM_BENCHMARK
+output/%/$1/$2: benchmark/%/$2
 	mkdir -p $$(dir $$@)
 	cp $$< $$@
 endef
-$(foreach format,$(ALL_FORMATS),$(eval $(call RULE_PREPARE_DOCUMENT,$(format))))
-define RULE_PREPARE_NAME
-output/%/$1/NAME: formats/$1/NAME
-	cp $$< $$@
-endef
-$(foreach format,$(ALL_FORMATS),$(eval $(call RULE_PREPARE_NAME,$(format))))
+$(foreach format,$(ALL_FORMATS),$(eval $(call COPY_FROM_BENCHMARK,$(format),document.json)))
+$(foreach format,$(ALL_FORMATS),$(eval $(call COPY_FROM_BENCHMARK,$(format),NAME)))
 
 # Provide default transformation JSON Patch documents
 output/%/pre.patch.json:
