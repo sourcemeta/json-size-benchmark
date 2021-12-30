@@ -26,7 +26,7 @@ include compression/lzma/targets.mk
 # VARIABLES
 #################################################
 
-ALL_FORMATS = $(notdir $(wildcard base/*))
+ALL_FORMATS = $(filter-out ORDER,$(notdir $(wildcard formats/*)))
 FORMATS ?= $(ALL_FORMATS)
 
 ALL_DOCUMENTS = $(notdir $(wildcard benchmark/*))
@@ -57,14 +57,19 @@ all: \
 # BENCHMARK
 #################################################
 
-# We programatically define this rule for every format as it is the
-# base one that requires two wildcards, which GNU Make doesn't support.
+# We programatically define these basic rule for every format as they are the
+# base ones that requires two wildcards, which GNU Make doesn't support.
 define RULE_PREPARE_DOCUMENT
 output/%/$1/document.json: benchmark/%/document.json
 	mkdir -p $$(dir $$@)
 	cp $$< $$@
 endef
 $(foreach format,$(ALL_FORMATS),$(eval $(call RULE_PREPARE_DOCUMENT,$(format))))
+define RULE_PREPARE_NAME
+output/%/$1/NAME: formats/$1/NAME
+	cp $$< $$@
+endef
+$(foreach format,$(ALL_FORMATS),$(eval $(call RULE_PREPARE_NAME,$(format))))
 
 # Provide default transformation JSON Patch documents
 output/%/pre.patch.json:
@@ -80,4 +85,15 @@ output/%/result.json: scripts/json-equals.py output/%/decode.json output/%/docum
 	$(PYTHON) $< $(word 2,$^) $(word 3,$^)
 	cp $(word 2,$^) $@
 
-include base/capnproto/targets.mk
+# TODO: Make this rule get the size results for a SINGLE format
+# When we merge the specific CSVs into a master one in another rule
+output/%/size.csv: \
+	compression/ORDER \
+	output/%/NAME \
+	output/%/output.bin \
+	output/%/output.bin.gz \
+	output/%/output.bin.lz4 \
+	output/%/output.bin.lzma
+	echo $(dir $@)
+
+include formats/capnproto/targets.mk
