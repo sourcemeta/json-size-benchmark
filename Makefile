@@ -93,6 +93,6 @@ $(OUTPUT)/%/result.json: scripts/json-equals.py \
 # When we merge the specific CSVs into a master one in another rule
 $(OUTPUT)/%/size.txt: scripts/size.sh compression/ORDER $(OUTPUT)/%/output.bin \
 	$(OUTPUT)/%/output.bin.gz $(OUTPUT)/%/output.bin.lz4 $(OUTPUT)/%/output.bin.lzma
-	exec $< $(word 2,$^) $(dir $(word 3,$^)) > $@
+	exec $< $(word 2,$^) $(word 3,$^) > $@
 
 include formats/capnproto/targets.mk

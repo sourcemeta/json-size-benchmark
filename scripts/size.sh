@@ -4,10 +4,9 @@ set -o errexit
 set -o nounset
 
 ORDER="$1"
-OUTPUT_DIRECTORY="$2"
+UNCOMPRESSED_PATH="$2"
 
 UNAME="$(uname)"
-
 byte_size() {
   if [ "$UNAME" = "Darwin" ]
   then
@@ -18,7 +17,6 @@ byte_size() {
 }
 
 # Uncompressed always goes first
-UNCOMPRESSED_PATH="$OUTPUT_DIRECTORY/output.bin"
 byte_size "$UNCOMPRESSED_PATH"
 
 while IFS= read -r compressor
