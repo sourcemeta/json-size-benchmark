@@ -1,4 +1,4 @@
-.PHONY: lint clean distclean all
+.PHONY: lint clean distclean test all
 .DEFAULT_GOAL = all
 
 #################################################
@@ -50,7 +50,7 @@ node_modules: package.json package-lock.json
 
 lint: node_modules
 	$(NODE) ./node_modules/.bin/standard scripts/**/*.js
-	$(SHELLCHECK) scripts/*.sh
+	$(SHELLCHECK) scripts/*.sh test/*.sh
 
 clean:
 	exec $(RMRF) $(OUTPUT)
@@ -58,7 +58,10 @@ clean:
 distclean: clean
 	exec $(RMRF) node_modules
 
-all: \
+test:
+	./test/formats-total-order.sh
+
+all: lint test \
 	$(OUTPUT)/circleciblank/capnproto/result.json \
 	$(OUTPUT)/circleciblank/flatbuffers/result.json \
 	$(OUTPUT)/circleciblank/json/result.json \
