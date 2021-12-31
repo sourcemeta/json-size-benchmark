@@ -38,6 +38,9 @@ FORMATS ?= $(ALL_FORMATS)
 ALL_DOCUMENTS = $(notdir $(wildcard benchmark/*))
 DOCUMENTS ?= $(ALL_DOCUMENTS)
 
+ALL_COMPRESSORS = $(filter-out ORDER,$(notdir $(wildcard compression/*)))
+COMPRESSORS ?= $(ALL_COMPRESSORS)
+
 #################################################
 # PHONY TARGETS
 #################################################
@@ -95,7 +98,7 @@ $(OUTPUT)/%/result.json: scripts/json-equals.py \
 # TODO: Make this rule get the size results for a SINGLE format
 # When we merge the specific CSVs into a master one in another rule
 $(OUTPUT)/%/size.txt: scripts/size.sh compression/ORDER $(OUTPUT)/%/output.bin \
-	$(OUTPUT)/%/output.bin.gz $(OUTPUT)/%/output.bin.lz4 $(OUTPUT)/%/output.bin.lzma
+	$(foreach compressor,$(ALL_COMPRESSORS),$(addsuffix .$(compressor),$(OUTPUT)/%/output.bin))
 	exec $< $(word 2,$^) $(word 3,$^) > $@
 
 include formats/capnproto/targets.mk
