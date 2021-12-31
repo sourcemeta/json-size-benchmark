@@ -66,6 +66,9 @@ all: lint test \
 	$(OUTPUT)/circleciblank/capnproto/result.json \
 	$(OUTPUT)/circleciblank/flatbuffers/result.json \
 	$(OUTPUT)/circleciblank/json/result.json \
+	$(OUTPUT)/circleciblank/capnproto/VERSION \
+	$(OUTPUT)/circleciblank/flatbuffers/VERSION \
+	$(OUTPUT)/circleciblank/json/VERSION \
 	$(OUTPUT)/circleciblank/data.csv
 
 #################################################

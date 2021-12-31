@@ -5,3 +5,6 @@ $(OUTPUT)/%/capnproto/output.bin: \
 $(OUTPUT)/%/capnproto/output.json: \
 	$(OUTPUT)/%/capnproto/output.bin benchmark/%/capnproto/schema.capnp
 	$(CAPNP) convert binary:json $(word 2,$^) Main < $< > $@
+
+$(OUTPUT)/%/capnproto/VERSION:
+	$(CAPNP) --version > $@

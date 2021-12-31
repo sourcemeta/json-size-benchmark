@@ -7,3 +7,6 @@ $(OUTPUT)/%/flatbuffers/output.json: \
 	$(OUTPUT)/%/flatbuffers/output.bin benchmark/%/flatbuffers/schema.fbs
 	$(FLATC) --raw-binary -o $(dir $@) --strict-json --json $(word 2,$^) -- $<
 	mv $(dir $@)$(notdir $(basename $<)).json $@
+
+$(OUTPUT)/%/flatbuffers/VERSION:
+	$(FLATC) --version > $@
