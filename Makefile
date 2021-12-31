@@ -61,6 +61,7 @@ distclean: clean
 all: \
 	$(OUTPUT)/circleciblank/capnproto/result.json \
 	$(OUTPUT)/circleciblank/flatbuffers/result.json \
+	$(OUTPUT)/circleciblank/json/result.json \
 	$(OUTPUT)/circleciblank/data.csv
 
 #################################################
@@ -106,3 +107,4 @@ $(OUTPUT)/%/data.csv: scripts/csv.sh formats/ORDER compression/ORDER \
 
 include formats/capnproto/targets.mk
 include formats/flatbuffers/targets.mk
+include formats/json/targets.mk
