@@ -37,18 +37,23 @@ COMPRESSORS ?= $(ALL_COMPRESSORS)
 # PHONY TARGETS
 #################################################
 
+env: requirements.txt
+	$(PYTHON) -m venv --clear $@
+	./$@/bin/python3 -m pip install --requirement $<
+
 node_modules: package.json package-lock.json
 	exec $(NPM) ci
 
-lint: node_modules
+lint: node_modules env
 	$(NODE) ./node_modules/.bin/standard scripts/**/*.js
 	$(SHELLCHECK) scripts/*.sh test/*.sh
+	./$(word 2,$^)/bin/python3 -m flake8 scripts/*.py
 
 clean:
 	exec $(RMRF) $(OUTPUT)
 
 distclean: clean
-	exec $(RMRF) node_modules
+	exec $(RMRF) node_modules env
 
 test:
 	./test/formats-total-order.sh
