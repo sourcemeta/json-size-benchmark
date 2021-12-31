@@ -19,14 +19,6 @@ LZ4 ?= lz4
 LZMA ?= lzma
 
 #################################################
-# TOP LEVEL INCLUDES
-#################################################
-
-include compression/gz/targets.mk
-include compression/lz4/targets.mk
-include compression/lzma/targets.mk
-
-#################################################
 # VARIABLES
 #################################################
 
@@ -72,7 +64,7 @@ all: lint test \
 	$(OUTPUT)/circleciblank/data.csv
 
 #################################################
-# BENCHMARK
+# PRELUDE
 #################################################
 
 # We programatically define these basic rule for every format as they are the
@@ -84,6 +76,17 @@ $(OUTPUT)/%/$1/$2: benchmark/%/$2
 endef
 $(foreach format,$(ALL_FORMATS),$(eval $(call COPY_FROM_BENCHMARK,$(format),document.json)))
 $(foreach format,$(ALL_FORMATS),$(eval $(call COPY_FROM_BENCHMARK,$(format),NAME)))
+
+#################################################
+# BENCHMARK
+#################################################
+
+include compression/gz/targets.mk
+include compression/lz4/targets.mk
+include compression/lzma/targets.mk
+include formats/capnproto/targets.mk
+include formats/flatbuffers/targets.mk
+include formats/json/targets.mk
 
 # Provide default transformation JSON Patch documents
 $(OUTPUT)/%/pre.patch.json:
@@ -111,7 +114,3 @@ $(OUTPUT)/%/data.csv: scripts/csv.sh formats/ORDER compression/ORDER \
 	$(addsuffix /NAME,$(addprefix formats/,$(FORMATS))) \
 	$(addsuffix /size.txt,$(addprefix output/%/,$(FORMATS)))
 	exec $< $(word 2,$^) $(word 3,$^) $(dir $@) > $@
-
-include formats/capnproto/targets.mk
-include formats/flatbuffers/targets.mk
-include formats/json/targets.mk
