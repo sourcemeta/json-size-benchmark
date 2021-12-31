@@ -60,9 +60,8 @@ distclean: clean
 
 all: \
 	$(OUTPUT)/circleciblank/capnproto/result.json \
-	$(OUTPUT)/circleciblank/capnproto/size.txt \
 	$(OUTPUT)/circleciblank/flatbuffers/result.json \
-	$(OUTPUT)/circleciblank/flatbuffers/size.txt
+	$(OUTPUT)/circleciblank/data.csv
 
 #################################################
 # BENCHMARK
