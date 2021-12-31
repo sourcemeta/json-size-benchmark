@@ -60,6 +60,7 @@ distclean: clean
 
 test:
 	./test/formats-total-order.sh
+	./test/compression-total-order.sh
 
 all: lint test \
 	$(OUTPUT)/circleciblank/capnproto/result.json \
