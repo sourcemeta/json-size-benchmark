@@ -95,11 +95,15 @@ $(OUTPUT)/%/result.json: scripts/json-equals.py \
 	$(PYTHON) $< $(word 2,$^) $(word 3,$^)
 	$(INSTALL) -m 0664 $(word 2,$^) $@
 
-# TODO: Make this rule get the size results for a SINGLE format
-# When we merge the specific CSVs into a master one in another rule
 $(OUTPUT)/%/size.txt: scripts/size.sh compression/ORDER $(OUTPUT)/%/output.bin \
 	$(foreach compressor,$(ALL_COMPRESSORS),$(addsuffix .$(compressor),$(OUTPUT)/%/output.bin))
 	exec $< $(word 2,$^) $(word 3,$^) > $@
+
+$(OUTPUT)/%/data.csv: scripts/csv.sh formats/ORDER compression/ORDER \
+	$(addsuffix /NAME,$(addprefix compression/,$(COMPRESSORS))) \
+	$(addsuffix /NAME,$(addprefix formats/,$(FORMATS))) \
+	$(addsuffix /size.txt,$(addprefix output/%/,$(FORMATS)))
+	exec $< $(word 2,$^) $(word 3,$^) $(dir $@) > $@
 
 include formats/capnproto/targets.mk
 include formats/flatbuffers/targets.mk
