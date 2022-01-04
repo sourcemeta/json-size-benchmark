@@ -63,9 +63,11 @@ all: lint test \
 	$(OUTPUT)/circleciblank/capnproto/result.json \
 	$(OUTPUT)/circleciblank/flatbuffers/result.json \
 	$(OUTPUT)/circleciblank/json/result.json \
+	$(OUTPUT)/circleciblank/ubjson/result.json \
 	$(OUTPUT)/circleciblank/capnproto/VERSION \
 	$(OUTPUT)/circleciblank/flatbuffers/VERSION \
 	$(OUTPUT)/circleciblank/json/VERSION \
+	$(OUTPUT)/circleciblank/ubjson/VERSION \
 	$(OUTPUT)/circleciblank/data.csv
 
 #################################################
@@ -92,6 +94,7 @@ include compression/lzma/targets.mk
 include formats/capnproto/targets.mk
 include formats/flatbuffers/targets.mk
 include formats/json/targets.mk
+include formats/ubjson/targets.mk
 
 # Provide default transformation JSON Patch documents
 $(OUTPUT)/%/pre.patch.json:
