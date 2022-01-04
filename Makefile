@@ -24,7 +24,7 @@ LZMA ?= lzma
 
 OUTPUT ?= output
 
-ALL_FORMATS = $(filter-out ORDER,$(notdir $(wildcard formats/*)))
+ALL_FORMATS = $(notdir $(wildcard formats/*))
 FORMATS ?= $(ALL_FORMATS)
 
 ALL_DOCUMENTS = $(notdir $(wildcard benchmark/*))
