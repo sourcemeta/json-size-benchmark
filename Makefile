@@ -56,7 +56,6 @@ distclean: clean
 	exec $(RMRF) node_modules env
 
 test:
-	./test/formats-total-order.sh
 	./test/compression-total-order.sh
 
 all: lint test \
@@ -117,8 +116,8 @@ $(OUTPUT)/%/size.txt: scripts/size.sh compression/ORDER $(OUTPUT)/%/output.bin \
 	$(foreach compressor,$(ALL_COMPRESSORS),$(addsuffix .$(compressor),$(OUTPUT)/%/output.bin))
 	exec $< $(word 2,$^) $(word 3,$^) > $@
 
-$(OUTPUT)/%/data.csv: scripts/csv.sh formats/ORDER compression/ORDER \
+$(OUTPUT)/%/data.csv: scripts/csv.sh compression/ORDER \
 	$(addsuffix /NAME,$(addprefix compression/,$(COMPRESSORS))) \
 	$(addsuffix /NAME,$(addprefix formats/,$(FORMATS))) \
 	$(addsuffix /size.txt,$(addprefix output/%/,$(FORMATS)))
-	exec $< $(word 2,$^) $(word 3,$^) $(dir $@) > $@
+	exec $< $(word 2,$^) $(dir $@) > $@

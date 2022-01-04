@@ -3,9 +3,8 @@
 set -o errexit
 set -o nounset
 
-FORMATS_ORDER="$1"
-COMPRESSORS_ORDER="$2"
-OUTPUT_DIRECTORY="$3"
+COMPRESSORS_ORDER="$1"
+OUTPUT_DIRECTORY="$2"
 
 printf "\"%s\",\"%s\",\"%s\",\"%s\"" \
   "Index" "ID" "Name" "Uncompressed"
@@ -15,14 +14,13 @@ do
 done < "$COMPRESSORS_ORDER"
 printf "\n"
 
-INDEX=1
-while IFS= read -r format
+for format in formats/*
 do
-  printf "%s,%s,\"%s\"" "$INDEX" "$format" "$(cat "formats/$format/NAME")"
+  FORMAT_ID="$(basename "$format")"
+  printf "%s,\"%s\"" "$FORMAT_ID" "$(cat "formats/$FORMAT_ID/NAME")"
   while IFS= read -r size
   do
     printf ",%s" "$size"
-  done < "$OUTPUT_DIRECTORY/$format/size.txt"
+  done < "$OUTPUT_DIRECTORY/$FORMAT_ID/size.txt"
   printf "\n"
-  INDEX="$((INDEX+1))"
-done < "$FORMATS_ORDER"
+done
