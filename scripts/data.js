@@ -9,7 +9,7 @@ const data = process.argv.slice(3).reduce((accumulator, filePath) => {
 })
 
 const result = {
-  document: process.argv[2],
+  title: process.argv[2],
   labels: data.map((entry) => {
     return entry.format
   }),
@@ -19,7 +19,7 @@ const result = {
     return compressor !== 'uncompressed'
   }).sort()).map((compressor) => {
     return {
-      title: compressor === 'uncompressed'
+      label: compressor === 'uncompressed'
         ? 'Uncompressed'
         : fs.readFileSync(path.resolve('compression', compressor, 'NAME'), 'utf8').trim(),
       data: data.map((entry) => {
