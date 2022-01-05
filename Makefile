@@ -54,6 +54,9 @@ distclean: clean
 	exec $(RMRF) node_modules env
 
 all: lint \
+	$(OUTPUT)/compressors/gz/VERSION \
+	$(OUTPUT)/compressors/lz4/VERSION \
+	$(OUTPUT)/compressors/lzma/VERSION \
 	$(OUTPUT)/documents/circleciblank/capnproto/result.json \
 	$(OUTPUT)/documents/circleciblank/flatbuffers/result.json \
 	$(OUTPUT)/documents/circleciblank/json/result.json \
@@ -81,6 +84,12 @@ $(foreach format,$(ALL_FORMATS),$(eval $(call COPY_TO_OUTPUT,$(format),NAME,form
 #################################################
 # BENCHMARK
 #################################################
+
+$(OUTPUT):
+	mkdir $@
+
+$(OUTPUT)/compressors: | $(OUTPUT)
+	mkdir $@
 
 include compression/gz/targets.mk
 include compression/lz4/targets.mk
