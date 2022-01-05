@@ -87,13 +87,15 @@ $(foreach format,$(ALL_FORMATS),$(eval $(call COPY_TO_OUTPUT,$(format),NAME,form
 
 $(OUTPUT):
 	mkdir $@
-
 $(OUTPUT)/compressors: | $(OUTPUT)
+	mkdir $@
+$(OUTPUT)/compressors/%: | $(OUTPUT)/compressors
 	mkdir $@
 
 include compression/gz/targets.mk
 include compression/lz4/targets.mk
 include compression/lzma/targets.mk
+
 include formats/capnproto/targets.mk
 include formats/flatbuffers/targets.mk
 include formats/json/targets.mk

@@ -1,6 +1,3 @@
-$(OUTPUT)/compressors/lz4: | $(OUTPUT)/compressors
-	mkdir $@
-
 %.lz4: %
 	$(LZ4) -f -12 $< $@
 

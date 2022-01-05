@@ -1,6 +1,3 @@
-$(OUTPUT)/compressors/gz: | $(OUTPUT)/compressors
-	mkdir $@
-
 %.gz: %
 	$(GZIP) --no-name -9 < $< > $@
 
