@@ -54,15 +54,15 @@ distclean: clean
 	exec $(RMRF) node_modules env
 
 all: lint \
-	$(OUTPUT)/circleciblank/capnproto/result.json \
-	$(OUTPUT)/circleciblank/flatbuffers/result.json \
-	$(OUTPUT)/circleciblank/json/result.json \
-	$(OUTPUT)/circleciblank/ubjson/result.json \
-	$(OUTPUT)/circleciblank/capnproto/VERSION \
-	$(OUTPUT)/circleciblank/flatbuffers/VERSION \
-	$(OUTPUT)/circleciblank/json/VERSION \
-	$(OUTPUT)/circleciblank/ubjson/VERSION \
-	$(OUTPUT)/circleciblank/data.json
+	$(OUTPUT)/documents/circleciblank/capnproto/result.json \
+	$(OUTPUT)/documents/circleciblank/flatbuffers/result.json \
+	$(OUTPUT)/documents/circleciblank/json/result.json \
+	$(OUTPUT)/documents/circleciblank/ubjson/result.json \
+	$(OUTPUT)/documents/circleciblank/capnproto/VERSION \
+	$(OUTPUT)/documents/circleciblank/flatbuffers/VERSION \
+	$(OUTPUT)/documents/circleciblank/json/VERSION \
+	$(OUTPUT)/documents/circleciblank/ubjson/VERSION \
+	$(OUTPUT)/documents/circleciblank/data.json
 
 #################################################
 # PRELUDE
@@ -71,7 +71,7 @@ all: lint \
 # We programatically define these basic rule for every format as they are the
 # base ones that requires two wildcards, which GNU Make doesn't support.
 define COPY_TO_OUTPUT
-$(OUTPUT)/%/$1/$2: $3
+$(OUTPUT)/documents/%/$1/$2: $3
 	$(INSTALL) -d $$(dir $$@)
 	$(INSTALL) -m 0664 $$< $$@
 endef
@@ -91,27 +91,27 @@ include formats/json/targets.mk
 include formats/ubjson/targets.mk
 
 # Provide default transformation JSON Patch documents
-$(OUTPUT)/%/pre.patch.json:
+$(OUTPUT)/documents/%/pre.patch.json:
 	exec echo "[]" > $@
-$(OUTPUT)/%/post.patch.json:
+$(OUTPUT)/documents/%/post.patch.json:
 	exec echo "[]" > $@
 
-$(OUTPUT)/%/input.json: scripts/jsonpatch.js \
-	$(OUTPUT)/%/document.json $(OUTPUT)/%/pre.patch.json node_modules
+$(OUTPUT)/documents/%/input.json: scripts/jsonpatch.js \
+	$(OUTPUT)/documents/%/document.json $(OUTPUT)/documents/%/pre.patch.json node_modules
 	exec $(NODE) $< $(word 3,$^) < $(word 2,$^) > $@
-$(OUTPUT)/%/decode.json: scripts/jsonpatch.js \
-	$(OUTPUT)/%/output.json $(OUTPUT)/%/post.patch.json node_modules
+$(OUTPUT)/documents/%/decode.json: scripts/jsonpatch.js \
+	$(OUTPUT)/documents/%/output.json $(OUTPUT)/documents/%/post.patch.json node_modules
 	exec $(NODE) $< $(word 3,$^) < $(word 2,$^) > $@
-$(OUTPUT)/%/result.json: scripts/json-equals.py \
-	$(OUTPUT)/%/decode.json $(OUTPUT)/%/document.json
+$(OUTPUT)/documents/%/result.json: scripts/json-equals.py \
+	$(OUTPUT)/documents/%/decode.json $(OUTPUT)/documents/%/document.json
 	$(PYTHON) $< $(word 2,$^) $(word 3,$^)
 	$(INSTALL) -m 0664 $(word 2,$^) $@
 
-$(OUTPUT)/%/size.json: scripts/size.js $(OUTPUT)/%/output.bin $(OUTPUT)/%/NAME \
-	$(foreach compressor,$(ALL_COMPRESSORS),$(addsuffix .$(compressor),$(OUTPUT)/%/output.bin))
+$(OUTPUT)/documents/%/size.json: scripts/size.js $(OUTPUT)/documents/%/output.bin $(OUTPUT)/documents/%/NAME \
+	$(foreach compressor,$(ALL_COMPRESSORS),$(addsuffix .$(compressor),$(OUTPUT)/documents/%/output.bin))
 	exec $(NODE) $< $(word 2,$^) "$(shell cat $(word 3,$^))" $(COMPRESSORS) > $@
 
-$(OUTPUT)/%/data.json: scripts/data.js benchmark/%/NAME \
+$(OUTPUT)/documents/%/data.json: scripts/data.js benchmark/%/NAME \
 	$(addsuffix /NAME,$(addprefix compression/,$(COMPRESSORS))) \
-	$(addsuffix /size.json,$(addprefix output/%/,$(FORMATS)))
+	$(addsuffix /size.json,$(addprefix output/documents/%/,$(FORMATS)))
 	exec $(NODE) $< "$(shell cat $(word 2,$^))" $(addsuffix /size.json,$(addprefix $(dir $@),$(FORMATS))) > $@

@@ -1,8 +1,8 @@
-$(OUTPUT)/%/json/output.bin: $(OUTPUT)/%/json/input.json
+$(OUTPUT)/documents/%/json/output.bin: $(OUTPUT)/documents/%/json/input.json
 	$(INSTALL) -m 0664 $< $@
 
-$(OUTPUT)/%/json/output.json: $(OUTPUT)/%/json/output.bin
+$(OUTPUT)/documents/%/json/output.json: $(OUTPUT)/documents/%/json/output.bin
 	$(INSTALL) -m 0664 $< $@
 
-$(OUTPUT)/%/json/VERSION:
+$(OUTPUT)/documents/%/json/VERSION:
 	echo "ECMA-404" > $@
