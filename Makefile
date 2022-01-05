@@ -30,7 +30,7 @@ FORMATS ?= $(ALL_FORMATS)
 ALL_DOCUMENTS = $(notdir $(wildcard benchmark/*))
 DOCUMENTS ?= $(ALL_DOCUMENTS)
 
-ALL_COMPRESSORS = $(filter-out ORDER,$(notdir $(wildcard compression/*)))
+ALL_COMPRESSORS = $(notdir $(wildcard compression/*))
 COMPRESSORS ?= $(ALL_COMPRESSORS)
 
 #################################################
@@ -47,7 +47,7 @@ node_modules: package.json package-lock.json
 lint: node_modules env
 	$(NODE) ./node_modules/.bin/standard scripts/**/*.js
 	$(SHELLCHECK) scripts/*.sh test/*.sh
-	./$(word 2,$^)/bin/python3 -m flake8 scripts/*.py
+	./$(word 2,$^)/bin/python3 -m flake8 scripts/*.py formats/**/*.py
 
 clean:
 	exec $(RMRF) $(OUTPUT)
@@ -75,13 +75,13 @@ all: lint test \
 
 # We programatically define these basic rule for every format as they are the
 # base ones that requires two wildcards, which GNU Make doesn't support.
-define COPY_FROM_BENCHMARK
-$(OUTPUT)/%/$1/$2: benchmark/%/$2
+define COPY_TO_OUTPUT
+$(OUTPUT)/%/$1/$2: $3
 	$(INSTALL) -d $$(dir $$@)
 	$(INSTALL) -m 0664 $$< $$@
 endef
-$(foreach format,$(ALL_FORMATS),$(eval $(call COPY_FROM_BENCHMARK,$(format),document.json)))
-$(foreach format,$(ALL_FORMATS),$(eval $(call COPY_FROM_BENCHMARK,$(format),NAME)))
+$(foreach format,$(ALL_FORMATS),$(eval $(call COPY_TO_OUTPUT,$(format),document.json,benchmark/%/document.json)))
+$(foreach format,$(ALL_FORMATS),$(eval $(call COPY_TO_OUTPUT,$(format),NAME,formats/$(format)/NAME)))
 
 #################################################
 # BENCHMARK
@@ -112,12 +112,11 @@ $(OUTPUT)/%/result.json: scripts/json-equals.py \
 	$(PYTHON) $< $(word 2,$^) $(word 3,$^)
 	$(INSTALL) -m 0664 $(word 2,$^) $@
 
-$(OUTPUT)/%/size.txt: scripts/size.sh compression/ORDER $(OUTPUT)/%/output.bin \
+$(OUTPUT)/%/size.json: scripts/size.js $(OUTPUT)/%/output.bin $(OUTPUT)/%/NAME \
 	$(foreach compressor,$(ALL_COMPRESSORS),$(addsuffix .$(compressor),$(OUTPUT)/%/output.bin))
-	exec $< $(word 2,$^) $(word 3,$^) > $@
+	exec $(NODE) $< $(word 2,$^) "$(shell cat $(word 3,$^))" $(COMPRESSORS) > $@
 
-$(OUTPUT)/%/data.csv: scripts/csv.sh compression/ORDER \
+$(OUTPUT)/%/data.json: scripts/data.js benchmark/%/NAME \
 	$(addsuffix /NAME,$(addprefix compression/,$(COMPRESSORS))) \
-	$(addsuffix /NAME,$(addprefix formats/,$(FORMATS))) \
-	$(addsuffix /size.txt,$(addprefix output/%/,$(FORMATS)))
-	exec $< $(word 2,$^) $(dir $@) > $@
+	$(addsuffix /size.json,$(addprefix output/%/,$(FORMATS)))
+	exec $(NODE) $< "$(shell cat $(word 2,$^))" $(addsuffix /size.json,$(addprefix $(dir $@),$(FORMATS)))
