@@ -1,4 +1,4 @@
-.PHONY: lint clean distclean test all
+.PHONY: lint clean distclean all
 .DEFAULT_GOAL = all
 
 #################################################
@@ -9,7 +9,6 @@ NODE ?= node
 NPM ?= npm
 PYTHON ?= python3
 INSTALL ?= install
-SHELLCHECK ?= shellcheck
 RMRF ?= rm -rf
 
 CAPNP ?= capnp
@@ -46,7 +45,6 @@ node_modules: package.json package-lock.json
 
 lint: node_modules env
 	$(NODE) ./node_modules/.bin/standard scripts/**/*.js
-	$(SHELLCHECK) scripts/*.sh test/*.sh
 	./$(word 2,$^)/bin/python3 -m flake8 scripts/*.py formats/**/*.py
 
 clean:
@@ -55,10 +53,7 @@ clean:
 distclean: clean
 	exec $(RMRF) node_modules env
 
-test:
-	./test/compression-total-order.sh
-
-all: lint test \
+all: lint \
 	$(OUTPUT)/circleciblank/capnproto/result.json \
 	$(OUTPUT)/circleciblank/flatbuffers/result.json \
 	$(OUTPUT)/circleciblank/json/result.json \
@@ -67,7 +62,7 @@ all: lint test \
 	$(OUTPUT)/circleciblank/flatbuffers/VERSION \
 	$(OUTPUT)/circleciblank/json/VERSION \
 	$(OUTPUT)/circleciblank/ubjson/VERSION \
-	$(OUTPUT)/circleciblank/data.csv
+	$(OUTPUT)/circleciblank/data.json
 
 #################################################
 # PRELUDE
@@ -119,4 +114,4 @@ $(OUTPUT)/%/size.json: scripts/size.js $(OUTPUT)/%/output.bin $(OUTPUT)/%/NAME \
 $(OUTPUT)/%/data.json: scripts/data.js benchmark/%/NAME \
 	$(addsuffix /NAME,$(addprefix compression/,$(COMPRESSORS))) \
 	$(addsuffix /size.json,$(addprefix output/%/,$(FORMATS)))
-	exec $(NODE) $< "$(shell cat $(word 2,$^))" $(addsuffix /size.json,$(addprefix $(dir $@),$(FORMATS)))
+	exec $(NODE) $< "$(shell cat $(word 2,$^))" $(addsuffix /size.json,$(addprefix $(dir $@),$(FORMATS))) > $@
