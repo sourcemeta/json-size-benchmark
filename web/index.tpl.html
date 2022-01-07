@@ -3,18 +3,35 @@
   <head>
     <meta charset="utf-8" />
     <title>{{ metadata.description }}</title>
+    <style>
+header {
+  text-align: center;
+}
+
+header,
+main {
+  max-width: 800px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+main {
+  margin-top: 100px;
+}
+    </style>
   </head>
   <body>
-    <h1>{{ metadata.description }}</h1>
-
-    {{#each data}}
-    <section>
-      <h2>{{title}}</h2>
-      <div>
+    <header>
+      <h1>{{ metadata.description }}</h1>
+      <p>By {{ metadata.author }}</p>
+    </header>
+    <main>
+      {{#each data}}
+      <section id="#{{id}}">
         <canvas id="canvas-{{id}}"></canvas>
-      </div>
-    </section>
-    {{/each}}
+      </section>
+      {{/each}}
+    </main>
 
     <script id="data" type="application/json">{{{ JSONstringify data }}}</script>
     <script src="app.min.js"></script>
