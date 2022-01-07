@@ -122,11 +122,12 @@ $(OUTPUT)/documents/%/result.json: scripts/json-equals.py \
 	$(INSTALL) -m 0664 $(word 2,$^) $@
 
 # This target ensures that the result is validated against the original input
-$(OUTPUT)/documents/%/size.json: scripts/size.js $(OUTPUT)/documents/%/output.bin $(OUTPUT)/documents/%/NAME \
+$(OUTPUT)/documents/%/size.json: scripts/size.js \
+	$(OUTPUT)/documents/%/output.bin $(OUTPUT)/documents/%/NAME $(OUTPUT)/documents/%/VERSION \
 	$(foreach compressor,$(ALL_COMPRESSORS),$(addsuffix .$(compressor),$(OUTPUT)/documents/%/output.bin)) \
 	$(OUTPUT)/documents/%/result.json \
 	| $(OUTPUT)/documents/%
-	exec $(NODE) $< $(word 2,$^) "$(shell cat $(word 3,$^))" $(COMPRESSORS) > $@
+	exec $(NODE) $< $(word 2,$^) "$(shell cat $(word 3,$^))" "$(shell cat $(word 4,$^))" $(COMPRESSORS) > $@
 
 $(OUTPUT)/documents/%/data.json: scripts/data.js benchmark/%/NAME \
 	$(addsuffix /NAME,$(addprefix compression/,$(COMPRESSORS))) \
