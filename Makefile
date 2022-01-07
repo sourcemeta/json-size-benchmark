@@ -144,7 +144,7 @@ $(OUTPUT)/app.min.js: web/app.js node_modules
 		--target=safari11
 
 $(OUTPUT)/index.html: scripts/template.js \
-	index.tpl.html $(OUTPUT)/documents/aggregate.json \
+	web/index.tpl.html $(OUTPUT)/documents/aggregate.json \
 	node_modules package.json $(OUTPUT)/app.min.js \
 	| $(OUTPUT)
 	exec $(NODE) $< $(word 2,$^) $(word 3,$^) > $@
