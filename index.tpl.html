@@ -3,14 +3,50 @@
   <head>
     <meta charset="utf-8" />
     <title>{{ metadata.description }}</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
-    <p>Hello World</p>
+    <h1>{{ metadata.description }}</h1>
 
     {{#each data}}
-    - {{this.title}}
+    <section>
+      <h2>{{title}}</h2>
+      <div>
+        <canvas id="canvas-{{id}}"></canvas>
+      </div>
+    </section>
     {{/each}}
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    {{#each data}}
+    <script id="data-{{id}}" type="application/json">{{{ JSONstringify this }}}</script>
+    {{/each}}
+
+    {{#each data}}
+    <script>
+      const data = JSON.parse(document.getElementById('data-{{id}}').textContent);
+      const chart = new Chart(document.getElementById('canvas-{{id}}'), {
+        type: 'bar',
+        data: {
+          labels: data.labels,
+          datasets: data.datasets
+        },
+        options: {
+          plugins: {
+            title: {
+              display: true,
+              text: '{{title}}'
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+
+      console.log(data);
+    </script>
+    {{/each}}
   </body>
 </html>
