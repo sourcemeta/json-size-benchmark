@@ -1,5 +1,16 @@
-HELLO
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ metadata.description }}</title>
+  </head>
+  <body>
+    <p>Hello World</p>
 
-{{#each data}}
-- {{this.title}}
-{{/each}}
+    {{#each data}}
+    - {{this.title}}
+    {{/each}}
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </body>
+</html>

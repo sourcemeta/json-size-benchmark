@@ -127,7 +127,8 @@ $(OUTPUT)/documents/%/data.json: scripts/data.js benchmark/%/NAME \
 	$(addsuffix /VERSION,$(addprefix output/compressors/,$(COMPRESSORS))) \
 	$(addsuffix /size.json,$(addprefix output/documents/%/,$(FORMATS))) \
 	| $(OUTPUT)/documents/%
-	exec $(NODE) $< "$(shell cat $(word 2,$^))" $(addsuffix /size.json,$(addprefix $(dir $@),$(FORMATS))) > $@
+	exec $(NODE) $< "$(shell cat $(word 2,$^))" $(notdir $(realpath $(dir $(word 2,$^)))) \
+		$(addsuffix /size.json,$(addprefix $(dir $@),$(FORMATS))) > $@
 
 $(OUTPUT)/documents/aggregate.json: scripts/concat.js \
 	$(addsuffix /data.json,$(addprefix output/documents/,$(DOCUMENTS))) \
@@ -135,6 +136,6 @@ $(OUTPUT)/documents/aggregate.json: scripts/concat.js \
 	exec $(NODE) $^ > $@
 
 $(OUTPUT)/index.html: scripts/template.js \
-	index.tpl.html $(OUTPUT)/documents/aggregate.json \
+	index.tpl.html $(OUTPUT)/documents/aggregate.json package.json \
 	| $(OUTPUT)
 	exec $(NODE) $< $(word 2,$^) $(word 3,$^) > $@
