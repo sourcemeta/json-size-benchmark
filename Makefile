@@ -10,6 +10,7 @@ NPM ?= npm
 PYTHON ?= python3
 INSTALL ?= install
 RMRF ?= rm -rf
+MKDIR ?= mkdir
 
 CAPNP ?= capnp
 FLATC ?= flatc
@@ -67,7 +68,7 @@ all: lint \
 $(OUTPUT):
 	mkdir $@
 define MAKE_DIRECTORY
-$1/$2: | $1; mkdir $$@
+$1/$2: | $1; exec $(MKDIR) $$@
 endef
 $(eval $(call MAKE_DIRECTORY,$(OUTPUT),documents))
 $(eval $(call MAKE_DIRECTORY,$(OUTPUT),compressors))
@@ -79,7 +80,7 @@ $(foreach document,$(ALL_DOCUMENTS),$(foreach format,$(ALL_FORMATS),$(eval $(cal
 # base ones that requires two wildcards, which GNU Make doesn't support.
 define COPY_TO_OUTPUT
 $(OUTPUT)/documents/%/$1/$2: $3 | $(OUTPUT)/documents/%/$1
-	$(INSTALL) -m 0664 $$< $$@
+	exec $(INSTALL) -m 0664 $$< $$@
 endef
 $(foreach format,$(ALL_FORMATS),$(eval $(call COPY_TO_OUTPUT,$(format),document.json,benchmark/%/document.json)))
 $(foreach format,$(ALL_FORMATS),$(eval $(call COPY_TO_OUTPUT,$(format),NAME,formats/$(format)/NAME)))
