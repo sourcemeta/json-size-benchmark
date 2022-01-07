@@ -54,11 +54,7 @@ clean:
 distclean: clean
 	exec $(RMRF) node_modules env
 
-all: lint \
-	$(OUTPUT)/compressors/gz/VERSION \
-	$(OUTPUT)/compressors/lz4/VERSION \
-	$(OUTPUT)/compressors/lzma/VERSION \
-	$(OUTPUT)/documents/aggregate.json
+all: lint $(OUTPUT)/documents/aggregate.json
 
 #################################################
 # PRELUDE
