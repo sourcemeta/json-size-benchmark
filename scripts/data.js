@@ -13,6 +13,9 @@ const result = {
   labels: data.map((entry) => {
     return entry.format
   }),
+  versions: data.map((entry) => {
+    return entry.version
+  }),
 
   // Uncompressed always comes first
   datasets: ['uncompressed'].concat(Object.keys(data[0].data).filter((compressor) => {
