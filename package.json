@@ -6,7 +6,9 @@
   "author": "Juan Cruz Viotti <jv@jviotti.com>",
   "license": "Apache-2.0",
   "dependencies": {
-    "fast-json-patch": "^3.1.0"
+    "fast-json-patch": "^3.1.0",
+    "handlebars": "^4.7.7",
+    "handlebars-helpers": "^0.10.0"
   },
   "devDependencies": {
     "standard": "^16.0.4"

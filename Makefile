@@ -65,7 +65,7 @@ all: lint \
 	$(OUTPUT)/documents/circleciblank/flatbuffers/VERSION \
 	$(OUTPUT)/documents/circleciblank/json/VERSION \
 	$(OUTPUT)/documents/circleciblank/ubjson/VERSION \
-	$(OUTPUT)/documents/circleciblank/data.json
+	$(OUTPUT)/documents/aggregate.json
 
 #################################################
 # PRELUDE
@@ -126,3 +126,6 @@ $(OUTPUT)/documents/%/data.json: scripts/data.js benchmark/%/NAME \
 	$(addsuffix /NAME,$(addprefix compression/,$(COMPRESSORS))) \
 	$(addsuffix /size.json,$(addprefix output/documents/%/,$(FORMATS)))
 	exec $(NODE) $< "$(shell cat $(word 2,$^))" $(addsuffix /size.json,$(addprefix $(dir $@),$(FORMATS))) > $@
+
+$(OUTPUT)/documents/aggregate.json: scripts/concat.js $(addsuffix /data.json,$(addprefix output/documents/,$(DOCUMENTS)))
+	exec $(NODE) $^ > $@
