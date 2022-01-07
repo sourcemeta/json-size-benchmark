@@ -25,6 +25,9 @@ const result = {
       label: compressor === 'uncompressed'
         ? 'Uncompressed'
         : fs.readFileSync(path.resolve('compression', compressor, 'NAME'), 'utf8').trim(),
+      version: compressor === 'uncompressed'
+        ? null
+        : fs.readFileSync(path.resolve('output', 'compressors', compressor, 'VERSION'), 'utf8').trim(),
       data: data.map((entry) => {
         return entry.data[compressor]
       })
