@@ -17,36 +17,32 @@
     </section>
     {{/each}}
 
-    {{#each data}}
-    <script id="data-{{id}}" type="application/json">{{{ JSONstringify this }}}</script>
-    {{/each}}
-
-    {{#each data}}
+    <script id="data" type="application/json">{{{ JSONstringify data }}}</script>
     <script>
-      const data = JSON.parse(document.getElementById('data-{{id}}').textContent);
-      const chart = new Chart(document.getElementById('canvas-{{id}}'), {
-        type: 'bar',
-        data: {
-          labels: data.labels,
-          datasets: data.datasets
-        },
-        options: {
-          plugins: {
-            title: {
-              display: true,
-              text: '{{title}}'
-            }
+      const data = JSON.parse(document.getElementById('data').textContent);
+
+      for (const entry of data) {
+        const chart = new Chart(document.getElementById(`canvas-${entry.id}`), {
+          type: 'bar',
+          data: {
+            labels: entry.labels,
+            datasets: entry.datasets
           },
-          scales: {
-            y: {
-              beginAtZero: true
+          options: {
+            plugins: {
+              title: {
+                display: true,
+                text: entry.title
+              }
+            },
+            scales: {
+              y: {
+                beginAtZero: true
+              }
             }
           }
-        }
-      });
-
-      console.log(data);
+        });
+      }
     </script>
-    {{/each}}
   </body>
 </html>
