@@ -54,7 +54,7 @@ clean:
 distclean: clean
 	exec $(RMRF) node_modules env
 
-all: lint $(OUTPUT)/documents/aggregate.json
+all: lint $(OUTPUT)/index.html
 
 #################################################
 # PRELUDE
@@ -133,3 +133,8 @@ $(OUTPUT)/documents/aggregate.json: scripts/concat.js \
 	$(addsuffix /data.json,$(addprefix output/documents/,$(DOCUMENTS))) \
 	| $(OUTPUT)/documents
 	exec $(NODE) $^ > $@
+
+$(OUTPUT)/index.html: scripts/template.js \
+	index.tpl.html $(OUTPUT)/documents/aggregate.json \
+	| $(OUTPUT)
+	exec $(NODE) $< $(word 2,$^) $(word 3,$^) > $@
