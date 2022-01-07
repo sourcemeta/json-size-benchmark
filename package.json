@@ -6,6 +6,7 @@
   "author": "Juan Cruz Viotti <jv@jviotti.com>",
   "license": "Apache-2.0",
   "dependencies": {
+    "esbuild": "^0.14.10",
     "fast-json-patch": "^3.1.0",
     "handlebars": "^4.7.7",
     "handlebars-helpers": "^0.10.0"

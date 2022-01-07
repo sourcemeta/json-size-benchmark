@@ -135,11 +135,16 @@ $(OUTPUT)/documents/aggregate.json: scripts/concat.js \
 	| $(OUTPUT)/documents
 	exec $(NODE) $^ > $@
 
-$(OUTPUT)/app.min.js: web/app.js
-	$(INSTALL) -m 0664 $< $@
+#################################################
+# WEB
+#################################################
+
+$(OUTPUT)/app.min.js: web/app.js node_modules
+	exec ./node_modules/.bin/esbuild $< --outfile=$@ --minify \
+		--target=chrome58,firefox57,safari11,edge16
 
 $(OUTPUT)/index.html: scripts/template.js \
 	index.tpl.html $(OUTPUT)/documents/aggregate.json \
-	package.json $(OUTPUT)/app.min.js \
+	node_modules package.json $(OUTPUT)/app.min.js \
 	| $(OUTPUT)
 	exec $(NODE) $< $(word 2,$^) $(word 3,$^) > $@
