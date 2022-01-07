@@ -8,5 +8,5 @@ $(OUTPUT)/documents/%/flatbuffers/output.json: \
 	$(FLATC) --raw-binary -o $(dir $@) --strict-json --json $(word 2,$^) -- $<
 	mv $(dir $@)$(notdir $(basename $<)).json $@
 
-$(OUTPUT)/documents/%/flatbuffers/VERSION:
+$(OUTPUT)/documents/%/flatbuffers/VERSION: | $(OUTPUT)/documents/%/flatbuffers
 	$(FLATC) --version > $@

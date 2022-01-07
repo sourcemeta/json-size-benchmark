@@ -57,10 +57,6 @@ all: lint \
 	$(OUTPUT)/compressors/gz/VERSION \
 	$(OUTPUT)/compressors/lz4/VERSION \
 	$(OUTPUT)/compressors/lzma/VERSION \
-	$(OUTPUT)/documents/circleciblank/capnproto/result.json \
-	$(OUTPUT)/documents/circleciblank/flatbuffers/result.json \
-	$(OUTPUT)/documents/circleciblank/json/result.json \
-	$(OUTPUT)/documents/circleciblank/ubjson/result.json \
 	$(OUTPUT)/documents/circleciblank/capnproto/VERSION \
 	$(OUTPUT)/documents/circleciblank/flatbuffers/VERSION \
 	$(OUTPUT)/documents/circleciblank/json/VERSION \
@@ -91,6 +87,15 @@ $(OUTPUT)/compressors: | $(OUTPUT)
 	mkdir $@
 $(OUTPUT)/compressors/%: | $(OUTPUT)/compressors
 	mkdir $@
+$(OUTPUT)/documents: | $(OUTPUT)
+	mkdir $@
+
+define MAKE_DIRECTORY
+$1/$2: | $1
+	mkdir $$@
+endef
+$(foreach document,$(ALL_DOCUMENTS),$(eval $(call MAKE_DIRECTORY,$(OUTPUT)/documents,$(document))))
+$(foreach document,$(ALL_DOCUMENTS),$(foreach format,$(ALL_FORMATS),$(eval $(call MAKE_DIRECTORY,$(OUTPUT)/documents/$(document),$(format)))))
 
 include compression/gz/targets.mk
 include compression/lz4/targets.mk
@@ -119,7 +124,8 @@ $(OUTPUT)/documents/%/result.json: scripts/json-equals.py \
 	$(INSTALL) -m 0664 $(word 2,$^) $@
 
 $(OUTPUT)/documents/%/size.json: scripts/size.js $(OUTPUT)/documents/%/output.bin $(OUTPUT)/documents/%/NAME \
-	$(foreach compressor,$(ALL_COMPRESSORS),$(addsuffix .$(compressor),$(OUTPUT)/documents/%/output.bin))
+	$(foreach compressor,$(ALL_COMPRESSORS),$(addsuffix .$(compressor),$(OUTPUT)/documents/%/output.bin)) \
+	$(OUTPUT)/documents/%/result.json # Ensure that result is validated
 	exec $(NODE) $< $(word 2,$^) "$(shell cat $(word 3,$^))" $(COMPRESSORS) > $@
 
 $(OUTPUT)/documents/%/data.json: scripts/data.js benchmark/%/NAME \
@@ -127,5 +133,5 @@ $(OUTPUT)/documents/%/data.json: scripts/data.js benchmark/%/NAME \
 	$(addsuffix /size.json,$(addprefix output/documents/%/,$(FORMATS)))
 	exec $(NODE) $< "$(shell cat $(word 2,$^))" $(addsuffix /size.json,$(addprefix $(dir $@),$(FORMATS))) > $@
 
-$(OUTPUT)/documents/aggregate.json: scripts/concat.js $(addsuffix /data.json,$(addprefix output/documents/,$(DOCUMENTS)))
+$(OUTPUT)/documents/aggregate.json: scripts/concat.js $(addsuffix /data.json,$(addprefix output/documents/,$(DOCUMENTS))) | $(OUTPUT)/documents
 	exec $(NODE) $^ > $@
