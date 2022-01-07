@@ -83,7 +83,7 @@ $(foreach document,$(ALL_DOCUMENTS),$(foreach format,$(ALL_FORMATS),$(eval $(cal
 # We programatically define these basic rule for every format as they are the
 # base ones that requires two wildcards, which GNU Make doesn't support.
 define COPY_TO_OUTPUT
-$(OUTPUT)/documents/%/$1/$2: $3
+$(OUTPUT)/documents/%/$1/$2: $3 | $(OUTPUT)/documents/%/$1
 	$(INSTALL) -d $$(dir $$@)
 	$(INSTALL) -m 0664 $$< $$@
 endef
@@ -104,31 +104,39 @@ include formats/json/targets.mk
 include formats/ubjson/targets.mk
 
 # Provide default transformation JSON Patch documents
-$(OUTPUT)/documents/%/pre.patch.json:
+$(OUTPUT)/documents/%/pre.patch.json: | $(OUTPUT)/documents/%
 	exec echo "[]" > $@
-$(OUTPUT)/documents/%/post.patch.json:
+$(OUTPUT)/documents/%/post.patch.json: | $(OUTPUT)/documents/%
 	exec echo "[]" > $@
 
 $(OUTPUT)/documents/%/input.json: scripts/jsonpatch.js \
-	$(OUTPUT)/documents/%/document.json $(OUTPUT)/documents/%/pre.patch.json node_modules
+	$(OUTPUT)/documents/%/document.json $(OUTPUT)/documents/%/pre.patch.json node_modules \
+	| $(OUTPUT)/documents/%
 	exec $(NODE) $< $(word 3,$^) < $(word 2,$^) > $@
 $(OUTPUT)/documents/%/decode.json: scripts/jsonpatch.js \
-	$(OUTPUT)/documents/%/output.json $(OUTPUT)/documents/%/post.patch.json node_modules
+	$(OUTPUT)/documents/%/output.json $(OUTPUT)/documents/%/post.patch.json node_modules \
+	| $(OUTPUT)/documents/%
 	exec $(NODE) $< $(word 3,$^) < $(word 2,$^) > $@
 $(OUTPUT)/documents/%/result.json: scripts/json-equals.py \
-	$(OUTPUT)/documents/%/decode.json $(OUTPUT)/documents/%/document.json
+	$(OUTPUT)/documents/%/decode.json $(OUTPUT)/documents/%/document.json \
+	| $(OUTPUT)/documents/%
 	$(PYTHON) $< $(word 2,$^) $(word 3,$^)
 	$(INSTALL) -m 0664 $(word 2,$^) $@
 
+# This target ensures that the result is validated against the original input
 $(OUTPUT)/documents/%/size.json: scripts/size.js $(OUTPUT)/documents/%/output.bin $(OUTPUT)/documents/%/NAME \
 	$(foreach compressor,$(ALL_COMPRESSORS),$(addsuffix .$(compressor),$(OUTPUT)/documents/%/output.bin)) \
-	$(OUTPUT)/documents/%/result.json # Ensure that result is validated
+	$(OUTPUT)/documents/%/result.json \
+	| $(OUTPUT)/documents/%
 	exec $(NODE) $< $(word 2,$^) "$(shell cat $(word 3,$^))" $(COMPRESSORS) > $@
 
 $(OUTPUT)/documents/%/data.json: scripts/data.js benchmark/%/NAME \
 	$(addsuffix /NAME,$(addprefix compression/,$(COMPRESSORS))) \
-	$(addsuffix /size.json,$(addprefix output/documents/%/,$(FORMATS)))
+	$(addsuffix /size.json,$(addprefix output/documents/%/,$(FORMATS))) \
+	| $(OUTPUT)/documents/%
 	exec $(NODE) $< "$(shell cat $(word 2,$^))" $(addsuffix /size.json,$(addprefix $(dir $@),$(FORMATS))) > $@
 
-$(OUTPUT)/documents/aggregate.json: scripts/concat.js $(addsuffix /data.json,$(addprefix output/documents/,$(DOCUMENTS))) | $(OUTPUT)/documents
+$(OUTPUT)/documents/aggregate.json: scripts/concat.js \
+	$(addsuffix /data.json,$(addprefix output/documents/,$(DOCUMENTS))) \
+	| $(OUTPUT)/documents
 	exec $(NODE) $^ > $@
