@@ -2,8 +2,17 @@
   "name": "@sourcemeta/json-size-benchmark",
   "version": "1.0.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sourcemeta/json-size-benchmark"
+  },
+  "homepage": "https://www.sourcemeta.com/json-size-benchmark",
   "description": "A space-efficiency benchmark of JSON-compatible serialization specifications",
-  "author": "Juan Cruz Viotti <jv@jviotti.com>",
+  "author": {
+    "name": "Juan Cruz Viotti",
+    "email": "jv@jviotti.com",
+    "url": "https://www.jviotti.com"
+  },
   "license": "Apache-2.0",
   "dependencies": {
     "chart.js": "^3.7.0",

@@ -1,39 +1,51 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>{{ metadata.description }}</title>
-    <style>
-header {
-  text-align: center;
-}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ metadata.description }}</title>
+  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+</head>
+<body>
+  <header>
+    <h2>{{ metadata.description }}</h2>
+    <p>An open-source research project by <a href="https://www.sourcemeta.com">Sourcemeta</a></p>
+    <nav>
+      <a href="{{ metadata.homepage }}">Home</a>
+      <a href="{{ metadata.repository.url }}" target="_blank">GitHub</a>
+      <a href="mailto:{{ metadata.author.email }}">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <br>
+    {{#each data}}
+    <section id="#{{id}}">
+      <canvas id="canvas-{{id}}"></canvas>
+    </section>
+    {{/each}}
 
-header,
-main {
-  max-width: 800px;
-  padding: 0 20px;
-  margin: 0 auto;
-}
+    <h2>Citations</h2>
+    <div class="highlight">
+      <pre class="highlight">
+        <code>
+  @online{ccsds-sle,
+    title = {Space Link Extension — Return Channel Frames Service Specification},
+    author = {Juan Cruz Viotti},
+    organization = {Sourcemeta},
+    year = {2022},
+    date = {2016-08},
+    urldate = {2021-01-14},
+    url = {https://public.ccsds.org/Pubs/911x2b3.pdf}
+  }</code>
+      </pre>
+    </div>
+  </main>
 
-main {
-  margin-top: 100px;
-}
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>{{ metadata.description }}</h1>
-      <p>By {{ metadata.author }}</p>
-    </header>
-    <main>
-      {{#each data}}
-      <section id="#{{id}}">
-        <canvas id="canvas-{{id}}"></canvas>
-      </section>
-      {{/each}}
-    </main>
+  <footer>
+    <p>Copyright <a href="{{ metadata.author.url }}">{{ metadata.author.name }}</a> © 2022 • All rights reserved</p>
+  </footer>
 
-    <script id="data" type="application/json">{{{ JSONstringify data }}}</script>
-    <script src="app.min.js"></script>
-  </body>
+  <script id="data" type="application/json">{{{ JSONstringify data }}}</script>
+  <script src="app.min.js"></script>
+</body>
 </html>
