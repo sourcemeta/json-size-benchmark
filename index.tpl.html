@@ -18,31 +18,6 @@
     {{/each}}
 
     <script id="data" type="application/json">{{{ JSONstringify data }}}</script>
-    <script>
-      const data = JSON.parse(document.getElementById('data').textContent);
-
-      for (const entry of data) {
-        const chart = new Chart(document.getElementById(`canvas-${entry.id}`), {
-          type: 'bar',
-          data: {
-            labels: entry.labels,
-            datasets: entry.datasets
-          },
-          options: {
-            plugins: {
-              title: {
-                display: true,
-                text: entry.title
-              }
-            },
-            scales: {
-              y: {
-                beginAtZero: true
-              }
-            }
-          }
-        });
-      }
-    </script>
+    <script src="app.min.js"></script>
   </body>
 </html>

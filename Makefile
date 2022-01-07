@@ -45,7 +45,7 @@ node_modules: package.json package-lock.json
 	exec $(NPM) ci
 
 lint: node_modules env
-	$(NODE) ./node_modules/.bin/standard scripts/**/*.js
+	$(NODE) ./node_modules/.bin/standard scripts/**/*.js web/**/*.js
 	./$(word 2,$^)/bin/python3 -m flake8 scripts/*.py formats/**/*.py
 
 clean:
@@ -135,7 +135,11 @@ $(OUTPUT)/documents/aggregate.json: scripts/concat.js \
 	| $(OUTPUT)/documents
 	exec $(NODE) $^ > $@
 
+$(OUTPUT)/app.min.js: web/app.js
+	$(INSTALL) -m 0664 $< $@
+
 $(OUTPUT)/index.html: scripts/template.js \
-	index.tpl.html $(OUTPUT)/documents/aggregate.json package.json \
+	index.tpl.html $(OUTPUT)/documents/aggregate.json \
+	package.json $(OUTPUT)/app.min.js \
 	| $(OUTPUT)
 	exec $(NODE) $< $(word 2,$^) $(word 3,$^) > $@
