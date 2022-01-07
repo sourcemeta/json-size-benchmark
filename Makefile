@@ -57,10 +57,6 @@ all: lint \
 	$(OUTPUT)/compressors/gz/VERSION \
 	$(OUTPUT)/compressors/lz4/VERSION \
 	$(OUTPUT)/compressors/lzma/VERSION \
-	$(OUTPUT)/documents/circleciblank/capnproto/VERSION \
-	$(OUTPUT)/documents/circleciblank/flatbuffers/VERSION \
-	$(OUTPUT)/documents/circleciblank/json/VERSION \
-	$(OUTPUT)/documents/circleciblank/ubjson/VERSION \
 	$(OUTPUT)/documents/aggregate.json
 
 #################################################
