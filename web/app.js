@@ -1,5 +1,4 @@
-/* global Chart */
-
+const Chart = require('chart.js')
 const data = JSON.parse(document.getElementById('data').textContent)
 
 for (const entry of data) {

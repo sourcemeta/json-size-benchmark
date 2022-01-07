@@ -140,8 +140,8 @@ $(OUTPUT)/documents/aggregate.json: scripts/concat.js \
 #################################################
 
 $(OUTPUT)/app.min.js: web/app.js node_modules
-	exec ./node_modules/.bin/esbuild $< --outfile=$@ --minify \
-		--target=chrome58,firefox57,safari11,edge16
+	exec ./node_modules/.bin/esbuild --bundle $< --outfile=$@ --minify \
+		--target=safari11
 
 $(OUTPUT)/index.html: scripts/template.js \
 	index.tpl.html $(OUTPUT)/documents/aggregate.json \
