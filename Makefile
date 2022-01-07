@@ -67,6 +67,19 @@ all: lint \
 # PRELUDE
 #################################################
 
+# Create output directory structure
+$(OUTPUT):
+	mkdir $@
+define MAKE_DIRECTORY
+$1/$2: | $1
+	mkdir $$@
+endef
+$(eval $(call MAKE_DIRECTORY,$(OUTPUT),documents))
+$(eval $(call MAKE_DIRECTORY,$(OUTPUT),compressors))
+$(foreach compressor,$(ALL_COMPRESSORS),$(eval $(call MAKE_DIRECTORY,$(OUTPUT)/compressors,$(compressor))))
+$(foreach document,$(ALL_DOCUMENTS),$(eval $(call MAKE_DIRECTORY,$(OUTPUT)/documents,$(document))))
+$(foreach document,$(ALL_DOCUMENTS),$(foreach format,$(ALL_FORMATS),$(eval $(call MAKE_DIRECTORY,$(OUTPUT)/documents/$(document),$(format)))))
+
 # We programatically define these basic rule for every format as they are the
 # base ones that requires two wildcards, which GNU Make doesn't support.
 define COPY_TO_OUTPUT
@@ -80,22 +93,6 @@ $(foreach format,$(ALL_FORMATS),$(eval $(call COPY_TO_OUTPUT,$(format),NAME,form
 #################################################
 # BENCHMARK
 #################################################
-
-$(OUTPUT):
-	mkdir $@
-$(OUTPUT)/compressors: | $(OUTPUT)
-	mkdir $@
-$(OUTPUT)/compressors/%: | $(OUTPUT)/compressors
-	mkdir $@
-$(OUTPUT)/documents: | $(OUTPUT)
-	mkdir $@
-
-define MAKE_DIRECTORY
-$1/$2: | $1
-	mkdir $$@
-endef
-$(foreach document,$(ALL_DOCUMENTS),$(eval $(call MAKE_DIRECTORY,$(OUTPUT)/documents,$(document))))
-$(foreach document,$(ALL_DOCUMENTS),$(foreach format,$(ALL_FORMATS),$(eval $(call MAKE_DIRECTORY,$(OUTPUT)/documents/$(document),$(format)))))
 
 include compression/gz/targets.mk
 include compression/lz4/targets.mk
