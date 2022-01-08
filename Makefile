@@ -17,6 +17,8 @@ FLATC ?= flatc
 GZIP ?= gzip
 LZ4 ?= lz4
 LZMA ?= lzma
+JSON2MSGPACK ?= json2msgpack
+MSGPACK2JSON ?= msgpack2json
 
 #################################################
 # VARIABLES
@@ -93,6 +95,7 @@ include formats/capnproto/targets.mk
 include formats/capnproto-packed/targets.mk
 include formats/flatbuffers/targets.mk
 include formats/flexbuffers/targets.mk
+include formats/messagepack/targets.mk
 include formats/json/targets.mk
 include formats/ubjson/targets.mk
 include formats/cbor/targets.mk
