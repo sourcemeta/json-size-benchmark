@@ -24,10 +24,10 @@
       <table>
         <thead>
           <tr>
-            <th>Serialization Specification</th>
+            <th><small>Serialization Specification</small></th>
 
             {{#each datasets}}
-            <th>{{ label }}</th>
+            <th><small>{{ label }}</small></th>
             {{/each}}
           </tr>
         </thead>
@@ -39,6 +39,31 @@
             <td>{{ this }}</td>
             {{/each}}
           </tr>
+          {{/each}}
+        </tbody>
+      </table>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Version</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each labels}}
+          <tr>
+            <td>{{this}}</td>
+            <td>{{ itemAt ../versions @index }}</td>
+          </tr>
+          {{/each}}
+          {{#each datasets}}
+          {{#compare label "!=" "Uncompressed"}}
+          <tr>
+            <td>{{label}}</td>
+            <td>{{version}}</td>
+          </tr>
+          {{/compare}}
           {{/each}}
         </tbody>
       </table>
