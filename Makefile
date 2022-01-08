@@ -2,6 +2,14 @@
 .DEFAULT_GOAL = all
 
 #################################################
+# GLOBALS
+#################################################
+
+# Make Python not write .pyc files for every executed Python script
+PYTHONDONTWRITEBYTECODE = 1
+export PYTHONDONTWRITEBYTECODE
+
+#################################################
 # PROGRAMS
 #################################################
 
@@ -21,6 +29,7 @@ LZ4 ?= lz4
 LZMA ?= lzma
 JSON2MSGPACK ?= json2msgpack
 MSGPACK2JSON ?= msgpack2json
+PROTOC ?= protoc
 
 #################################################
 # VARIABLES
@@ -93,6 +102,7 @@ include compression/gz/targets.mk
 include compression/lz4/targets.mk
 include compression/lzma/targets.mk
 
+include formats/protobuf/targets.mk
 include formats/capnproto/targets.mk
 include formats/capnproto-packed/targets.mk
 include formats/flatbuffers/targets.mk
