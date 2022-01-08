@@ -14,5 +14,6 @@ $(OUTPUT)/documents/%/protobuf/output.json: formats/protobuf/decode.py \
 	| $(OUTPUT)/documents/%/protobuf
 	PYTHONPATH="$(dir $(word 3,$^)):$(dir $(word 4,$^))" ./env/bin/python $< $(word 2,$^) $@
 
-$(OUTPUT)/documents/%/protobuf/VERSION: | $(OUTPUT)/documents/%/protobuf
+$(OUTPUT)/documents/%/protobuf/VERSION: env scripts/version.py | $(OUTPUT)/documents/%/protobuf
 	$(PROTOC) --version > $@
+	./$</bin/python $(word 2,$^) protobuf >> $@
