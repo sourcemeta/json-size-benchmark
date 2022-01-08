@@ -14,7 +14,7 @@
 <body>
   <header>
     <h2>{{ metadata.description }}</h2>
-    <p>An open-source research project by <a href="{{ metadata.organization.url }}">{{ metadata.organization.name }}</a></p>
+    <p>An open-source research project by <a href="{{ metadata.organization.url }}">{{ capitalize metadata.organization.name }}</a></p>
     <nav>
       <a href="{{ metadata.homepage }}">Home</a>
       <a href="{{ metadata.repository.url }}" target="_blank">GitHub</a>
