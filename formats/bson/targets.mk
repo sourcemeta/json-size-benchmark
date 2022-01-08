@@ -7,4 +7,4 @@ $(OUTPUT)/documents/%/bson/output.json: formats/bson/decode.js $(OUTPUT)/documen
 	$(NODE) $< $(word 2,$^) > $@
 
 $(OUTPUT)/documents/%/bson/VERSION: | $(OUTPUT)/documents/%/bson
-	$(NODE) --print "require('./node_modules/bson/package.json').version" > $@
+	$(NODE) --eval "console.log('bson', require('./node_modules/bson/package.json').version)" > $@
