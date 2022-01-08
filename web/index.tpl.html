@@ -23,6 +23,16 @@
   </header>
   <main>
     <br>
+
+    <details>
+      <summary>Table of Contents</summary>
+      <ul>
+        {{#each data}}
+        <li><a href="#{{id}}">{{  title }}</a></li>
+        {{/each}}
+      </ul>
+    </details>
+
     {{#each data}}
     <section id="{{id}}">
       <h3><a href="#{{id}}">{{title}}</a></h3>
