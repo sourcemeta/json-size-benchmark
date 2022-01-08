@@ -90,6 +90,7 @@ include compression/lz4/targets.mk
 include compression/lzma/targets.mk
 
 include formats/capnproto/targets.mk
+include formats/capnproto-packed/targets.mk
 include formats/flatbuffers/targets.mk
 include formats/flexbuffers/targets.mk
 include formats/json/targets.mk
