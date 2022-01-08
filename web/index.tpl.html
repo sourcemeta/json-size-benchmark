@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ metadata.description }}</title>
-  <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+  <link rel="stylesheet" href="style.min.css">
 </head>
 <body>
   <header>
@@ -28,14 +28,14 @@
     <div class="highlight">
       <pre class="highlight">
         <code>
-  @online{ccsds-sle,
-    title = {Space Link Extension — Return Channel Frames Service Specification},
-    author = {Juan Cruz Viotti},
+  @online{sourcemeta-json-size-benchmark,
+    title = { {{ metadata.description }} },
+    author = { {{ metadata.author.name }} },
     organization = {Sourcemeta},
     year = {2022},
     date = {2016-08},
     urldate = {2021-01-14},
-    url = {https://public.ccsds.org/Pubs/911x2b3.pdf}
+    url = {{append '' '{'}}{{ metadata.homepage }}{{append '' '}'}}
   }</code>
       </pre>
     </div>

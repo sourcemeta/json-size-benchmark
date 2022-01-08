@@ -139,12 +139,15 @@ $(OUTPUT)/documents/aggregate.json: scripts/concat.js \
 # WEB
 #################################################
 
-$(OUTPUT)/app.min.js: web/app.js node_modules
+$(OUTPUT)/app.min.js: web/app.js node_modules | $(OUTPUT)
 	exec ./node_modules/.bin/esbuild --bundle $< --outfile=$@ --minify \
 		--target=safari11
 
+$(OUTPUT)/style.min.css: node_modules/simpledotcss/simple.min.css | $(OUTPUT)
+	$(INSTALL) -m 0644 $< $@
+
 $(OUTPUT)/index.html: scripts/template.js \
 	web/index.tpl.html $(OUTPUT)/documents/aggregate.json \
-	node_modules package.json $(OUTPUT)/app.min.js \
+	node_modules package.json $(OUTPUT)/app.min.js $(OUTPUT)/style.min.css \
 	| $(OUTPUT)
 	exec $(NODE) $< $(word 2,$^) $(word 3,$^) > $@
