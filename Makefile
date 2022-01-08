@@ -11,6 +11,8 @@ PYTHON ?= python3
 INSTALL ?= install
 RMRF ?= rm -rf
 MKDIR ?= mkdir
+CUT ?= cut
+PRINTF ?= printf
 
 CAPNP ?= capnp
 FLATC ?= flatc
@@ -97,6 +99,7 @@ include formats/flatbuffers/targets.mk
 include formats/flexbuffers/targets.mk
 include formats/messagepack/targets.mk
 include formats/json/targets.mk
+include formats/smile/targets.mk
 include formats/ubjson/targets.mk
 include formats/cbor/targets.mk
 include formats/bson/targets.mk
