@@ -9,6 +9,10 @@ const output = handlebars.compile(template)({
   metadata: packageJSON,
   data,
 
+  context: {
+    branch: 'master'
+  },
+
   timestamp: () => {
     return (new Date()).toLocaleDateString('en-CA')
   }
