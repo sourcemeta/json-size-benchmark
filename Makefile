@@ -93,6 +93,7 @@ include formats/capnproto/targets.mk
 include formats/flatbuffers/targets.mk
 include formats/json/targets.mk
 include formats/ubjson/targets.mk
+include formats/cbor/targets.mk
 
 # Provide default transformation JSON Patch documents
 $(OUTPUT)/documents/%/pre.patch.json: | $(OUTPUT)/documents/%

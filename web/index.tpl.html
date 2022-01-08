@@ -32,11 +32,11 @@
           </tr>
         </thead>
         <tbody>
-          {{#each datasets}}
+          {{#each labels}}
           <tr>
-            <td>{{ itemAt ../labels @index }}</td>
-            {{#each data}}
             <td>{{ this }}</td>
+            {{#each ../datasets}}
+            <td>{{ itemAt data @../index }}</td>
             {{/each}}
           </tr>
           {{/each}}
