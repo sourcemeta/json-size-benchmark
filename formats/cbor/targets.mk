@@ -7,4 +7,4 @@ $(OUTPUT)/documents/%/cbor/output.json: formats/cbor/decode.py $(OUTPUT)/documen
 	$(PYTHON) $< $(word 2,$^) > $@
 
 $(OUTPUT)/documents/%/cbor/VERSION: | $(OUTPUT)/documents/%/cbor
-	$(PYTHON) -c "import cbor2; print('cbor2 XXXXXXX')" >> $@
+	$(PYTHON) -c "import pkg_resources; print('cbor2', pkg_resources.get_distribution('cbor2').version)" >> $@
