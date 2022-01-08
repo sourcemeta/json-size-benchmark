@@ -6,5 +6,5 @@ $(OUTPUT)/documents/%/ubjson/output.json: formats/ubjson/decode.py $(OUTPUT)/doc
 	| $(OUTPUT)/documents/%/ubjson
 	$(PYTHON) $< $(word 2,$^) > $@
 
-$(OUTPUT)/documents/%/ubjson/VERSION: | $(OUTPUT)/documents/%/ubjson
-	$(PYTHON) -c "import ubjson; print('py-ubjson', ubjson.__version__)" >> $@
+$(OUTPUT)/documents/%/ubjson/VERSION: scripts/version.py | $(OUTPUT)/documents/%/ubjson
+	$(PYTHON) $< py-ubjson >> $@
