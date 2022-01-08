@@ -3,6 +3,7 @@ def encode(json, schema):
     payload.version = json['version']
     return payload
 
+
 def decode(payload):
     return {
       'version': payload.version

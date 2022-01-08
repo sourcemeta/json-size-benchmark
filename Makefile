@@ -59,7 +59,7 @@ node_modules: package.json package-lock.json
 
 lint: node_modules env
 	$(NODE) ./node_modules/.bin/standard scripts/**/*.js web/**/*.js formats/**/*.js
-	./$(word 2,$^)/bin/python3 -m flake8 scripts/*.py formats/**/*.py
+	./$(word 2,$^)/bin/python3 -m flake8 scripts/*.py formats/**/*.py benchmark/*/*/*.py
 
 clean:
 	exec $(RMRF) $(OUTPUT)
