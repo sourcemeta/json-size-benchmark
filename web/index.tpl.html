@@ -43,30 +43,33 @@
         </tbody>
       </table>
 
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Version</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#each labels}}
-          <tr>
-            <td>{{this}}</td>
-            <td>{{ itemAt ../versions @index }}</td>
-          </tr>
-          {{/each}}
-          {{#each datasets}}
-          {{#compare label "!=" "Uncompressed"}}
-          <tr>
-            <td>{{label}}</td>
-            <td>{{version}}</td>
-          </tr>
-          {{/compare}}
-          {{/each}}
-        </tbody>
-      </table>
+      <details>
+        <summary>Implementations and Versions</summary>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Version</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each labels}}
+            <tr>
+              <td>{{this}}</td>
+              <td>{{ itemAt ../versions @index }}</td>
+            </tr>
+            {{/each}}
+            {{#each datasets}}
+            {{#compare label "!=" "Uncompressed"}}
+            <tr>
+              <td>{{label}}</td>
+              <td>{{version}}</td>
+            </tr>
+            {{/compare}}
+            {{/each}}
+          </tbody>
+        </table>
+      </details>
     </section>
     {{/each}}
 
