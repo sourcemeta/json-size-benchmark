@@ -12,13 +12,13 @@ for (const entry of data) {
       datasets: entry.datasets
     },
     options: {
-      plugins: {
-        title: {
-          display: true,
-          text: entry.title
-        }
-      },
       scales: {
+        x: {
+          ticks: {
+            minRotation: 90,
+            maxRotation: 90
+          }
+        },
         y: {
           beginAtZero: true
         }
