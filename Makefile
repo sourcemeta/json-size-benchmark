@@ -95,6 +95,7 @@ include formats/json/targets.mk
 include formats/ubjson/targets.mk
 include formats/cbor/targets.mk
 include formats/bson/targets.mk
+include formats/avro/targets.mk
 
 # Provide default transformation JSON Patch documents
 $(OUTPUT)/documents/%/pre.patch.json: | $(OUTPUT)/documents/%
