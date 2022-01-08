@@ -21,6 +21,27 @@
     {{#each data}}
     <section id="#{{id}}">
       <canvas id="canvas-{{id}}"></canvas>
+      <table>
+        <thead>
+          <tr>
+            <th>Serialization Specification</th>
+
+            {{#each datasets}}
+            <th>{{ label }}</th>
+            {{/each}}
+          </tr>
+        </thead>
+        <tbody>
+          {{#each datasets}}
+          <tr>
+            <td>{{ itemAt ../labels @index }}</td>
+            {{#each data}}
+            <td>{{ this }}</td>
+            {{/each}}
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
     </section>
     {{/each}}
 
