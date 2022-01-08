@@ -1,0 +1,4 @@
+--ignore-dir=output
+--ignore-dir=env
+--ignore-dir=.cpcache
+--ignore-dir=node_modules
