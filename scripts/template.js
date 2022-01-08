@@ -9,6 +9,7 @@ const output = handlebars.compile(template)({
   metadata: packageJSON,
   data,
 
+  // TODO: Calculate the actual branch
   context: {
     branch: 'master'
   },
