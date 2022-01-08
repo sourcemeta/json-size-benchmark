@@ -23,6 +23,7 @@ CUT ?= cut
 PRINTF ?= printf
 
 CAPNP ?= capnp
+THRIFT ?= thrift
 FLATC ?= flatc
 GZIP ?= gzip
 LZ4 ?= lz4
@@ -108,6 +109,7 @@ include formats/capnproto-packed/targets.mk
 include formats/flatbuffers/targets.mk
 include formats/flexbuffers/targets.mk
 include formats/messagepack/targets.mk
+include formats/thrift/targets.mk
 include formats/json/targets.mk
 include formats/smile/targets.mk
 include formats/ubjson/targets.mk
