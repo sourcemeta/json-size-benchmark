@@ -130,9 +130,9 @@ $(OUTPUT)/documents/%/decode.json: scripts/jsonpatch.js \
 	| $(OUTPUT)/documents/%
 	exec $(NODE) $< $(word 3,$^) < $(word 2,$^) > $@
 $(OUTPUT)/documents/%/result.json: scripts/json-equals.py \
-	$(OUTPUT)/documents/%/decode.json $(OUTPUT)/documents/%/document.json \
+	$(OUTPUT)/documents/%/decode.json $(OUTPUT)/documents/%/document.json env \
 	| $(OUTPUT)/documents/%
-	$(PYTHON) $< $(word 2,$^) $(word 3,$^)
+	./$(word 4,$^)/bin/python $< $(word 2,$^) $(word 3,$^)
 	$(INSTALL) -m 0664 $(word 2,$^) $@
 
 # This target ensures that the result is validated against the original input
