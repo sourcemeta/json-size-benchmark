@@ -1,7 +1,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const data = process.argv.slice(4).reduce((accumulator, filePath) => {
+const data = process.argv.slice(5).reduce((accumulator, filePath) => {
   accumulator.push(JSON.parse(fs.readFileSync(filePath, 'utf8')))
   return accumulator
 }, []).sort((left, right) => {
@@ -11,6 +11,7 @@ const data = process.argv.slice(4).reduce((accumulator, filePath) => {
 const result = {
   id: process.argv[3],
   title: process.argv[2],
+  source: process.argv[4],
   labels: data.map((entry) => {
     return entry.format
   }),

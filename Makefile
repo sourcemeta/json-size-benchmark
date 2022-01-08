@@ -133,12 +133,13 @@ $(OUTPUT)/documents/%/size.json: scripts/size.js \
 	| $(OUTPUT)/documents/%
 	exec $(NODE) $< $(word 2,$^) "$(shell cat $(word 3,$^))" "$(shell cat $(word 4,$^))" $(COMPRESSORS) > $@
 
-$(OUTPUT)/documents/%/data.json: scripts/data.js benchmark/%/NAME \
+$(OUTPUT)/documents/%/data.json: scripts/data.js benchmark/%/NAME benchmark/%/SOURCE \
 	$(addsuffix /NAME,$(addprefix compression/,$(COMPRESSORS))) \
 	$(addsuffix /VERSION,$(addprefix output/compressors/,$(COMPRESSORS))) \
 	$(addsuffix /size.json,$(addprefix output/documents/%/,$(FORMATS))) \
 	| $(OUTPUT)/documents/%
 	exec $(NODE) $< "$(shell cat $(word 2,$^))" $(notdir $(realpath $(dir $(word 2,$^)))) \
+		"$(shell cat $(word 3,$^))" \
 		$(addsuffix /size.json,$(addprefix $(dir $@),$(FORMATS))) > $@
 
 $(OUTPUT)/documents/aggregate.json: scripts/concat.js \
