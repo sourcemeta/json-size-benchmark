@@ -148,7 +148,7 @@ $(OUTPUT)/app.min.js: web/app.js node_modules | $(OUTPUT)
 		--target=safari11
 
 $(OUTPUT)/style.min.css: node_modules/simpledotcss/simple.min.css | $(OUTPUT)
-	$(INSTALL) -m 0644 $< $@
+	exec $(INSTALL) -m 0644 $< $@
 
 $(OUTPUT)/index.html: scripts/template.js \
 	web/index.tpl.html $(OUTPUT)/documents/aggregate.json \
