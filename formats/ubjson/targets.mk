@@ -7,4 +7,4 @@ $(OUTPUT)/documents/%/ubjson/output.json: formats/ubjson/decode.py $(OUTPUT)/doc
 	$(PYTHON) $< $(word 2,$^) > $@
 
 $(OUTPUT)/documents/%/ubjson/VERSION: scripts/version.py | $(OUTPUT)/documents/%/ubjson
-	$(PYTHON) $< py-ubjson >> $@
+	$(PYTHON) $< py-ubjson > $@

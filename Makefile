@@ -45,7 +45,7 @@ node_modules: package.json package-lock.json
 	exec $(NPM) ci
 
 lint: node_modules env
-	$(NODE) ./node_modules/.bin/standard scripts/**/*.js web/**/*.js
+	$(NODE) ./node_modules/.bin/standard scripts/**/*.js web/**/*.js formats/**/*.js
 	./$(word 2,$^)/bin/python3 -m flake8 scripts/*.py formats/**/*.py
 
 clean:
@@ -94,6 +94,7 @@ include formats/flatbuffers/targets.mk
 include formats/json/targets.mk
 include formats/ubjson/targets.mk
 include formats/cbor/targets.mk
+include formats/bson/targets.mk
 
 # Provide default transformation JSON Patch documents
 $(OUTPUT)/documents/%/pre.patch.json: | $(OUTPUT)/documents/%

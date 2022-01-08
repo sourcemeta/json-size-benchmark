@@ -7,4 +7,4 @@ $(OUTPUT)/documents/%/cbor/output.json: formats/cbor/decode.py $(OUTPUT)/documen
 	$(PYTHON) $< $(word 2,$^) > $@
 
 $(OUTPUT)/documents/%/cbor/VERSION: scripts/version.py | $(OUTPUT)/documents/%/cbor
-	$(PYTHON) $< cbor2 >> $@
+	$(PYTHON) $< cbor2 > $@

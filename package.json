@@ -19,6 +19,7 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
+    "bson": "^4.6.1",
     "chart.js": "^3.7.0",
     "chartjs-plugin-autocolors": "0.0.5",
     "esbuild": "^0.14.10",
