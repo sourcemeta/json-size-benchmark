@@ -2,6 +2,10 @@
   "name": "@sourcemeta/json-size-benchmark",
   "version": "1.0.0",
   "private": true,
+  "organization": {
+    "name": "Sourcemeta",
+    "url": "https://www.sourcemeta.com"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/sourcemeta/json-size-benchmark"

@@ -9,7 +9,7 @@
 <body>
   <header>
     <h2>{{ metadata.description }}</h2>
-    <p>An open-source research project by <a href="https://www.sourcemeta.com">Sourcemeta</a></p>
+    <p>An open-source research project by <a href="{{ metadata.organization.url }}">{{ metadata.organization.name }}</a></p>
     <nav>
       <a href="{{ metadata.homepage }}">Home</a>
       <a href="{{ metadata.repository.url }}" target="_blank">GitHub</a>
@@ -25,24 +25,19 @@
     {{/each}}
 
     <h2>Citations</h2>
-    <div class="highlight">
-      <pre class="highlight">
-        <code>
-  @online{sourcemeta-json-size-benchmark,
-    title = { {{ metadata.description }} },
-    author = { {{ metadata.author.name }} },
-    organization = {Sourcemeta},
-    year = {2022},
-    date = {2016-08},
-    urldate = {2021-01-14},
-    url = {{append '' '{'}}{{ metadata.homepage }}{{append '' '}'}}
-  }</code>
-      </pre>
-    </div>
+    <pre class="highlight">
+<code>@online{sourcemeta-json-size-benchmark,
+  title = {{append '' '{'}}{{ metadata.description }}{{append '' '}'}},
+  author = {{append '' '{'}}{{ metadata.author.name }}{{append '' '}'}},
+  organization = {{append '' '{'}}{{ metadata.organization.name }}{{append '' '}'}},
+  year = {{append '' '{'}}{{ year }}{{append '' '}'}},
+  url = {{append '' '{'}}{{ metadata.homepage }}{{append '' '}'}}
+}</code>
+    </pre>
   </main>
 
   <footer>
-    <p>Copyright <a href="{{ metadata.author.url }}">{{ metadata.author.name }}</a> © 2022 • All rights reserved</p>
+    <p>Copyright <a href="{{ metadata.author.url }}">{{ metadata.author.name }}</a> © {{ year }} • All rights reserved</p>
   </footer>
 
   <script id="data" type="application/json">{{{ JSONstringify data }}}</script>
