@@ -14,6 +14,9 @@ const output = handlebars.compile(template)({
     branch: 'master'
   },
 
+  curlyLeft: '{',
+  curlyRight: '}',
+
   timestamp: () => {
     return (new Date()).toLocaleDateString('en-CA')
   }

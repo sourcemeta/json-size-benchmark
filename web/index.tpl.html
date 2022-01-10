@@ -32,7 +32,7 @@
       <summary>Table of Contents</summary>
       <ul>
         {{#each data}}
-        <li><a href="#{{id}}">{{  title }}</a></li>
+        <li><a href="#{{id}}">{{ title }}</a></li>
         {{/each}}
       </ul>
     </details>
@@ -99,13 +99,13 @@
 
     <h2>Citations</h2>
     <p>To cite this work, please use the following <a href="http://www.bibtex.org">BibTeX</a> entry:</p>
-    <pre class="highlight"><code>@online{{append '' '{'}}{{ dashcase metadata.name }},
-  title = {{append '' '{'}}{{ metadata.description }}{{append '' '}'}},
-  author = {{append '' '{'}}{{ metadata.author.name }}{{append '' '}'}},
-  organization = {{append '' '{'}}{{ metadata.organization.name }}{{append '' '}'}},
-  year = {{append '' '{'}}{{ year }}{{append '' '}'}},
-  date = {{append '' '{'}}{{ timestamp }}{{append '' '}'}},
-  url = {{append '' '{'}}{{ metadata.homepage }}{{append '' '}'}}
+    <pre class="highlight"><code>@online{{ curlyLeft }}{{ dashcase metadata.name }},
+  title = {{ curlyLeft }}{{ metadata.description }}{{ curlyRight }},
+  author = {{ curlyLeft }}{{ metadata.author.name }}{{ curlyRight }},
+  organization = {{ curlyLeft }}{{ metadata.organization.name }}{{ curlyRight }},
+  year = {{ curlyLeft }}{{ year }}{{ curlyRight }},
+  date = {{ curlyLeft }}{{ timestamp }}{{ curlyRight }},
+  url = {{ curlyLeft }}{{ metadata.homepage }}{{ curlyRight }}
 }</code></pre>
   </main>
 
