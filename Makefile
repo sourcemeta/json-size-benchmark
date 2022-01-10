@@ -33,8 +33,6 @@ LZMA ?= lzma
 CAPNP ?= capnp
 THRIFT ?= thrift
 FLATC ?= flatc
-JSON2MSGPACK ?= json2msgpack
-MSGPACK2JSON ?= msgpack2json
 PROTOC ?= protoc
 
 #################################################
