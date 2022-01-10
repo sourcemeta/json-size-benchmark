@@ -27,6 +27,7 @@ PRINTF ?= printf
 DOCKER ?= docker
 PYTHON ?= python3
 ESLINT ?= eslint
+WEBPACK ?= webpack
 
 GZIP ?= gzip
 LZ4 ?= lz4
@@ -163,8 +164,7 @@ $(OUTPUT)/documents/aggregate.json: scripts/concat.js \
 #################################################
 
 $(OUTPUT)/app.min.js: web/app.js | $(OUTPUT)
-	exec ./node_modules/.bin/esbuild --bundle $< --outfile=$@ --minify \
-		--target=safari11
+	exec $(WEBPACK) --mode=development $< -o $@
 
 $(OUTPUT)/style.min.css: node_modules/simpledotcss/simple.min.css | $(OUTPUT)
 	exec $(INSTALL) -m 0644 $< $@

@@ -1,11 +1,12 @@
-const Chart = require('chart.js')
-const autocolors = require('chartjs-plugin-autocolors')
+const Chart = require('chart.js/dist/chart.js')
+const autocolors = require('chartjs-plugin-autocolors/dist/chartjs-plugin-autocolors.js')
 const data = JSON.parse(document.getElementById('data').textContent)
 
 Chart.register(autocolors)
 
 for (const entry of data) {
-  const chart = new Chart(document.getElementById(`canvas-${entry.id}`), {
+  // eslint-disable-next-line no-new
+  new Chart(document.getElementById(`canvas-${entry.id}`), {
     type: 'bar',
     data: {
       labels: entry.labels,
@@ -27,6 +28,4 @@ for (const entry of data) {
       }
     }
   })
-
-  console.log(chart)
 }

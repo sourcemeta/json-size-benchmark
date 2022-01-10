@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install base dependencies
 RUN apt-get update -y && apt-get install -y --no-install-recommends \
   make \
-  nodejs npm handlebars eslint \
+  nodejs npm handlebars eslint webpack \
   python3 flake8 \
   && rm -rf /var/lib/apt/lists/*
 
