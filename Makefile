@@ -54,10 +54,7 @@ COMPRESSORS ?= $(ALL_COMPRESSORS)
 # PHONY TARGETS
 #################################################
 
-node_modules: package.json package-lock.json
-	exec $(NPM) ci
-
-lint: node_modules
+lint:
 	$(NODE) ./node_modules/.bin/standard scripts/**/*.js web/**/*.js formats/**/*.js
 	$(PYTHON) -m flake8 scripts/*.py formats/**/*.py benchmark/*/*/*.py
 
@@ -125,11 +122,11 @@ $(OUTPUT)/documents/%/post.patch.json: | $(OUTPUT)/documents/%
 	exec echo "[]" > $@
 
 $(OUTPUT)/documents/%/input.json: scripts/jsonpatch.js \
-	$(OUTPUT)/documents/%/document.json $(OUTPUT)/documents/%/pre.patch.json node_modules \
+	$(OUTPUT)/documents/%/document.json $(OUTPUT)/documents/%/pre.patch.json \
 	| $(OUTPUT)/documents/%
 	exec $(NODE) $< $(word 3,$^) < $(word 2,$^) > $@
 $(OUTPUT)/documents/%/decode.json: scripts/jsonpatch.js \
-	$(OUTPUT)/documents/%/output.json $(OUTPUT)/documents/%/post.patch.json node_modules \
+	$(OUTPUT)/documents/%/output.json $(OUTPUT)/documents/%/post.patch.json \
 	| $(OUTPUT)/documents/%
 	exec $(NODE) $< $(word 3,$^) < $(word 2,$^) > $@
 $(OUTPUT)/documents/%/result.json: scripts/json-equals.py \
@@ -164,7 +161,7 @@ $(OUTPUT)/documents/aggregate.json: scripts/concat.js \
 # WEB
 #################################################
 
-$(OUTPUT)/app.min.js: web/app.js node_modules | $(OUTPUT)
+$(OUTPUT)/app.min.js: web/app.js | $(OUTPUT)
 	exec ./node_modules/.bin/esbuild --bundle $< --outfile=$@ --minify \
 		--target=safari11
 
@@ -173,6 +170,6 @@ $(OUTPUT)/style.min.css: node_modules/simpledotcss/simple.min.css | $(OUTPUT)
 
 $(OUTPUT)/index.html: scripts/template.js \
 	web/index.tpl.html $(OUTPUT)/documents/aggregate.json \
-	node_modules package.json $(OUTPUT)/app.min.js $(OUTPUT)/style.min.css \
+	package.json $(OUTPUT)/app.min.js $(OUTPUT)/style.min.css \
 	| $(OUTPUT)
 	exec $(NODE) $< $(word 2,$^) $(word 3,$^) > $@

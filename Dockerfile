@@ -1,12 +1,17 @@
 FROM ubuntu:21.04
 WORKDIR /usr/src/app
 
-# Install dependencies
+# Install base dependencies
 RUN apt-get update -y \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
   make \
   nodejs npm handlebars \
   python3 flake8 \
+  && rm -rf /var/lib/apt/lists/*
+
+# Install format dependencies
+RUN apt-get update -y \
+  && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
   lz4 lzma gzip \
   python3-avro \
   thrift-compiler python3-thrift  \
@@ -18,10 +23,14 @@ RUN apt-get update -y \
   flatbuffers-compiler \
   && rm -rf /var/lib/apt/lists/*
 
-# Copy benchmark source code
-COPY Makefile .
+# Install npm dependencies
+# TODO: Can we get rid of this step?
 COPY package.json .
 COPY package-lock.json .
+RUN npm ci
+
+# Copy benchmark source code
+COPY Makefile .
 COPY benchmark ./benchmark/
 COPY compression ./compression/
 COPY formats ./formats/
@@ -29,5 +38,4 @@ COPY scripts ./scripts/
 COPY web ./web/
 
 # Execute the benchmark
-RUN make lint
-CMD make html
+CMD make lint html
