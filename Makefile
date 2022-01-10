@@ -1,5 +1,5 @@
-.PHONY: lint clean distclean all
-.DEFAULT_GOAL = all
+.PHONY: lint clean distclean html docker
+.DEFAULT_GOAL = docker
 
 #################################################
 # GLOBALS
@@ -21,13 +21,14 @@ RMRF ?= rm -rf
 MKDIR ?= mkdir
 CUT ?= cut
 PRINTF ?= printf
+DOCKER ?= docker
 
-CAPNP ?= capnp
-THRIFT ?= thrift
-FLATC ?= flatc
 GZIP ?= gzip
 LZ4 ?= lz4
 LZMA ?= lzma
+CAPNP ?= capnp
+THRIFT ?= thrift
+FLATC ?= flatc
 JSON2MSGPACK ?= json2msgpack
 MSGPACK2JSON ?= msgpack2json
 PROTOC ?= protoc
@@ -53,6 +54,7 @@ COMPRESSORS ?= $(ALL_COMPRESSORS)
 
 env: requirements.txt
 	$(PYTHON) -m venv --clear $@
+	./$@/bin/python3 -m pip install wheel
 	./$@/bin/python3 -m pip install --requirement $<
 
 node_modules: package.json package-lock.json
@@ -68,7 +70,10 @@ clean:
 distclean: clean
 	exec $(RMRF) node_modules env
 
-all: lint $(OUTPUT)/index.html
+html: $(OUTPUT)/index.html
+
+docker: Dockerfile
+	$(DOCKER) build --progress=plain $(dir $(realpath $<))
 
 #################################################
 # PRELUDE
@@ -107,11 +112,9 @@ include formats/protobuf/targets.mk
 include formats/capnproto/targets.mk
 include formats/capnproto-packed/targets.mk
 include formats/flatbuffers/targets.mk
-include formats/flexbuffers/targets.mk
 include formats/messagepack/targets.mk
 include formats/thrift/targets.mk
 include formats/json/targets.mk
-include formats/smile/targets.mk
 include formats/ubjson/targets.mk
 include formats/cbor/targets.mk
 include formats/bson/targets.mk

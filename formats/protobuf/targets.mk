@@ -1,6 +1,6 @@
 $(OUTPUT)/documents/%/protobuf/schema_pb2.py: benchmark/%/protobuf/schema.proto \
 	| $(OUTPUT)/documents/%/protobuf
-	$(PROTOC) --experimental_allow_proto3_optional -I$(dir $<) --python_out=$(dir $@) $<
+	$(PROTOC) -I$(dir $<) --python_out=$(dir $@) $<
 
 $(OUTPUT)/documents/%/protobuf/output.bin: formats/protobuf/encode.py \
 	$(OUTPUT)/documents/%/protobuf/input.json $(OUTPUT)/documents/%/protobuf/schema_pb2.py \
