@@ -1,6 +1,9 @@
 .PHONY: lint clean distclean html docker
 .DEFAULT_GOAL = docker
 
+ORGANIZATION = sourcemeta
+NAME = json-size-benchmark
+
 #################################################
 # GLOBALS
 #################################################
@@ -68,8 +71,9 @@ distclean: clean
 
 html: $(OUTPUT)/index.html
 
-docker: Dockerfile
-	$(DOCKER) build --progress=plain $(dir $(realpath $<))
+docker: Dockerfile | $(OUTPUT)
+	$(DOCKER) build --progress plain --tag $(ORGANIZATION)/$(NAME) $(dir $(realpath $<))
+	$(DOCKER) run --volume $(shell pwd)/$(OUTPUT):/usr/src/app/output $(ORGANIZATION)/$(NAME)
 
 #################################################
 # PRELUDE

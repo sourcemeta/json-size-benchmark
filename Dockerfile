@@ -38,4 +38,5 @@ COPY scripts ./scripts/
 COPY web ./web/
 
 # Execute the benchmark
-RUN make lint html
+RUN make lint
+CMD make html
