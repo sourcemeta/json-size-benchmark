@@ -5,7 +5,7 @@ WORKDIR /usr/src/app
 RUN apt-get update -y \
   && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
   make \
-  nodejs npm \
+  nodejs npm handlebars \
   python3 flake8 \
   lz4 lzma gzip \
   python3-avro python3-thrift python3-protobuf python3-cbor2 python3-ubjson \

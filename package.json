@@ -24,7 +24,6 @@
     "chartjs-plugin-autocolors": "0.0.5",
     "esbuild": "^0.14.10",
     "fast-json-patch": "^3.1.0",
-    "handlebars": "^4.7.7",
     "handlebars-helpers": "^0.10.0",
     "simpledotcss": "^1.0.5"
   },
