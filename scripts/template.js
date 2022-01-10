@@ -17,6 +17,10 @@ const output = handlebars.compile(template)({
   curlyLeft: '{',
   curlyRight: '}',
 
+  stringify: (value) => {
+    return JSON.stringify(value, null, 2)
+  },
+
   timestamp: () => {
     return (new Date()).toLocaleDateString('en-CA')
   }
