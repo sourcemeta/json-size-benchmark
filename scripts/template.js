@@ -21,6 +21,10 @@ const output = handlebars.compile(template)({
     return JSON.stringify(value, null, 2)
   },
 
+  item: (array, index) => {
+    return array[parseInt(index, 10)]
+  },
+
   timestamp: () => {
     return (new Date()).toLocaleDateString('en-CA')
   }

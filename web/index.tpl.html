@@ -60,7 +60,7 @@
           <tr>
             <td>{{ this }}</td>
             {{#each ../datasets}}
-            <td>{{ itemAt data @../index }}</td>
+            <td>{{ @root.item data @../index }}</td>
             {{/each}}
           </tr>
           {{/each}}
@@ -80,7 +80,7 @@
             {{#each labels}}
             <tr>
               <td>{{this}}</td>
-              <td>{{ itemAt ../versions @index }}</td>
+              <td>{{ @root.item ../versions @index }}</td>
             </tr>
             {{/each}}
             {{#each datasets}}
