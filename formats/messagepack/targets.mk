@@ -1,10 +1,10 @@
-$(OUTPUT)/documents/%/messagepack/output.bin: $(OUTPUT)/documents/%/messagepack/input.json \
+$(OUTPUT)/documents/%/messagepack/output.bin: formats/messagepack/encode.py $(OUTPUT)/documents/%/messagepack/input.json \
 	| $(OUTPUT)/documents/%/messagepack
-	$(JSON2MSGPACK) < $< > $@
+	$(PYTHON) $< $(word 2,$^) $@
 
-$(OUTPUT)/documents/%/messagepack/output.json: $(OUTPUT)/documents/%/messagepack/output.bin \
+$(OUTPUT)/documents/%/messagepack/output.json: formats/messagepack/decode.py $(OUTPUT)/documents/%/messagepack/output.bin \
 	| $(OUTPUT)/documents/%/messagepack
-	$(MSGPACK2JSON) < $< > $@
+	$(PYTHON) $< $(word 2,$^) > $@
 
-$(OUTPUT)/documents/%/messagepack/VERSION: | $(OUTPUT)/documents/%/messagepack
-	$(MSGPACK2JSON) -v 2>&1 | head -n 1 > $@
+$(OUTPUT)/documents/%/messagepack/VERSION: scripts/version.py | $(OUTPUT)/documents/%/messagepack
+	$(PYTHON) $< msgpack > $@

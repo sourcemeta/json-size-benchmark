@@ -8,24 +8,15 @@ RUN apt-get update -y \
   nodejs npm handlebars \
   python3 flake8 \
   lz4 lzma gzip \
-  python3-avro python3-thrift python3-protobuf python3-cbor2 python3-ubjson \
-  capnproto thrift-compiler protobuf-compiler flatbuffers-compiler \
+  python3-avro \
+  thrift-compiler python3-thrift  \
+  protobuf-compiler python3-protobuf \
+  python3-cbor2 \
+  python3-ubjson \
+  python3-msgpack \
+  capnproto \
+  flatbuffers-compiler \
   && rm -rf /var/lib/apt/lists/*
-
-# msgpack-tools is not available on Ubuntu Packages
-# TODO: Use MessagePack as a Python library instead
-RUN apt-get update -y \
-  && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
-    curl build-essential cmake \
-  && rm -rf /var/lib/apt/lists/* \
-  && curl -L -O https://github.com/ludocode/msgpack-tools/releases/download/v0.6/msgpack-tools-0.6.tar.gz \
-  && tar fvx msgpack-tools-0.6.tar.gz \
-  && cd msgpack-tools-0.6 \
-  && ./configure \
-  && make \
-  && make install \
-  && cd .. \
-  && rm -rf msgpack-tools-0.6 msgpack-tools-0.6.tar.gz
 
 # Copy benchmark source code
 COPY Makefile .
