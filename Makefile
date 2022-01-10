@@ -56,7 +56,7 @@ COMPRESSORS ?= $(ALL_COMPRESSORS)
 #################################################
 
 lint: .eslintrc.json
-	$(ESLINT) --config $< scripts/**/*.js web/**/*.js formats/**/*.js
+	$(ESLINT) --config $< scripts/**/*.js web/**/*.js
 	$(PYTHON) -m flake8 scripts/*.py formats/**/*.py benchmark/*/*/*.py
 
 clean:

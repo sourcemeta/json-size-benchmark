@@ -15,6 +15,7 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
   python3-avro \
   thrift-compiler python3-thrift  \
   protobuf-compiler python3-protobuf \
+  python3-bson \
   python3-cbor2 \
   python3-ubjson \
   python3-msgpack \
