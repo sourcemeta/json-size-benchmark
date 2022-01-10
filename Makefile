@@ -71,7 +71,7 @@ distclean: clean
 
 html: $(OUTPUT)/index.html
 
-docker: Dockerfile | $(OUTPUT)
+docker: Dockerfile clean | $(OUTPUT)
 	$(DOCKER) build --progress plain --tag $(ORGANIZATION)/$(NAME) $(dir $(realpath $<))
 	$(DOCKER) run --volume $(shell pwd)/$(OUTPUT):/usr/src/app/output $(ORGANIZATION)/$(NAME)
 
