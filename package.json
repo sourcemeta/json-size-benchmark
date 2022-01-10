@@ -26,8 +26,5 @@
     "fast-json-patch": "^3.1.0",
     "handlebars-helpers": "^0.10.0",
     "simpledotcss": "^1.0.5"
-  },
-  "devDependencies": {
-    "standard": "^16.0.4"
   }
 }

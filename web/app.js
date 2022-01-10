@@ -13,12 +13,14 @@ for (const entry of data) {
     },
     options: {
       scales: {
+        // eslint-disable-next-line id-length
         x: {
           ticks: {
             minRotation: 90,
             maxRotation: 90
           }
         },
+        // eslint-disable-next-line id-length
         y: {
           beginAtZero: true
         }

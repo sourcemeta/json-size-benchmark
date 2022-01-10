@@ -26,6 +26,7 @@ CUT ?= cut
 PRINTF ?= printf
 DOCKER ?= docker
 PYTHON ?= python3
+ESLINT ?= eslint
 
 GZIP ?= gzip
 LZ4 ?= lz4
@@ -54,8 +55,8 @@ COMPRESSORS ?= $(ALL_COMPRESSORS)
 # PHONY TARGETS
 #################################################
 
-lint:
-	$(NODE) ./node_modules/.bin/standard scripts/**/*.js web/**/*.js formats/**/*.js
+lint: .eslintrc.json
+	$(ESLINT) --config $< scripts/**/*.js web/**/*.js formats/**/*.js
 	$(PYTHON) -m flake8 scripts/*.py formats/**/*.py benchmark/*/*/*.py
 
 clean:
