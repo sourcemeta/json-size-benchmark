@@ -1,6 +1,0 @@
-avro == 1.10.0
-cbor2 == 5.1.2
-flake8 == 3.8.4
-py-ubjson == 0.16.1
-protobuf == 3.19.1
-thrift == 0.15.0

@@ -22,6 +22,7 @@ MKDIR ?= mkdir
 CUT ?= cut
 PRINTF ?= printf
 DOCKER ?= docker
+PYTHON ?= python3
 
 GZIP ?= gzip
 LZ4 ?= lz4
@@ -52,23 +53,18 @@ COMPRESSORS ?= $(ALL_COMPRESSORS)
 # PHONY TARGETS
 #################################################
 
-env: requirements.txt
-	$(PYTHON) -m venv --clear $@
-	./$@/bin/python3 -m pip install wheel
-	./$@/bin/python3 -m pip install --requirement $<
-
 node_modules: package.json package-lock.json
 	exec $(NPM) ci
 
-lint: node_modules env
+lint: node_modules
 	$(NODE) ./node_modules/.bin/standard scripts/**/*.js web/**/*.js formats/**/*.js
-	./$(word 2,$^)/bin/python3 -m flake8 scripts/*.py formats/**/*.py benchmark/*/*/*.py
+	$(PYTHON) -m flake8 scripts/*.py formats/**/*.py benchmark/*/*/*.py
 
 clean:
 	exec $(RMRF) $(OUTPUT)
 
 distclean: clean
-	exec $(RMRF) node_modules env
+	exec $(RMRF) node_modules
 
 html: $(OUTPUT)/index.html
 
@@ -135,9 +131,9 @@ $(OUTPUT)/documents/%/decode.json: scripts/jsonpatch.js \
 	| $(OUTPUT)/documents/%
 	exec $(NODE) $< $(word 3,$^) < $(word 2,$^) > $@
 $(OUTPUT)/documents/%/result.json: scripts/json-equals.py \
-	$(OUTPUT)/documents/%/decode.json $(OUTPUT)/documents/%/document.json env \
+	$(OUTPUT)/documents/%/decode.json $(OUTPUT)/documents/%/document.json \
 	| $(OUTPUT)/documents/%
-	./$(word 4,$^)/bin/python $< $(word 2,$^) $(word 3,$^)
+	$(PYTHON) $< $(word 2,$^) $(word 3,$^)
 	$(INSTALL) -m 0664 $(word 2,$^) $@
 
 # This target ensures that the result is validated against the original input
