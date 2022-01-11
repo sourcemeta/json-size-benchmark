@@ -8,4 +8,4 @@ $(OUTPUT)/documents/%/bson/output.json: formats/bson/decode.py $(OUTPUT)/documen
 
 $(OUTPUT)/documents/%/bson/VERSION: | $(OUTPUT)/documents/%/bson
 	$(PYTHON) --version > $@
-	echo "bson XXXX" >> $@
+	echo "pymongo" >> $@
