@@ -30,16 +30,9 @@ handlebars.registerHelper('timestamp', () => {
 const template = fs.readFileSync(process.argv[2], 'utf8')
 const data = JSON.parse(fs.readFileSync(process.argv[3], 'utf8'))
 const output = handlebars.compile(template)({
-  data,
-
-  // TODO: Calculate the actual branch
-  context: {
-    branch: 'master'
-  },
-
-  env: process.env,
-
   curlyLeft: '{',
-  curlyRight: '}'
+  curlyRight: '}',
+  env: process.env,
+  data
 })
 console.log(output)
