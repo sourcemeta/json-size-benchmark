@@ -5,7 +5,6 @@
   "license": "Apache-2.0",
   "dependencies": {
     "chart.js": "^3.7.0",
-    "chartjs-plugin-autocolors": "0.0.5",
-    "fast-json-patch": "^3.1.0"
+    "chartjs-plugin-autocolors": "0.0.5"
   }
 }

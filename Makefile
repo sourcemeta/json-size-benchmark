@@ -143,14 +143,14 @@ $(OUTPUT)/documents/%/pre.patch.json: | $(OUTPUT)/documents/%
 $(OUTPUT)/documents/%/post.patch.json: | $(OUTPUT)/documents/%
 	exec echo "[]" > $@
 
-$(OUTPUT)/documents/%/input.json: scripts/jsonpatch.js \
+$(OUTPUT)/documents/%/input.json: scripts/jsonpatch-apply.py \
 	$(OUTPUT)/documents/%/document.json $(OUTPUT)/documents/%/pre.patch.json \
 	| $(OUTPUT)/documents/%
-	exec $(NODE) $< $(word 3,$^) < $(word 2,$^) > $@
-$(OUTPUT)/documents/%/decode.json: scripts/jsonpatch.js \
+	exec $(PYTHON) $< $(word 2,$^) $(word 3,$^) > $@
+$(OUTPUT)/documents/%/decode.json: scripts/jsonpatch-apply.py \
 	$(OUTPUT)/documents/%/output.json $(OUTPUT)/documents/%/post.patch.json \
 	| $(OUTPUT)/documents/%
-	exec $(NODE) $< $(word 3,$^) < $(word 2,$^) > $@
+	exec $(PYTHON) $< $(word 2,$^) $(word 3,$^) > $@
 $(OUTPUT)/documents/%/result.json: scripts/json-equals.py \
 	$(OUTPUT)/documents/%/decode.json $(OUTPUT)/documents/%/document.json \
 	| $(OUTPUT)/documents/%
