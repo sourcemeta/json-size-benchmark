@@ -184,7 +184,7 @@ $(OUTPUT)/documents/aggregate.json: scripts/concat.js \
 #################################################
 
 $(OUTPUT)/app.min.js: web/app.js | $(OUTPUT)
-	exec $(WEBPACK) --mode=development $< -o $@
+	exec $(WEBPACK) --mode=production $< -o $@
 
 $(OUTPUT)/style.min.css: vendor/simplecss/simple.min.css | $(OUTPUT)
 	exec $(INSTALL) -m 0644 $< $@
