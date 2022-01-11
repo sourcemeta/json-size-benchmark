@@ -1,8 +1,5 @@
-const Chart = require('chart.js/dist/chart.js')
-const autocolors = require('chartjs-plugin-autocolors/dist/chartjs-plugin-autocolors.js')
+const Chart = require('/usr/share/nodejs/chart.js')
 const data = JSON.parse(document.getElementById('data').textContent)
-
-Chart.register(autocolors)
 
 for (const entry of data) {
   // eslint-disable-next-line no-new
@@ -13,18 +10,26 @@ for (const entry of data) {
       datasets: entry.datasets
     },
     options: {
+      responsive: true,
+      legend: {
+        position: 'top'
+      },
       scales: {
-        // eslint-disable-next-line id-length
-        x: {
-          ticks: {
-            minRotation: 90,
-            maxRotation: 90
+        xAxes: [
+          {
+            ticks: {
+              minRotation: 90,
+              maxRotation: 90
+            }
           }
-        },
-        // eslint-disable-next-line id-length
-        y: {
-          beginAtZero: true
-        }
+        ],
+        yAxes: [
+          {
+            ticks: {
+              beginAtZero: true
+            }
+          }
+        ]
       }
     }
   })

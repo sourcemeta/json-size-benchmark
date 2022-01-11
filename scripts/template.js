@@ -1,6 +1,5 @@
 const fs = require('fs')
 const handlebars = require('handlebars')
-const packageJSON = require('../package.json')
 
 handlebars.registerHelper('ifnot', function ifnot (left, right, options) {
   return left === right
@@ -31,7 +30,6 @@ handlebars.registerHelper('timestamp', () => {
 const template = fs.readFileSync(process.argv[2], 'utf8')
 const data = JSON.parse(fs.readFileSync(process.argv[3], 'utf8'))
 const output = handlebars.compile(template)({
-  metadata: packageJSON,
   data,
 
   // TODO: Calculate the actual branch

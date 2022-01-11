@@ -191,6 +191,6 @@ $(OUTPUT)/style.min.css: vendor/simplecss/simple.min.css | $(OUTPUT)
 
 $(OUTPUT)/index.html: scripts/template.js \
 	web/index.tpl.html $(OUTPUT)/documents/aggregate.json \
-	package.json $(OUTPUT)/app.min.js $(OUTPUT)/style.min.css \
+	$(OUTPUT)/app.min.js $(OUTPUT)/style.min.css \
 	| $(OUTPUT)
 	exec $(NODE) $< $(word 2,$^) $(word 3,$^) > $@

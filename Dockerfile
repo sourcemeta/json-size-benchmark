@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install base dependencies
 RUN apt-get update -y && apt-get install -y --no-install-recommends \
   make \
-  nodejs npm handlebars eslint webpack \
+  nodejs npm handlebars eslint webpack node-chart.js \
   python3 flake8 python3-jsonpatch \
   && rm -rf /var/lib/apt/lists/*
 
@@ -22,12 +22,6 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
   capnproto \
   flatbuffers-compiler \
   && rm -rf /var/lib/apt/lists/*
-
-# Install npm dependencies
-# TODO: Can we get rid of this step?
-COPY package.json .
-COPY package-lock.json .
-RUN npm ci
 
 # Copy benchmark source code
 COPY .eslintrc.json .
