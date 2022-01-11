@@ -6,5 +6,5 @@ $(OUTPUT)/documents/%/cbor/output.json: formats/cbor/decode.py $(OUTPUT)/documen
 	| $(OUTPUT)/documents/%/cbor
 	$(PYTHON) $< $(word 2,$^) > $@
 
-$(OUTPUT)/documents/%/cbor/VERSION: scripts/version.py | $(OUTPUT)/documents/%/cbor
-	$(PYTHON) $< cbor2 > $@
+$(OUTPUT)/documents/%/cbor/VERSION: | $(OUTPUT)/documents/%/cbor
+	$(PYTHON) -c "from importlib_metadata import version; print('cbor2', version('cbor2'))" > $@
