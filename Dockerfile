@@ -37,6 +37,7 @@ COPY compression ./compression/
 COPY formats ./formats/
 COPY scripts ./scripts/
 COPY web ./web/
+COPY vendor ./vendor/
 
 # Execute the benchmark
 CMD make lint html

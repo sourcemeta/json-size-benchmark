@@ -1,0 +1,496 @@
+/* Set the global variables for everything. Change these to use your own fonts and colours. */
+:root {
+
+  /* Set sans-serif & mono fonts */
+  --sans-font: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Nimbus Sans L", Roboto, Noto, "Segoe UI", Arial, Helvetica, "Helvetica Neue", sans-serif;
+  --mono-font: Consolas, Menlo, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+
+  /* Body font size. By default, effectively 18.4px, based on 16px as 'root em' */
+  --base-fontsize: 1.15rem;
+
+  /* Major third scale progression - see https://type-scale.com/ */
+  --header-scale: 1.25;
+
+  /* Line height is set to the "Golden ratio" for optimal legibility */
+  --line-height: 1.618;
+
+  /* Default (light) theme */
+  --bg: #FFF;
+  --accent-bg: #F5F7FF;
+  --text: #212121;
+  --text-light: #585858;
+  --border: #D8DAE1;
+  --accent: #0D47A1;
+  --accent-light: #90CAF9;
+  --code: #D81B60;
+  --preformatted: #444;
+  --marked: #FFDD33;
+  --disabled: #EFEFEF;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #212121;
+    --accent-bg: #2B2B2B;
+    --text: #DCDCDC;
+    --text-light: #ABABAB;
+    --border: #666;
+    --accent: #FFB300;
+    --accent-light: #FFECB3;
+    --code: #F06292;
+    --preformatted: #CCC;
+    --disabled: #111;
+  }
+
+  img, video {
+    opacity: .6;
+  }
+}
+
+html {
+  /* Set the font globally */
+  font-family: var(--sans-font);
+}
+
+/* Make the body a nice central block */
+body {
+  color: var(--text);
+  background: var(--bg);
+  font-size: var(--base-fontsize);
+  line-height: var(--line-height);
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  flex: 1;
+  margin: 0 auto;
+  max-width: 45rem;
+  padding: 0 .5rem;
+  overflow-x: hidden;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Make the header bg full width, but the content inline with body */
+header {
+  background: var(--accent-bg);
+  border-bottom: 1px solid var(--border);
+  text-align: center;
+  padding: 2rem .5rem;
+  width: 100vw;
+  position: relative;
+  box-sizing: border-box;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+
+/* Remove margins for header text */
+header h1,
+header p {
+  margin: 0;
+}
+
+/* Fix line height when title wraps */
+h1, h2, h3 {
+  line-height: 1.1;
+}
+
+/* Format navigation */
+nav {
+  font-size: 1rem;
+  line-height: 2;
+  padding: 1rem 0;
+}
+
+nav a {
+  margin: 1rem 1rem 0 0;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  color: var(--text) !important;
+  display: inline-block;
+  padding: .1rem 1rem;
+  text-decoration: none;
+  transition: .4s;
+}
+
+nav a:hover {
+  color: var(--accent) !important;
+  border-color: var(--accent);
+}
+
+nav a.current:hover {
+  text-decoration: none;
+}
+
+footer {
+  margin-top: 4rem;
+  padding: 2rem 1rem 1.5rem 1rem;
+  color: var(--text-light);
+  font-size: .9rem;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+/* Format headers */
+h1 {
+  font-size: calc(var(--base-fontsize) * var(--header-scale) * var(--header-scale) * var(--header-scale) * var(--header-scale));
+  margin-top: calc(var(--line-height) * 1.5rem);
+}
+
+h2 {
+  font-size: calc(var(--base-fontsize) * var(--header-scale) * var(--header-scale) * var(--header-scale));
+  margin-top: calc(var(--line-height) * 1.5rem);
+}
+
+h3 {
+  font-size: calc(var(--base-fontsize) * var(--header-scale) * var(--header-scale));
+  margin-top: calc(var(--line-height) * 1.5rem);
+}
+
+h4 {
+  font-size: calc(var(--base-fontsize) * var(--header-scale));
+  margin-top: calc(var(--line-height) * 1.5rem);
+}
+
+h5 {
+  font-size: var(--base-fontsize);
+  margin-top: calc(var(--line-height) * 1.5rem);
+}
+
+h6 {
+  font-size: calc(var(--base-fontsize) / var(--header-scale));
+  margin-top: calc(var(--line-height) * 1.5rem);
+}
+
+/* Format links & buttons */
+a,
+a:visited {
+  color: var(--accent);
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a button,
+button,
+[role="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  border: none;
+  border-radius: 5px;
+  background: var(--accent);
+  font-size: 1rem;
+  color: var(--bg);
+  padding: .7rem .9rem;
+  margin: .5rem 0;
+  transition: .4s;
+}
+
+a button[disabled],
+button[disabled],
+[role="button"][aria-disabled="true"],
+input[type="submit"][disabled],
+input[type="reset"][disabled],
+input[type="button"][disabled],
+input[type="checkbox"][disabled],
+input[type="radio"][disabled],
+select[disabled] {
+  cursor: default;
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+input:disabled,
+textarea:disabled,
+select:disabled {
+  cursor: not-allowed;
+  background-color: var(--disabled);
+}
+
+input[type="range"] {
+  padding: 0;
+}
+
+/* Set the cursor to '?' while hovering over an abbreviation */
+abbr {
+  cursor: help;
+}
+
+button:focus,
+button:enabled:hover,
+[role="button"]:focus,
+[role="button"]:not([aria-disabled="true"]):hover,
+input[type="submit"]:focus,
+input[type="submit"]:enabled:hover,
+input[type="reset"]:focus,
+input[type="reset"]:enabled:hover,
+input[type="button"]:focus,
+input[type="button"]:enabled:hover,
+input[type="checkbox"]:focus,
+input[type="checkbox"]:enabled:hover,
+input[type="radio"]:focus,
+input[type="radio"]:enabled:hover{
+  opacity: .8;
+  cursor: pointer;
+}
+
+/* Format the expanding box */
+details {
+  background: var(--accent-bg);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  padding: .6rem 1rem;
+}
+
+details[open] {
+  padding: .6rem 1rem .75rem 1rem;
+}
+
+details[open] summary {
+  margin-bottom: .5rem;
+  padding: 0;
+}
+
+details[open]>*:last-child {
+  margin-bottom: 0;
+}
+
+/* Format tables */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+td,
+th {
+  border: 1px solid var(--border);
+  text-align: left;
+  padding: .5rem;
+}
+
+th {
+  background: var(--accent-bg);
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  /* Set every other cell slightly darker. Improves readability. */
+  background: var(--accent-bg);
+}
+
+table caption {
+  font-weight: bold;
+  margin-bottom: .5rem;
+}
+
+/* Lists */
+ol,
+ul {
+  padding-left: 3rem;
+}
+
+/* Format forms */
+textarea,
+select,
+input {
+  font-size: inherit;
+  font-family: inherit;
+  padding: .5rem;
+  margin-bottom: .5rem;
+  color: var(--text);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  box-shadow: none;
+  box-sizing: border-box;
+  width: 60%;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/* Add arrow to  */
+select {
+  background-image:
+    linear-gradient(45deg, transparent 49%, var(--text) 51%),
+    linear-gradient(135deg, var(--text) 51%, transparent 49%);
+  background-position:
+    calc(100% - 20px),
+    calc(100% - 15px);
+  background-size:
+    5px 5px,
+    5px 5px;
+  background-repeat: no-repeat;
+}
+
+select[multiple] {
+  background-image: none !important;
+}
+
+/* checkbox and radio button style */
+input[type="checkbox"], input[type="radio"]{
+  vertical-align: bottom;
+  position: relative;
+}
+input[type="radio"]{
+  border-radius: 100%;
+}
+
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+  background: var(--accent);
+}
+
+input[type="checkbox"]:checked::after {
+  /* Creates a rectangle with colored right and bottom borders which is rotated to look like a check mark */
+  content: ' ';
+  width: 0.1em;
+  height: 0.25em;
+  border-radius: 0;
+  position: absolute;
+  top: 0.05em;
+  left: 0.18em;
+  background: transparent;
+  border-right: solid var(--bg) 0.08em;
+  border-bottom: solid var(--bg) 0.08em;
+  font-size: 1.8em;
+  transform: rotate(45deg);
+}
+input[type="radio"]:checked::after {
+  /* creates a colored circle for the checked radio button  */
+  content: ' ';
+  width: .25em;
+  height: .25em;
+  border-radius: 100%;
+  position: absolute;
+  top: 0.125em;
+  background: var(--bg);
+  left: 0.125em;
+  font-size: 32px;
+}
+
+/* Make the textarea wider than other inputs */
+textarea {
+  width: 80%
+}
+
+/* Makes input fields wider on smaller screens */
+@media only screen and (max-width: 720px) {
+  textarea,
+  select,
+  input {
+    width: 100%;
+  }
+}
+
+/* Ensures the checkbox and radio inputs do not have a set width like other input fields */
+input[type="checkbox"], input[type="radio"]{
+  width: auto;
+}
+
+/* do not show border around file selector button */
+input[type="file"] {
+  border: 0;
+}
+
+/* Without this any HTML using <fieldset> shows ugly borders and has additional padding/margin. (Issue #3) */
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+/* Misc body elements */
+
+hr {
+  color: var(--border);
+  border-top: 1px;
+  margin: 1rem auto;
+}
+
+mark {
+  padding: 2px 5px;
+  border-radius: 4px;
+  background: var(--marked);
+}
+
+main img, main video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+figure {
+  margin: 0;
+}
+
+figcaption {
+  font-size: .9rem;
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+blockquote {
+  margin: 2rem 0 2rem 2rem;
+  padding: .4rem .8rem;
+  border-left: .35rem solid var(--accent);
+  opacity: .8;
+  font-style: italic;
+}
+
+cite {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  font-style: normal;
+}
+
+/* Use mono font for code like elements */
+code,
+pre,
+pre span,
+kbd,
+samp {
+  font-size: 1.075rem;
+  font-family: var(--mono-font);
+  color: var(--code);
+}
+
+kbd {
+  color: var(--preformatted);
+  border: 1px solid var(--preformatted);
+  border-bottom: 3px solid var(--preformatted);
+  border-radius: 5px;
+  padding: .1rem;
+}
+
+pre {
+  padding: 1rem 1.4rem;
+  max-width: 100%;
+  overflow: auto;
+  overflow-x: auto;
+  color: var(--preformatted);
+  background: var(--accent-bg);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+}
+
+/* Fix embedded code within pre */
+pre code {
+  color: var(--preformatted);
+  background: none;
+  margin: 0;
+  padding: 0;
+}

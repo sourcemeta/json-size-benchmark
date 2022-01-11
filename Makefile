@@ -1,3 +1,5 @@
+include vendor/vendorpull/targets.mk
+
 .PHONY: lint clean distclean html docker
 .DEFAULT_GOAL = docker
 
@@ -184,7 +186,7 @@ $(OUTPUT)/documents/aggregate.json: scripts/concat.js \
 $(OUTPUT)/app.min.js: web/app.js | $(OUTPUT)
 	exec $(WEBPACK) --mode=development $< -o $@
 
-$(OUTPUT)/style.min.css: node_modules/simpledotcss/simple.min.css | $(OUTPUT)
+$(OUTPUT)/style.min.css: vendor/simplecss/simple.min.css | $(OUTPUT)
 	exec $(INSTALL) -m 0644 $< $@
 
 $(OUTPUT)/index.html: scripts/template.js \
