@@ -129,6 +129,7 @@ include formats/protobuf/targets.mk
 include formats/capnproto/targets.mk
 include formats/capnproto-packed/targets.mk
 include formats/flatbuffers/targets.mk
+include formats/flexbuffers/targets.mk
 include formats/messagepack/targets.mk
 include formats/thrift/targets.mk
 include formats/json/targets.mk
