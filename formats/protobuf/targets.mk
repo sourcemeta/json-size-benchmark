@@ -15,4 +15,6 @@ $(OUTPUT)/documents/%/protobuf/output.json: formats/protobuf/decode.py \
 	PYTHONPATH="$(dir $(word 3,$^)):$(dir $(word 4,$^))" $(PYTHON) $< $(word 2,$^) $@
 
 $(OUTPUT)/documents/%/protobuf/VERSION: | $(OUTPUT)/documents/%/protobuf
-	$(PROTOC) --version > $@
+	$(PYTHON) --version > $@
+	$(PYTHON) -c "import google.protobuf; print('protobuf', google.protobuf.__version__)" >> $@
+	$(PROTOC) --version >> $@

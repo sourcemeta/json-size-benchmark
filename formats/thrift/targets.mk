@@ -27,4 +27,6 @@ $(OUTPUT)/documents/%/thrift/output.json: formats/thrift/decode.py \
 	PYTHONPATH="$(dir $(word 3,$^)):$(dir $@)" $(PYTHON) $< $(word 2,$^) $@
 
 $(OUTPUT)/documents/%/thrift/VERSION: | $(OUTPUT)/documents/%/thrift
-	$(THRIFT) --version > $@
+	$(PYTHON) --version > $@
+	$(PYTHON) -c "from importlib_metadata import version; print('thrift', version('thrift'))" >> $@
+	$(THRIFT) --version >> $@
