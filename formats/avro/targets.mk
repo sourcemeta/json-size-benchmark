@@ -9,4 +9,5 @@ $(OUTPUT)/documents/%/avro/output.json: formats/avro/decode.py \
 	$(PYTHON) $< $(word 2,$^) $(word 3,$^) > $@
 
 $(OUTPUT)/documents/%/avro/VERSION: | $(OUTPUT)/documents/%/avro
-	$(PYTHON) -c "import avro; print('avro', avro.__version__)" > $@
+	$(PYTHON) --version > $@
+	$(PYTHON) -c "import avro; print('avro', avro.__version__)" >> $@

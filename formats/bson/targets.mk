@@ -7,4 +7,5 @@ $(OUTPUT)/documents/%/bson/output.json: formats/bson/decode.py $(OUTPUT)/documen
 	$(PYTHON) $< $(word 2,$^) > $@
 
 $(OUTPUT)/documents/%/bson/VERSION: | $(OUTPUT)/documents/%/bson
-	echo "bson XXXX" > $@
+	$(PYTHON) --version > $@
+	echo "bson XXXX" >> $@

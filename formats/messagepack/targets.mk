@@ -7,4 +7,5 @@ $(OUTPUT)/documents/%/messagepack/output.json: formats/messagepack/decode.py $(O
 	$(PYTHON) $< $(word 2,$^) > $@
 
 $(OUTPUT)/documents/%/messagepack/VERSION: | $(OUTPUT)/documents/%/messagepack
-	$(PYTHON) -c "from importlib_metadata import version; print('msgpack', version('msgpack'))" > $@
+	$(PYTHON) --version > $@
+	$(PYTHON) -c "from importlib_metadata import version; print('msgpack', version('msgpack'))" >> $@
