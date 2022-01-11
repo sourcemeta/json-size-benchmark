@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ metadata.description }}</title>
+  <title>{{ env.METADATA_DESCRIPTION }}</title>
   <link rel="stylesheet" href="style.min.css">
   <style>
   body {
@@ -13,12 +13,12 @@
 </head>
 <body>
   <header>
-    <h2>{{ metadata.description }}</h2>
-    <p>An open-source research project by <a href="{{ metadata.organization.url }}">{{ capitalize metadata.organization.name }}</a></p>
+    <h2>{{ env.METADATA_DESCRIPTION }}</h2>
+    <p>An open-source research project by <a href="{{ env.METADATA_ORGANIZATION_URL }}">{{ capitalize env.METADATA_ORGANIZATION }}</a></p>
     <nav>
-      <a href="{{ metadata.homepage }}">Home</a>
-      <a href="{{ metadata.repository.url }}" target="_blank">GitHub</a>
-      <a href="mailto:{{ metadata.author.email }}">Contact</a>
+      <a href="{{ env.METADATA_URL }}">Home</a>
+      <a href="{{ env.METADATA_GITHUB_URL }}" target="_blank">GitHub</a>
+      <a href="mailto:{{ env.METADATA_EMAIL }}">Contact</a>
     </nav>
   </header>
   <main>
@@ -42,7 +42,7 @@
       <h3><a href="#{{id}}">{{title}}</a></h3>
 
       <p>The input document, origin and schema definitions for this case can be seen on
-      <a target="_blank" href="{{ ../metadata.repository.url }}/blob/{{ ../context.branch }}/benchmark/{{ id }}">GitHub</a>.</p>
+      <a target="_blank" href="{{ @root.env.METADATA_GITHUB_URL }}/blob/{{ ../context.branch }}/benchmark/{{ id }}">GitHub</a>.</p>
 
       <canvas id="canvas-{{id}}"></canvas>
       <table>
@@ -60,7 +60,7 @@
           <tr>
             <td>{{ this }}</td>
             {{#each ../datasets}}
-            <td>{{ @root.item data @../index }}</td>
+            <td>{{ item data @../index }}</td>
             {{/each}}
           </tr>
           {{/each}}
@@ -80,16 +80,16 @@
             {{#each labels}}
             <tr>
               <td>{{this}}</td>
-              <td>{{ @root.item ../versions @index }}</td>
+              <td>{{ item ../versions @index }}</td>
             </tr>
             {{/each}}
             {{#each datasets}}
-            {{#compare label "!=" "Uncompressed"}}
+            {{#ifnot label "Uncompressed"}}
             <tr>
               <td>{{label}}</td>
               <td>{{version}}</td>
             </tr>
-            {{/compare}}
+            {{/ifnot}}
             {{/each}}
           </tbody>
         </table>
@@ -99,18 +99,18 @@
 
     <h2>Citations</h2>
     <p>To cite this work, please use the following <a href="http://www.bibtex.org">BibTeX</a> entry:</p>
-    <pre class="highlight"><code>@online{{ curlyLeft }}{{ dashcase metadata.name }},
-  title = {{ curlyLeft }}{{ metadata.description }}{{ curlyRight }},
-  author = {{ curlyLeft }}{{ metadata.author.name }}{{ curlyRight }},
-  organization = {{ curlyLeft }}{{ metadata.organization.name }}{{ curlyRight }},
+    <pre class="highlight"><code>@online{{ curlyLeft }}{{ env.METADATA_ORGANIZATION }},
+  title = {{ curlyLeft }}{{ env.METADATA_DESCRIPTION }}{{ curlyRight }},
+  author = {{ curlyLeft }}{{ env.METADATA_AUTHOR }}{{ curlyRight }},
+  organization = {{ curlyLeft }}{{ capitalize env.METADATA_ORGANIZATION }}{{ curlyRight }},
   year = {{ curlyLeft }}{{ year }}{{ curlyRight }},
   date = {{ curlyLeft }}{{ timestamp }}{{ curlyRight }},
-  url = {{ curlyLeft }}{{ metadata.homepage }}{{ curlyRight }}
+  url = {{ curlyLeft }}{{ env.METADATA_URL }}{{ curlyRight }}
 }</code></pre>
   </main>
 
   <footer>
-    <p>Copyright <a href="{{ metadata.author.url }}">{{ metadata.author.name }}</a> © {{ year }} • All rights reserved</p>
+    <p>Copyright <a href="{{ env.METADATA_AUTHOR_URL }}">{{ env.METADATA_AUTHOR }}</a> © {{ year }} • All rights reserved</p>
   </footer>
 
   <script id="data" type="application/json">{{{ stringify data }}}</script>

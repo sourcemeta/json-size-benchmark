@@ -1,8 +1,24 @@
 .PHONY: lint clean distclean html docker
 .DEFAULT_GOAL = docker
 
-ORGANIZATION = sourcemeta
-NAME = json-size-benchmark
+METADATA_DESCRIPTION = A space-efficiency benchmark of JSON-compatible serialization specifications
+export METADATA_DESCRIPTION
+METADATA_ORGANIZATION = sourcemeta
+export METADATA_ORGANIZATION
+METADATA_ORGANIZATION_URL = https://www.sourcemeta.com
+export METADATA_ORGANIZATION_URL
+METADATA_NAME = json-size-benchmark
+export METADATA_NAME
+METADATA_AUTHOR = Juan Cruz Viotti
+export METADATA_AUTHOR
+METADATA_AUTHOR_URL = https://www.jviotti.com
+export METADATA_AUTHOR_URL
+METADATA_EMAIL = jv@jviotti.com
+export METADATA_EMAIL
+METADATA_URL = https://www.sourcemeta.com/json-size-benchmark
+export METADATA_URL
+METADATA_GITHUB_URL = https://github.com/sourcemeta/json-size-benchmark
+export METADATA_GITHUB_URL
 
 #################################################
 # GLOBALS
@@ -69,8 +85,10 @@ distclean: clean
 html: $(OUTPUT)/index.html
 
 docker: Dockerfile clean | $(OUTPUT)
-	$(DOCKER) build --progress plain --tag $(ORGANIZATION)/$(NAME) $(dir $(realpath $<))
-	$(DOCKER) run --volume $(shell pwd)/$(OUTPUT):/usr/src/app/output $(ORGANIZATION)/$(NAME)
+	$(DOCKER) build --progress plain --tag $(METADATA_ORGANIZATION)/$(METADATA_NAME) \
+		$(dir $(realpath $<))
+	$(DOCKER) run --volume $(shell pwd)/$(OUTPUT):/usr/src/app/output \
+		$(METADATA_ORGANIZATION)/$(METADATA_NAME)
 
 #################################################
 # PRELUDE
