@@ -60,6 +60,7 @@ PROTOC ?= protoc
 # VARIABLES
 #################################################
 
+CLASSPATH ?= /usr/share/java
 OUTPUT ?= output
 
 ALL_FORMATS = $(notdir $(wildcard formats/*))
