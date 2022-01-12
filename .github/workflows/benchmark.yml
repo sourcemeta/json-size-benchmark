@@ -6,5 +6,9 @@ jobs:
   execute:
     runs-on: ubuntu-20.04
     steps:
-    - uses: actions/checkout@v2
-    - run: make
+      - uses: actions/checkout@v2
+      - run: make
+      - uses: actions/upload-artifact@v2
+        with:
+          name: benchmark
+          path: output
