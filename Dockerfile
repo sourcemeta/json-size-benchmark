@@ -7,6 +7,7 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
   make \
   nodejs npm handlebars eslint webpack node-chart.js \
   python3 flake8 python3-jsonpatch python3-importlib-metadata \
+  clojure \
   && rm -rf /var/lib/apt/lists/*
 
 # Install format dependencies
@@ -19,6 +20,7 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
   python3-cbor2 \
   python3-ubjson \
   python3-msgpack \
+  libcheshire-clojure \
   capnproto \
   flatbuffers-compiler \
   && rm -rf /var/lib/apt/lists/*

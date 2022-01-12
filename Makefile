@@ -46,6 +46,7 @@ DOCKER ?= docker
 PYTHON ?= python3
 ESLINT ?= eslint
 WEBPACK ?= webpack
+JAVA ?= java
 
 GZIP ?= gzip
 LZ4 ?= lz4
@@ -137,6 +138,7 @@ include formats/ubjson/targets.mk
 include formats/cbor/targets.mk
 include formats/bson/targets.mk
 include formats/avro/targets.mk
+include formats/smile/targets.mk
 
 # Provide default transformation JSON Patch documents
 $(OUTPUT)/documents/%/pre.patch.json: | $(OUTPUT)/documents/%
