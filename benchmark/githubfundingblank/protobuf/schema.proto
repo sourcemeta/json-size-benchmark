@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+enum NullValue {
+  // Null value.
+  NULL_VALUE = 0;
+}
+
+message Main {
+  string github = 1;
+  NullValue patreon = 2;
+  NullValue open_collective = 3;
+  NullValue ko_fi = 4;
+  NullValue tidelift = 5;
+  NullValue community_bridge = 6;
+  NullValue liberapay = 7;
+  NullValue issuehunt = 8;
+  NullValue otechie = 9;
+  NullValue custom = 10;
+}
