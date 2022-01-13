@@ -6,7 +6,8 @@ $(OUTPUT)/documents/%/capnproto/output.bin: \
 $(OUTPUT)/documents/%/capnproto/output.json: \
 	$(OUTPUT)/documents/%/capnproto/output.bin benchmark/%/capnproto/schema.capnp \
 	| $(OUTPUT)/documents/%/capnproto
-	$(CAPNP) convert binary:json $(word 2,$^) Main < $< > $@
+	$(CAPNP) convert binary:json $(word 2,$^) Main < $< > $@ || \
+		$(CAPNP) convert flat:json $(word 2,$^) Main < $< > $@
 
 $(OUTPUT)/documents/%/capnproto/VERSION: | $(OUTPUT)/documents/%/capnproto
 	$(CAPNP) --version > $@

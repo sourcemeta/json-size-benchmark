@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+enum NullValue {
+  // Null value.
+  NULL_VALUE = 0;
+}
+
+message Main {
+  NullValue general = 1;
+  NullValue stages = 2;
+  NullValue steps = 3;
+}
