@@ -36,4 +36,4 @@ COPY web ./web/
 COPY vendor ./vendor/
 
 # Execute the benchmark
-CMD make lint html
+CMD make --jobs 8 lint html
