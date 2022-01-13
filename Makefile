@@ -141,6 +141,11 @@ include formats/bson/targets.mk
 include formats/avro/targets.mk
 include formats/smile/targets.mk
 
+$(OUTPUT)/documents/%/pre.patch.json: benchmark/%/pre.patch.json | $(OUTPUT)/documents/%
+	$(INSTALL) -m 0664 $< $@
+$(OUTPUT)/documents/%/post.patch.json: benchmark/%/post.patch.json | $(OUTPUT)/documents/%
+	$(INSTALL) -m 0664 $< $@
+
 # Provide default transformation JSON Patch documents
 $(OUTPUT)/documents/%/pre.patch.json: | $(OUTPUT)/documents/%
 	exec echo "[]" > $@
