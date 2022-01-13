@@ -45,27 +45,33 @@
       <a target="_blank" href="{{ @root.env.METADATA_GITHUB_URL }}/blob/master/benchmark/{{ id }}">GitHub</a>.</p>
 
       <canvas id="canvas-{{id}}"></canvas>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
 
-            {{#each datasets}}
-            <th>{{ label }}</th>
+      <br>
+
+      <details>
+        <summary>Raw Data</summary>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+
+              {{#each datasets}}
+              <th>{{ label }}</th>
+              {{/each}}
+            </tr>
+          </thead>
+          <tbody>
+            {{#each labels}}
+            <tr>
+              <td>{{ this }}</td>
+              {{#each ../datasets}}
+              <td>{{ item data @../index }}</td>
+              {{/each}}
+            </tr>
             {{/each}}
-          </tr>
-        </thead>
-        <tbody>
-          {{#each labels}}
-          <tr>
-            <td>{{ this }}</td>
-            {{#each ../datasets}}
-            <td>{{ item data @../index }}</td>
-            {{/each}}
-          </tr>
-          {{/each}}
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+      </details>
 
       <details>
         <summary>Implementations and Versions</summary>
