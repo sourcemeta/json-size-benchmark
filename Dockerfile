@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # Install base dependencies
 RUN apt-get update -y && apt-get install -y --no-install-recommends \
-  make \
+  make jq \
   nodejs npm handlebars eslint webpack node-chart.js \
   python3 flake8 python3-jsonpatch python3-importlib-metadata \
   clojure \

@@ -47,6 +47,7 @@ PYTHON ?= python3
 ESLINT ?= eslint
 WEBPACK ?= webpack
 JAVA ?= java
+JQ ?= jq
 
 GZIP ?= gzip
 LZ4 ?= lz4
