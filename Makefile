@@ -78,7 +78,7 @@ COMPRESSORS ?= $(ALL_COMPRESSORS)
 
 lint: .eslintrc.json
 	$(ESLINT) --config $< scripts/**/*.js web/**/*.js
-	$(PYTHON) -m flake8 scripts/*.py formats/**/*.py benchmark/*/*/*.py
+	$(PYTHON) -m flake8 --max-line-length 150 scripts/*.py formats/**/*.py benchmark/*/*/*.py
 
 clean:
 	exec $(RMRF) $(OUTPUT)
