@@ -35,4 +35,4 @@ License
 -------
 
 This project is released under the terms specified in the
-[license](https://github.com/sourcemeta/json-size-benchmark/blob/main/LICENSE).
+[license](https://github.com/sourcemeta/json-size-benchmark/blob/master/LICENSE).
