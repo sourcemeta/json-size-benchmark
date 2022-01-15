@@ -1,0 +1,3053 @@
+[
+  {
+    "id": "circleciblank",
+    "title": "CircleCI Definition (Blank)",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/circleciconfig/version-2.0.json",
+    "labels": [
+      "Apache Avro (unframed)",
+      "Protocol Buffers",
+      "Cap'n Proto (Packed)",
+      "Apache Thrift",
+      "JSON",
+      "CBOR",
+      "MessagePack",
+      "FlatBuffers",
+      "UBJSON",
+      "BSON",
+      "Cap'n Proto (Binary)",
+      "Smile",
+      "FlexBuffers"
+    ],
+    "versions": [
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Cap'n Proto version 0.7.0",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "ECMA-404",
+      "Python 3.9.5 cbor2 5.2.0",
+      "Python 3.9.5 msgpack 1.0.0",
+      "flatc version 1.12.0",
+      "Python 3.9.5 ubjson 0.16.1",
+      "Python 3.9.5 pymongo",
+      "Cap'n Proto version 0.7.0",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "flatc version 1.12.0"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          4,
+          5,
+          6,
+          10,
+          14,
+          18,
+          18,
+          20,
+          20,
+          22,
+          24,
+          25,
+          32
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          24,
+          25,
+          26,
+          25,
+          34,
+          33,
+          33,
+          32,
+          35,
+          36,
+          33,
+          39,
+          45
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          23,
+          24,
+          25,
+          29,
+          33,
+          37,
+          37,
+          39,
+          39,
+          41,
+          41,
+          44,
+          49
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          26,
+          27,
+          29,
+          28,
+          38,
+          37,
+          37,
+          35,
+          39,
+          39,
+          33,
+          44,
+          48
+        ]
+      }
+    ]
+  },
+  {
+    "id": "circlecimatrix",
+    "title": "CircleCI Matrix Definition",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/circleciconfig/matrix-simple.json",
+    "labels": [
+      "Apache Avro (unframed)",
+      "Protocol Buffers",
+      "Apache Thrift",
+      "Cap'n Proto (Packed)",
+      "CBOR",
+      "MessagePack",
+      "Smile",
+      "UBJSON",
+      "JSON",
+      "Cap'n Proto (Binary)",
+      "FlatBuffers",
+      "BSON",
+      "FlexBuffers"
+    ],
+    "versions": [
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Cap'n Proto version 0.7.0",
+      "Python 3.9.5 cbor2 5.2.0",
+      "Python 3.9.5 msgpack 1.0.0",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "Python 3.9.5 ubjson 0.16.1",
+      "ECMA-404",
+      "Cap'n Proto version 0.7.0",
+      "flatc version 1.12.0",
+      "Python 3.9.5 pymongo",
+      "flatc version 1.12.0"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          15,
+          26,
+          28,
+          36,
+          72,
+          72,
+          87,
+          92,
+          95,
+          96,
+          104,
+          136,
+          157
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          32,
+          43,
+          39,
+          49,
+          89,
+          90,
+          104,
+          103,
+          99,
+          56,
+          82,
+          123,
+          134
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          34,
+          45,
+          47,
+          53,
+          91,
+          91,
+          106,
+          111,
+          112,
+          72,
+          104,
+          150,
+          151
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          36,
+          46,
+          42,
+          50,
+          90,
+          92,
+          105,
+          104,
+          101,
+          54,
+          77,
+          121,
+          131
+        ]
+      }
+    ]
+  },
+  {
+    "id": "commitlint",
+    "title": "CommitLint Configuration",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/commitlintrc/commitlintrc-test5.json",
+    "labels": [
+      "Apache Avro (unframed)",
+      "Apache Thrift",
+      "Protocol Buffers",
+      "CBOR",
+      "MessagePack",
+      "Cap'n Proto (Packed)",
+      "Smile",
+      "FlexBuffers",
+      "UBJSON",
+      "JSON",
+      "BSON",
+      "Cap'n Proto (Binary)",
+      "FlatBuffers"
+    ],
+    "versions": [
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Python 3.9.5 cbor2 5.2.0",
+      "Python 3.9.5 msgpack 1.0.0",
+      "Cap'n Proto version 0.7.0",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "flatc version 1.12.0",
+      "Python 3.9.5 ubjson 0.16.1",
+      "ECMA-404",
+      "Python 3.9.5 pymongo",
+      "Cap'n Proto version 0.7.0",
+      "flatc version 1.12.0"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          40,
+          59,
+          62,
+          74,
+          74,
+          76,
+          84,
+          90,
+          93,
+          96,
+          147,
+          152,
+          156
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          41,
+          53,
+          60,
+          67,
+          68,
+          67,
+          76,
+          97,
+          79,
+          80,
+          97,
+          75,
+          95
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          49,
+          59,
+          70,
+          76,
+          76,
+          75,
+          82,
+          105,
+          86,
+          86,
+          112,
+          96,
+          122
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          45,
+          57,
+          63,
+          70,
+          71,
+          71,
+          80,
+          99,
+          83,
+          83,
+          97,
+          73,
+          91
+        ]
+      }
+    ]
+  },
+  {
+    "id": "commitlintbasic",
+    "title": "CommitLint Configuration (Basic)",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/commitlintrc/commitlintrc-test3.json",
+    "labels": [
+      "Protocol Buffers",
+      "Apache Avro (unframed)",
+      "Apache Thrift",
+      "Cap'n Proto (Packed)",
+      "CBOR",
+      "MessagePack",
+      "UBJSON",
+      "FlatBuffers",
+      "BSON",
+      "Smile",
+      "Cap'n Proto (Binary)",
+      "FlexBuffers",
+      "JSON"
+    ],
+    "versions": [
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Cap'n Proto version 0.7.0",
+      "Python 3.9.5 cbor2 5.2.0",
+      "Python 3.9.5 msgpack 1.0.0",
+      "Python 3.9.5 ubjson 0.16.1",
+      "flatc version 1.12.0",
+      "Python 3.9.5 pymongo",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "Cap'n Proto version 0.7.0",
+      "flatc version 1.12.0",
+      "ECMA-404"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          0,
+          1,
+          2,
+          6,
+          17,
+          17,
+          19,
+          20,
+          22,
+          22,
+          24,
+          25,
+          25
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          20,
+          21,
+          22,
+          26,
+          37,
+          37,
+          39,
+          31,
+          41,
+          42,
+          31,
+          45,
+          45
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          15,
+          20,
+          21,
+          25,
+          36,
+          36,
+          38,
+          39,
+          41,
+          41,
+          41,
+          44,
+          44
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          23,
+          24,
+          25,
+          29,
+          41,
+          41,
+          43,
+          34,
+          44,
+          47,
+          31,
+          49,
+          49
+        ]
+      }
+    ]
+  },
+  {
+    "id": "epr",
+    "title": "Entry Point Regulation Manifest",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/epr-manifest/official-example.json",
+    "labels": [
+      "Apache Avro (unframed)",
+      "Protocol Buffers",
+      "Apache Thrift",
+      "Cap'n Proto (Packed)",
+      "Smile",
+      "CBOR",
+      "MessagePack",
+      "FlexBuffers",
+      "UBJSON",
+      "FlatBuffers",
+      "JSON",
+      "Cap'n Proto (Binary)",
+      "BSON"
+    ],
+    "versions": [
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Cap'n Proto version 0.7.0",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "Python 3.9.5 cbor2 5.2.0",
+      "Python 3.9.5 msgpack 1.0.0",
+      "flatc version 1.12.0",
+      "Python 3.9.5 ubjson 0.16.1",
+      "flatc version 1.12.0",
+      "ECMA-404",
+      "Cap'n Proto version 0.7.0",
+      "Python 3.9.5 pymongo"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          195,
+          247,
+          251,
+          318,
+          356,
+          412,
+          412,
+          429,
+          469,
+          504,
+          520,
+          536,
+          564
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          168,
+          196,
+          192,
+          255,
+          266,
+          248,
+          262,
+          355,
+          272,
+          290,
+          264,
+          261,
+          304
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          197,
+          222,
+          220,
+          280,
+          311,
+          306,
+          307,
+          417,
+          326,
+          369,
+          332,
+          326,
+          378
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          167,
+          189,
+          186,
+          241,
+          261,
+          246,
+          254,
+          342,
+          265,
+          273,
+          272,
+          233,
+          299
+        ]
+      }
+    ]
+  },
+  {
+    "id": "eslintrc",
+    "title": "ESLint Configuration Document",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/eslintrc/WebAnalyzer.json",
+    "labels": [
+      "Apache Avro (unframed)",
+      "Cap'n Proto (Packed)",
+      "Apache Thrift",
+      "Protocol Buffers",
+      "Cap'n Proto (Binary)",
+      "FlatBuffers",
+      "MessagePack",
+      "CBOR",
+      "Smile",
+      "UBJSON",
+      "JSON",
+      "BSON",
+      "FlexBuffers"
+    ],
+    "versions": [
+      "Python 3.9.5 avro 1.10.1",
+      "Cap'n Proto version 0.7.0",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Cap'n Proto version 0.7.0",
+      "flatc version 1.12.0",
+      "Python 3.9.5 msgpack 1.0.0",
+      "Python 3.9.5 cbor2 5.2.0",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "Python 3.9.5 ubjson 0.16.1",
+      "ECMA-404",
+      "Python 3.9.5 pymongo",
+      "flatc version 1.12.0"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          100,
+          131,
+          150,
+          161,
+          216,
+          320,
+          971,
+          979,
+          979,
+          1070,
+          1141,
+          1184,
+          1201
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          93,
+          130,
+          110,
+          164,
+          136,
+          228,
+          525,
+          504,
+          544,
+          550,
+          488,
+          512,
+          635
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          107,
+          141,
+          126,
+          180,
+          177,
+          304,
+          711,
+          716,
+          723,
+          769,
+          700,
+          723,
+          821
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          91,
+          129,
+          109,
+          155,
+          128,
+          217,
+          546,
+          544,
+          565,
+          563,
+          521,
+          539,
+          636
+        ]
+      }
+    ]
+  },
+  {
+    "id": "esmrc",
+    "title": "ECMAScript Module Loader Definition",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/esmrc/.esmrc_.json",
+    "labels": [
+      "Apache Avro (unframed)",
+      "Protocol Buffers",
+      "Apache Thrift",
+      "Cap'n Proto (Packed)",
+      "CBOR",
+      "MessagePack",
+      "Smile",
+      "UBJSON",
+      "Cap'n Proto (Binary)",
+      "FlatBuffers",
+      "FlexBuffers",
+      "BSON",
+      "JSON"
+    ],
+    "versions": [
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Cap'n Proto version 0.7.0",
+      "Python 3.9.5 cbor2 5.2.0",
+      "Python 3.9.5 msgpack 1.0.0",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "Python 3.9.5 ubjson 0.16.1",
+      "Cap'n Proto version 0.7.0",
+      "flatc version 1.12.0",
+      "flatc version 1.12.0",
+      "Python 3.9.5 pymongo",
+      "ECMA-404"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          16,
+          23,
+          24,
+          35,
+          64,
+          64,
+          70,
+          78,
+          80,
+          80,
+          91,
+          96,
+          102
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          36,
+          43,
+          44,
+          55,
+          81,
+          82,
+          87,
+          93,
+          68,
+          77,
+          107,
+          101,
+          101
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          35,
+          42,
+          43,
+          54,
+          83,
+          83,
+          89,
+          97,
+          82,
+          94,
+          110,
+          115,
+          117
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          39,
+          47,
+          48,
+          59,
+          82,
+          85,
+          91,
+          94,
+          67,
+          74,
+          109,
+          105,
+          103
+        ]
+      }
+    ]
+  },
+  {
+    "id": "geojson",
+    "title": "GeoJSON Example Document",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/geojson/multi-polygon.json",
+    "labels": [
+      "JSON",
+      "Cap'n Proto (Packed)",
+      "Apache Thrift",
+      "Apache Avro (unframed)",
+      "CBOR",
+      "MessagePack",
+      "Protocol Buffers",
+      "UBJSON",
+      "Smile",
+      "FlexBuffers",
+      "Cap'n Proto (Binary)",
+      "BSON",
+      "FlatBuffers"
+    ],
+    "versions": [
+      "ECMA-404",
+      "Cap'n Proto version 0.7.0",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 cbor2 5.2.0",
+      "Python 3.9.5 msgpack 1.0.0",
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Python 3.9.5 ubjson 0.16.1",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "flatc version 1.12.0",
+      "Cap'n Proto version 0.7.0",
+      "Python 3.9.5 pymongo",
+      "flatc version 1.12.0"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          190,
+          228,
+          277,
+          283,
+          322,
+          322,
+          325,
+          336,
+          408,
+          415,
+          448,
+          536,
+          680
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          121,
+          142,
+          110,
+          100,
+          127,
+          128,
+          115,
+          137,
+          142,
+          183,
+          146,
+          184,
+          221
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          146,
+          162,
+          136,
+          130,
+          160,
+          160,
+          145,
+          169,
+          176,
+          221,
+          197,
+          226,
+          289
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          116,
+          137,
+          104,
+          92,
+          120,
+          121,
+          107,
+          135,
+          137,
+          177,
+          132,
+          165,
+          195
+        ]
+      }
+    ]
+  },
+  {
+    "id": "githubfundingblank",
+    "title": "GitHub FUNDING Sponsorship Definition (Empty)",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/github-funding/ebookfoundation.json",
+    "labels": [
+      "Apache Avro (unframed)",
+      "Protocol Buffers",
+      "Apache Thrift",
+      "Cap'n Proto (Packed)",
+      "Cap'n Proto (Binary)",
+      "FlatBuffers",
+      "CBOR",
+      "MessagePack",
+      "Smile",
+      "BSON",
+      "UBJSON",
+      "FlexBuffers",
+      "JSON"
+    ],
+    "versions": [
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Cap'n Proto version 0.7.0",
+      "Cap'n Proto version 0.7.0",
+      "flatc version 1.12.0",
+      "Python 3.9.5 cbor2 5.2.0",
+      "Python 3.9.5 msgpack 1.0.0",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "Python 3.9.5 pymongo",
+      "Python 3.9.5 ubjson 0.16.1",
+      "flatc version 1.12.0",
+      "ECMA-404"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          16,
+          17,
+          18,
+          25,
+          40,
+          68,
+          124,
+          124,
+          129,
+          133,
+          137,
+          152,
+          183
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          36,
+          37,
+          38,
+          45,
+          50,
+          71,
+          114,
+          124,
+          134,
+          125,
+          135,
+          143,
+          134
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          35,
+          36,
+          37,
+          44,
+          56,
+          79,
+          143,
+          143,
+          148,
+          152,
+          156,
+          168,
+          167
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          39,
+          41,
+          42,
+          50,
+          51,
+          71,
+          131,
+          136,
+          139,
+          137,
+          144,
+          148,
+          144
+        ]
+      }
+    ]
+  },
+  {
+    "id": "githubworkflow",
+    "title": "GitHub Workflow Definition",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/github-workflow/919.json",
+    "labels": [
+      "Apache Avro (unframed)",
+      "Apache Thrift",
+      "Protocol Buffers",
+      "Cap'n Proto (Packed)",
+      "MessagePack",
+      "Smile",
+      "CBOR",
+      "UBJSON",
+      "JSON",
+      "FlexBuffers",
+      "BSON",
+      "FlatBuffers",
+      "Cap'n Proto (Binary)"
+    ],
+    "versions": [
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Cap'n Proto version 0.7.0",
+      "Python 3.9.5 msgpack 1.0.0",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "Python 3.9.5 cbor2 5.2.0",
+      "Python 3.9.5 ubjson 0.16.1",
+      "ECMA-404",
+      "flatc version 1.12.0",
+      "Python 3.9.5 pymongo",
+      "flatc version 1.12.0",
+      "Cap'n Proto version 0.7.0"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          167,
+          187,
+          189,
+          242,
+          287,
+          287,
+          288,
+          339,
+          356,
+          396,
+          411,
+          440,
+          464
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          153,
+          170,
+          176,
+          232,
+          222,
+          235,
+          208,
+          243,
+          228,
+          309,
+          273,
+          275,
+          241
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          164,
+          186,
+          195,
+          247,
+          256,
+          268,
+          257,
+          291,
+          292,
+          369,
+          347,
+          352,
+          299
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          153,
+          170,
+          175,
+          230,
+          224,
+          240,
+          216,
+          249,
+          247,
+          318,
+          278,
+          256,
+          223
+        ]
+      }
+    ]
+  },
+  {
+    "id": "gruntcontribclean",
+    "title": "Grunt.js Clean Task Definition",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/grunt-clean-task/with-options.json",
+    "labels": [
+      "Apache Avro (unframed)",
+      "Protocol Buffers",
+      "Apache Thrift",
+      "Cap'n Proto (Packed)",
+      "CBOR",
+      "MessagePack",
+      "Smile",
+      "UBJSON",
+      "JSON",
+      "FlexBuffers",
+      "Cap'n Proto (Binary)",
+      "BSON",
+      "FlatBuffers"
+    ],
+    "versions": [
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Cap'n Proto version 0.7.0",
+      "Python 3.9.5 cbor2 5.2.0",
+      "Python 3.9.5 msgpack 1.0.0",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "Python 3.9.5 ubjson 0.16.1",
+      "ECMA-404",
+      "flatc version 1.12.0",
+      "Cap'n Proto version 0.7.0",
+      "Python 3.9.5 pymongo",
+      "flatc version 1.12.0"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          16,
+          20,
+          23,
+          39,
+          60,
+          60,
+          70,
+          77,
+          93,
+          94,
+          96,
+          105,
+          116
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          31,
+          36,
+          38,
+          53,
+          75,
+          76,
+          85,
+          88,
+          94,
+          110,
+          66,
+          97,
+          77
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          35,
+          39,
+          39,
+          58,
+          79,
+          79,
+          88,
+          92,
+          106,
+          113,
+          85,
+          110,
+          104
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          34,
+          41,
+          41,
+          56,
+          77,
+          78,
+          88,
+          89,
+          95,
+          115,
+          66,
+          98,
+          74
+        ]
+      }
+    ]
+  },
+  {
+    "id": "imageoptimizerwebjob",
+    "title": "ImageOptimizer Azure Webjob Configuration",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/imageoptimizer/default.json",
+    "labels": [
+      "Protocol Buffers",
+      "Apache Avro (unframed)",
+      "Apache Thrift",
+      "Cap'n Proto (Packed)",
+      "CBOR",
+      "MessagePack",
+      "Smile",
+      "UBJSON",
+      "JSON",
+      "FlexBuffers",
+      "Cap'n Proto (Binary)",
+      "FlatBuffers",
+      "BSON"
+    ],
+    "versions": [
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Cap'n Proto version 0.7.0",
+      "Python 3.9.5 cbor2 5.2.0",
+      "Python 3.9.5 msgpack 1.0.0",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "Python 3.9.5 ubjson 0.16.1",
+      "ECMA-404",
+      "flatc version 1.12.0",
+      "Cap'n Proto version 0.7.0",
+      "flatc version 1.12.0",
+      "Python 3.9.5 pymongo"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          23,
+          24,
+          26,
+          44,
+          61,
+          61,
+          70,
+          74,
+          82,
+          89,
+          96,
+          100,
+          102
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          43,
+          44,
+          46,
+          64,
+          76,
+          77,
+          86,
+          87,
+          88,
+          102,
+          76,
+          80,
+          103
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          42,
+          43,
+          45,
+          63,
+          78,
+          78,
+          88,
+          90,
+          96,
+          107,
+          97,
+          101,
+          117
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          47,
+          47,
+          50,
+          68,
+          76,
+          78,
+          88,
+          87,
+          90,
+          103,
+          72,
+          79,
+          100
+        ]
+      }
+    ]
+  },
+  {
+    "id": "jsonereversesort",
+    "title": "JSON-e Templating Engine Reverse Sort Example",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/jsone/reverse-sort.json",
+    "labels": [
+      "Apache Avro (unframed)",
+      "Protocol Buffers",
+      "Apache Thrift",
+      "Cap'n Proto (Packed)",
+      "MessagePack",
+      "CBOR",
+      "Smile",
+      "UBJSON",
+      "JSON",
+      "FlexBuffers",
+      "BSON",
+      "FlatBuffers",
+      "Cap'n Proto (Binary)"
+    ],
+    "versions": [
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Cap'n Proto version 0.7.0",
+      "Python 3.9.5 msgpack 1.0.0",
+      "Python 3.9.5 cbor2 5.2.0",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "Python 3.9.5 ubjson 0.16.1",
+      "ECMA-404",
+      "flatc version 1.12.0",
+      "Python 3.9.5 pymongo",
+      "flatc version 1.12.0",
+      "Cap'n Proto version 0.7.0"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          11,
+          21,
+          22,
+          43,
+          52,
+          53,
+          63,
+          70,
+          86,
+          95,
+          121,
+          136,
+          240
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          31,
+          41,
+          39,
+          63,
+          73,
+          73,
+          82,
+          83,
+          86,
+          109,
+          104,
+          89,
+          72
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          30,
+          40,
+          41,
+          62,
+          71,
+          72,
+          82,
+          89,
+          99,
+          114,
+          129,
+          126,
+          100
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          34,
+          43,
+          40,
+          65,
+          76,
+          76,
+          84,
+          87,
+          88,
+          111,
+          101,
+          87,
+          68
+        ]
+      }
+    ]
+  },
+  {
+    "id": "jsonesort",
+    "title": "JSON-e Templating Engine Sort Example",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/jsone/sort.json",
+    "labels": [
+      "Apache Avro (unframed)",
+      "Protocol Buffers",
+      "Apache Thrift",
+      "Cap'n Proto (Packed)",
+      "CBOR",
+      "MessagePack",
+      "Smile",
+      "UBJSON",
+      "JSON",
+      "FlexBuffers",
+      "FlatBuffers",
+      "Cap'n Proto (Binary)",
+      "BSON"
+    ],
+    "versions": [
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Cap'n Proto version 0.7.0",
+      "Python 3.9.5 cbor2 5.2.0",
+      "Python 3.9.5 msgpack 1.0.0",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "Python 3.9.5 ubjson 0.16.1",
+      "ECMA-404",
+      "flatc version 1.12.0",
+      "flatc version 1.12.0",
+      "Cap'n Proto version 0.7.0",
+      "Python 3.9.5 pymongo"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          9,
+          10,
+          11,
+          18,
+          21,
+          21,
+          27,
+          30,
+          34,
+          39,
+          44,
+          48,
+          65
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          29,
+          30,
+          31,
+          38,
+          41,
+          41,
+          48,
+          48,
+          54,
+          56,
+          51,
+          45,
+          66
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          28,
+          29,
+          30,
+          37,
+          40,
+          40,
+          46,
+          49,
+          53,
+          58,
+          63,
+          58,
+          79
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          32,
+          33,
+          35,
+          41,
+          46,
+          46,
+          52,
+          53,
+          58,
+          60,
+          51,
+          45,
+          66
+        ]
+      }
+    ]
+  },
+  {
+    "id": "jsonfeed",
+    "title": "JSON Feed Example Document",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/feed/microblog.json",
+    "labels": [
+      "Apache Avro (unframed)",
+      "Protocol Buffers",
+      "Apache Thrift",
+      "Cap'n Proto (Packed)",
+      "MessagePack",
+      "Smile",
+      "CBOR",
+      "UBJSON",
+      "Cap'n Proto (Binary)",
+      "JSON",
+      "FlatBuffers",
+      "BSON",
+      "FlexBuffers"
+    ],
+    "versions": [
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Cap'n Proto version 0.7.0",
+      "Python 3.9.5 msgpack 1.0.0",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "Python 3.9.5 cbor2 5.2.0",
+      "Python 3.9.5 ubjson 0.16.1",
+      "Cap'n Proto version 0.7.0",
+      "ECMA-404",
+      "flatc version 1.12.0",
+      "Python 3.9.5 pymongo",
+      "flatc version 1.12.0"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          398,
+          411,
+          413,
+          468,
+          515,
+          519,
+          521,
+          555,
+          568,
+          571,
+          584,
+          594,
+          596
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          241,
+          254,
+          252,
+          325,
+          327,
+          330,
+          315,
+          342,
+          323,
+          321,
+          334,
+          355,
+          404
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          287,
+          300,
+          300,
+          365,
+          396,
+          401,
+          401,
+          426,
+          409,
+          416,
+          429,
+          451,
+          473
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          245,
+          261,
+          259,
+          321,
+          334,
+          337,
+          329,
+          352,
+          312,
+          339,
+          329,
+          370,
+          397
+        ]
+      }
+    ]
+  },
+  {
+    "id": "jsonresume",
+    "title": "JSON Resume Example",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/resume/richardhendriks.json",
+    "labels": [
+      "Apache Avro (unframed)",
+      "Protocol Buffers",
+      "Apache Thrift",
+      "Cap'n Proto (Packed)",
+      "Smile",
+      "MessagePack",
+      "CBOR",
+      "UBJSON",
+      "FlexBuffers",
+      "JSON",
+      "FlatBuffers",
+      "Cap'n Proto (Binary)",
+      "BSON"
+    ],
+    "versions": [
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Cap'n Proto version 0.7.0",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "Python 3.9.5 msgpack 1.0.0",
+      "Python 3.9.5 cbor2 5.2.0",
+      "Python 3.9.5 ubjson 0.16.1",
+      "flatc version 1.12.0",
+      "ECMA-404",
+      "flatc version 1.12.0",
+      "Cap'n Proto version 0.7.0",
+      "Python 3.9.5 pymongo"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          2155,
+          2218,
+          2223,
+          2542,
+          2613,
+          2742,
+          2747,
+          2970,
+          3041,
+          3043,
+          3108,
+          3136,
+          3276
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          1282,
+          1355,
+          1321,
+          1656,
+          1566,
+          1587,
+          1541,
+          1641,
+          1956,
+          1539,
+          1673,
+          1612,
+          1767
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          1764,
+          1824,
+          1805,
+          2155,
+          2161,
+          2155,
+          2156,
+          2266,
+          2554,
+          2196,
+          2283,
+          2213,
+          2438
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          1307,
+          1360,
+          1343,
+          1661,
+          1612,
+          1605,
+          1574,
+          1656,
+          1929,
+          1579,
+          1617,
+          1562,
+          1755
+        ]
+      }
+    ]
+  },
+  {
+    "id": "netcoreproject",
+    "title": ".NET Core Project",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/project/EF-project.json",
+    "labels": [
+      "Apache Avro (unframed)",
+      "Apache Thrift",
+      "Protocol Buffers",
+      "Cap'n Proto (Packed)",
+      "Cap'n Proto (Binary)",
+      "FlatBuffers",
+      "Smile",
+      "FlexBuffers",
+      "MessagePack",
+      "CBOR",
+      "UBJSON",
+      "JSON",
+      "BSON"
+    ],
+    "versions": [
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Cap'n Proto version 0.7.0",
+      "Cap'n Proto version 0.7.0",
+      "flatc version 1.12.0",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "flatc version 1.12.0",
+      "Python 3.9.5 msgpack 1.0.0",
+      "Python 3.9.5 cbor2 5.2.0",
+      "Python 3.9.5 ubjson 0.16.1",
+      "ECMA-404",
+      "Python 3.9.5 pymongo"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          242,
+          283,
+          284,
+          376,
+          608,
+          636,
+          870,
+          890,
+          919,
+          923,
+          1008,
+          1049,
+          1084
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          93,
+          113,
+          155,
+          181,
+          195,
+          279,
+          453,
+          559,
+          458,
+          435,
+          464,
+          411,
+          442
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          120,
+          136,
+          195,
+          214,
+          266,
+          364,
+          558,
+          664,
+          565,
+          566,
+          581,
+          546,
+          574
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          98,
+          115,
+          152,
+          180,
+          180,
+          247,
+          450,
+          552,
+          443,
+          434,
+          458,
+          425,
+          453
+        ]
+      }
+    ]
+  },
+  {
+    "id": "nightwatch",
+    "title": "Nightwatch.js Test Framework Configuration",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/nightwatch/default.json",
+    "labels": [
+      "Apache Avro (unframed)",
+      "Protocol Buffers",
+      "Apache Thrift",
+      "Cap'n Proto (Packed)",
+      "Cap'n Proto (Binary)",
+      "FlatBuffers",
+      "Smile",
+      "MessagePack",
+      "CBOR",
+      "UBJSON",
+      "BSON",
+      "FlexBuffers",
+      "JSON"
+    ],
+    "versions": [
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Cap'n Proto version 0.7.0",
+      "Cap'n Proto version 0.7.0",
+      "flatc version 1.12.0",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "Python 3.9.5 msgpack 1.0.0",
+      "Python 3.9.5 cbor2 5.2.0",
+      "Python 3.9.5 ubjson 0.16.1",
+      "Python 3.9.5 pymongo",
+      "flatc version 1.12.0",
+      "ECMA-404"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          92,
+          109,
+          134,
+          149,
+          304,
+          464,
+          1090,
+          1172,
+          1176,
+          1268,
+          1327,
+          1389,
+          1507
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          104,
+          129,
+          142,
+          148,
+          170,
+          302,
+          683,
+          670,
+          640,
+          692,
+          666,
+          869,
+          649
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          111,
+          128,
+          153,
+          157,
+          209,
+          390,
+          886,
+          871,
+          873,
+          935,
+          933,
+          1139,
+          925
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          107,
+          132,
+          142,
+          151,
+          158,
+          257,
+          701,
+          678,
+          667,
+          710,
+          694,
+          873,
+          682
+        ]
+      }
+    ]
+  },
+  {
+    "id": "openweathermap",
+    "title": "OpenWeatherMap API Example Document",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/openweather.current/example.json",
+    "labels": [
+      "Apache Avro (unframed)",
+      "Protocol Buffers",
+      "Apache Thrift",
+      "Cap'n Proto (Packed)",
+      "Cap'n Proto (Binary)",
+      "MessagePack",
+      "CBOR",
+      "FlatBuffers",
+      "Smile",
+      "UBJSON",
+      "BSON",
+      "JSON",
+      "FlexBuffers"
+    ],
+    "versions": [
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Cap'n Proto version 0.7.0",
+      "Cap'n Proto version 0.7.0",
+      "Python 3.9.5 msgpack 1.0.0",
+      "Python 3.9.5 cbor2 5.2.0",
+      "flatc version 1.12.0",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "Python 3.9.5 ubjson 0.16.1",
+      "Python 3.9.5 pymongo",
+      "ECMA-404",
+      "flatc version 1.12.0"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          148,
+          188,
+          191,
+          206,
+          320,
+          382,
+          383,
+          384,
+          412,
+          439,
+          480,
+          494,
+          660
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          163,
+          199,
+          199,
+          219,
+          236,
+          358,
+          347,
+          307,
+          389,
+          382,
+          394,
+          341,
+          502
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          167,
+          207,
+          209,
+          225,
+          288,
+          393,
+          394,
+          367,
+          418,
+          446,
+          471,
+          470,
+          590
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          166,
+          203,
+          202,
+          220,
+          222,
+          350,
+          339,
+          285,
+          372,
+          379,
+          395,
+          361,
+          483
+        ]
+      }
+    ]
+  },
+  {
+    "id": "openweatherroadrisk",
+    "title": "OpenWeather Road Risk API Example",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/openweather.roadrisk/example.json",
+    "labels": [
+      "Apache Avro (unframed)",
+      "Protocol Buffers",
+      "Apache Thrift",
+      "Cap'n Proto (Packed)",
+      "Cap'n Proto (Binary)",
+      "FlatBuffers",
+      "Smile",
+      "MessagePack",
+      "CBOR",
+      "UBJSON",
+      "JSON",
+      "BSON",
+      "FlexBuffers"
+    ],
+    "versions": [
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Cap'n Proto version 0.7.0",
+      "Cap'n Proto version 0.7.0",
+      "flatc version 1.12.0",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "Python 3.9.5 msgpack 1.0.0",
+      "Python 3.9.5 cbor2 5.2.0",
+      "Python 3.9.5 ubjson 0.16.1",
+      "ECMA-404",
+      "Python 3.9.5 pymongo",
+      "flatc version 1.12.0"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          156,
+          173,
+          177,
+          204,
+          296,
+          328,
+          334,
+          346,
+          347,
+          384,
+          385,
+          434,
+          498
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          156,
+          171,
+          171,
+          204,
+          216,
+          251,
+          305,
+          283,
+          282,
+          301,
+          254,
+          324,
+          390
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          168,
+          183,
+          184,
+          214,
+          265,
+          297,
+          332,
+          304,
+          305,
+          325,
+          308,
+          366,
+          442
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          156,
+          172,
+          173,
+          205,
+          203,
+          235,
+          296,
+          265,
+          262,
+          284,
+          257,
+          312,
+          372
+        ]
+      }
+    ]
+  },
+  {
+    "id": "packagejson",
+    "title": "NPM Package.json Example Manifest",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/package/package-test.json",
+    "labels": [
+      "Apache Avro (unframed)",
+      "Apache Thrift",
+      "Protocol Buffers",
+      "Cap'n Proto (Packed)",
+      "Smile",
+      "CBOR",
+      "MessagePack",
+      "UBJSON",
+      "Cap'n Proto (Binary)",
+      "JSON",
+      "FlatBuffers",
+      "FlexBuffers",
+      "BSON"
+    ],
+    "versions": [
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Cap'n Proto version 0.7.0",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "Python 3.9.5 cbor2 5.2.0",
+      "Python 3.9.5 msgpack 1.0.0",
+      "Python 3.9.5 ubjson 0.16.1",
+      "Cap'n Proto version 0.7.0",
+      "ECMA-404",
+      "flatc version 1.12.0",
+      "flatc version 1.12.0",
+      "Python 3.9.5 pymongo"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          1500,
+          1561,
+          1581,
+          1755,
+          1983,
+          1990,
+          1995,
+          2171,
+          2216,
+          2259,
+          2268,
+          2320,
+          2386
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          800,
+          848,
+          888,
+          1013,
+          1119,
+          1083,
+          1131,
+          1173,
+          1008,
+          1093,
+          1132,
+          1395,
+          1226
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          1060,
+          1108,
+          1149,
+          1280,
+          1473,
+          1477,
+          1482,
+          1571,
+          1362,
+          1519,
+          1512,
+          1766,
+          1658
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          820,
+          860,
+          903,
+          1009,
+          1138,
+          1099,
+          1143,
+          1178,
+          977,
+          1129,
+          1064,
+          1381,
+          1236
+        ]
+      }
+    ]
+  },
+  {
+    "id": "packagejsonlintrc",
+    "title": "NPM Package.json Linter Configuration Manifest",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/npmpackagejsonlintrc/npmpackagejsonlintrc-test.json",
+    "labels": [
+      "Apache Avro (unframed)",
+      "Apache Thrift",
+      "Protocol Buffers",
+      "Cap'n Proto (Packed)",
+      "Cap'n Proto (Binary)",
+      "FlexBuffers",
+      "FlatBuffers",
+      "MessagePack",
+      "CBOR",
+      "Smile",
+      "UBJSON",
+      "JSON",
+      "BSON"
+    ],
+    "versions": [
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Cap'n Proto version 0.7.0",
+      "Cap'n Proto version 0.7.0",
+      "flatc version 1.12.0",
+      "flatc version 1.12.0",
+      "Python 3.9.5 msgpack 1.0.0",
+      "Python 3.9.5 cbor2 5.2.0",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "Python 3.9.5 ubjson 0.16.1",
+      "ECMA-404",
+      "Python 3.9.5 pymongo"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          201,
+          420,
+          454,
+          519,
+          880,
+          942,
+          960,
+          989,
+          993,
+          1002,
+          1117,
+          1159,
+          1295
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          75,
+          91,
+          197,
+          120,
+          131,
+          522,
+          288,
+          366,
+          349,
+          380,
+          374,
+          321,
+          348
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          86,
+          102,
+          252,
+          136,
+          165,
+          629,
+          389,
+          476,
+          477,
+          499,
+          489,
+          440,
+          478
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          78,
+          95,
+          172,
+          119,
+          123,
+          510,
+          248,
+          365,
+          358,
+          388,
+          377,
+          344,
+          366
+        ]
+      }
+    ]
+  },
+  {
+    "id": "sapcloudsdkpipeline",
+    "title": "SAP Cloud SDK Continuous Delivery Toolkit Configuration",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/cloud-sdk-pipeline-config-schema/empty.json",
+    "labels": [
+      "Apache Avro (unframed)",
+      "Protocol Buffers",
+      "Apache Thrift",
+      "Cap'n Proto (Packed)",
+      "Cap'n Proto (Binary)",
+      "FlatBuffers",
+      "CBOR",
+      "MessagePack",
+      "BSON",
+      "UBJSON",
+      "Smile",
+      "FlexBuffers",
+      "JSON"
+    ],
+    "versions": [
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Cap'n Proto version 0.7.0",
+      "Cap'n Proto version 0.7.0",
+      "flatc version 1.12.0",
+      "Python 3.9.5 cbor2 5.2.0",
+      "Python 3.9.5 msgpack 1.0.0",
+      "Python 3.9.5 pymongo",
+      "Python 3.9.5 ubjson 0.16.1",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "flatc version 1.12.0",
+      "ECMA-404"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          0,
+          0,
+          1,
+          7,
+          16,
+          24,
+          25,
+          25,
+          29,
+          29,
+          30,
+          37,
+          44
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          20,
+          20,
+          21,
+          27,
+          33,
+          35,
+          45,
+          45,
+          46,
+          49,
+          50,
+          52,
+          50
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          15,
+          15,
+          20,
+          26,
+          35,
+          43,
+          44,
+          44,
+          48,
+          48,
+          49,
+          56,
+          58
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          23,
+          23,
+          24,
+          29,
+          32,
+          38,
+          48,
+          49,
+          49,
+          52,
+          54,
+          55,
+          55
+        ]
+      }
+    ]
+  },
+  {
+    "id": "travisnotifications",
+    "title": "TravisCI Notifications Configuration",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/travis/notification-secure.json",
+    "labels": [
+      "FlexBuffers",
+      "Apache Avro (unframed)",
+      "Protocol Buffers",
+      "Apache Thrift",
+      "Cap'n Proto (Packed)",
+      "Smile",
+      "CBOR",
+      "MessagePack",
+      "Cap'n Proto (Binary)",
+      "UBJSON",
+      "FlatBuffers",
+      "JSON",
+      "BSON"
+    ],
+    "versions": [
+      "flatc version 1.12.0",
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Cap'n Proto version 0.7.0",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "Python 3.9.5 cbor2 5.2.0",
+      "Python 3.9.5 msgpack 1.0.0",
+      "Cap'n Proto version 0.7.0",
+      "Python 3.9.5 ubjson 0.16.1",
+      "flatc version 1.12.0",
+      "ECMA-404",
+      "Python 3.9.5 pymongo"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          228,
+          504,
+          521,
+          521,
+          566,
+          604,
+          627,
+          627,
+          640,
+          658,
+          668,
+          673,
+          699
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          214,
+          90,
+          114,
+          95,
+          125,
+          168,
+          147,
+          157,
+          129,
+          163,
+          175,
+          154,
+          160
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          244,
+          103,
+          133,
+          106,
+          135,
+          199,
+          192,
+          192,
+          152,
+          198,
+          215,
+          195,
+          204
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          207,
+          91,
+          109,
+          96,
+          120,
+          173,
+          160,
+          163,
+          120,
+          169,
+          164,
+          164,
+          167
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tslintbasic",
+    "title": "TSLint Linter Definition (Basic)",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/tslint/tslint-test19.json",
+    "labels": [
+      "Apache Avro (unframed)",
+      "Protocol Buffers",
+      "Apache Thrift",
+      "Cap'n Proto (Packed)",
+      "Cap'n Proto (Binary)",
+      "CBOR",
+      "MessagePack",
+      "Smile",
+      "UBJSON",
+      "FlatBuffers",
+      "JSON",
+      "BSON",
+      "FlexBuffers"
+    ],
+    "versions": [
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Cap'n Proto version 0.7.0",
+      "Cap'n Proto version 0.7.0",
+      "Python 3.9.5 cbor2 5.2.0",
+      "Python 3.9.5 msgpack 1.0.0",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "Python 3.9.5 ubjson 0.16.1",
+      "flatc version 1.12.0",
+      "ECMA-404",
+      "Python 3.9.5 pymongo",
+      "flatc version 1.12.0"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          1,
+          8,
+          8,
+          12,
+          48,
+          51,
+          51,
+          59,
+          59,
+          60,
+          67,
+          71,
+          77
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          21,
+          28,
+          26,
+          29,
+          33,
+          62,
+          62,
+          68,
+          66,
+          53,
+          68,
+          74,
+          76
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          20,
+          27,
+          27,
+          31,
+          44,
+          70,
+          70,
+          73,
+          72,
+          64,
+          74,
+          82,
+          88
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          24,
+          31,
+          28,
+          31,
+          34,
+          63,
+          64,
+          71,
+          67,
+          49,
+          70,
+          74,
+          80
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tslintextend",
+    "title": "TSLint Linter Definition (Extends Only)",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/tslint/tslint-test5.json",
+    "labels": [
+      "Apache Avro (unframed)",
+      "Protocol Buffers",
+      "Apache Thrift",
+      "CBOR",
+      "MessagePack",
+      "Smile",
+      "Cap'n Proto (Packed)",
+      "UBJSON",
+      "JSON",
+      "FlexBuffers",
+      "BSON",
+      "Cap'n Proto (Binary)",
+      "FlatBuffers"
+    ],
+    "versions": [
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Python 3.9.5 cbor2 5.2.0",
+      "Python 3.9.5 msgpack 1.0.0",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "Cap'n Proto version 0.7.0",
+      "Python 3.9.5 ubjson 0.16.1",
+      "ECMA-404",
+      "flatc version 1.12.0",
+      "Python 3.9.5 pymongo",
+      "Cap'n Proto version 0.7.0",
+      "flatc version 1.12.0"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          47,
+          47,
+          48,
+          55,
+          55,
+          61,
+          62,
+          62,
+          63,
+          70,
+          78,
+          88,
+          88
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          55,
+          55,
+          56,
+          63,
+          63,
+          69,
+          68,
+          70,
+          70,
+          78,
+          79,
+          77,
+          78
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          57,
+          57,
+          58,
+          65,
+          65,
+          71,
+          70,
+          72,
+          72,
+          81,
+          85,
+          90,
+          91
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          58,
+          58,
+          59,
+          65,
+          65,
+          72,
+          73,
+          72,
+          73,
+          80,
+          80,
+          75,
+          78
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tslintmulti",
+    "title": "TSLint Linter Definition (Multi-rule)",
+    "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/tslint/tslint-test25.json",
+    "labels": [
+      "Apache Avro (unframed)",
+      "Protocol Buffers",
+      "Apache Thrift",
+      "Cap'n Proto (Packed)",
+      "CBOR",
+      "MessagePack",
+      "Smile",
+      "Cap'n Proto (Binary)",
+      "UBJSON",
+      "FlatBuffers",
+      "JSON",
+      "FlexBuffers",
+      "BSON"
+    ],
+    "versions": [
+      "Python 3.9.5 avro 1.10.1",
+      "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+      "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+      "Cap'n Proto version 0.7.0",
+      "Python 3.9.5 cbor2 5.2.0",
+      "Python 3.9.5 msgpack 1.0.0",
+      "clojure-1.10.2 cheshire-5.7.1",
+      "Cap'n Proto version 0.7.0",
+      "Python 3.9.5 ubjson 0.16.1",
+      "flatc version 1.12.0",
+      "ECMA-404",
+      "flatc version 1.12.0",
+      "Python 3.9.5 pymongo"
+    ],
+    "datasets": [
+      {
+        "label": "Uncompressed",
+        "version": null,
+        "data": [
+          7,
+          14,
+          14,
+          23,
+          68,
+          68,
+          78,
+          80,
+          80,
+          84,
+          98,
+          102,
+          104
+        ]
+      },
+      {
+        "label": "GZIP (-9)",
+        "version": "gzip 1.10",
+        "data": [
+          27,
+          34,
+          31,
+          37,
+          80,
+          81,
+          88,
+          44,
+          84,
+          71,
+          90,
+          106,
+          99
+        ]
+      },
+      {
+        "label": "LZ4 (-12)",
+        "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+        "data": [
+          26,
+          33,
+          33,
+          42,
+          87,
+          87,
+          92,
+          59,
+          94,
+          94,
+          99,
+          116,
+          109
+        ]
+      },
+      {
+        "label": "LZMA (-9)",
+        "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+        "data": [
+          29,
+          36,
+          34,
+          41,
+          81,
+          82,
+          92,
+          45,
+          89,
+          69,
+          92,
+          109,
+          100
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,113 @@
+{
+  "id": "geojson",
+  "title": "GeoJSON Example Document",
+  "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/geojson/multi-polygon.json",
+  "labels": [
+    "JSON",
+    "Cap'n Proto (Packed)",
+    "Apache Thrift",
+    "Apache Avro (unframed)",
+    "CBOR",
+    "MessagePack",
+    "Protocol Buffers",
+    "UBJSON",
+    "Smile",
+    "FlexBuffers",
+    "Cap'n Proto (Binary)",
+    "BSON",
+    "FlatBuffers"
+  ],
+  "versions": [
+    "ECMA-404",
+    "Cap'n Proto version 0.7.0",
+    "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+    "Python 3.9.5 avro 1.10.1",
+    "Python 3.9.5 cbor2 5.2.0",
+    "Python 3.9.5 msgpack 1.0.0",
+    "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+    "Python 3.9.5 ubjson 0.16.1",
+    "clojure-1.10.2 cheshire-5.7.1",
+    "flatc version 1.12.0",
+    "Cap'n Proto version 0.7.0",
+    "Python 3.9.5 pymongo",
+    "flatc version 1.12.0"
+  ],
+  "datasets": [
+    {
+      "label": "Uncompressed",
+      "version": null,
+      "data": [
+        190,
+        228,
+        277,
+        283,
+        322,
+        322,
+        325,
+        336,
+        408,
+        415,
+        448,
+        536,
+        680
+      ]
+    },
+    {
+      "label": "GZIP (-9)",
+      "version": "gzip 1.10",
+      "data": [
+        121,
+        142,
+        110,
+        100,
+        127,
+        128,
+        115,
+        137,
+        142,
+        183,
+        146,
+        184,
+        221
+      ]
+    },
+    {
+      "label": "LZ4 (-12)",
+      "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+      "data": [
+        146,
+        162,
+        136,
+        130,
+        160,
+        160,
+        145,
+        169,
+        176,
+        221,
+        197,
+        226,
+        289
+      ]
+    },
+    {
+      "label": "LZMA (-9)",
+      "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+      "data": [
+        116,
+        137,
+        104,
+        92,
+        120,
+        121,
+        107,
+        135,
+        137,
+        177,
+        132,
+        165,
+        195
+      ]
+    }
+  ]
+}

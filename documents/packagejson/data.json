@@ -1,0 +1,113 @@
+{
+  "id": "packagejson",
+  "title": "NPM Package.json Example Manifest",
+  "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/package/package-test.json",
+  "labels": [
+    "Apache Avro (unframed)",
+    "Apache Thrift",
+    "Protocol Buffers",
+    "Cap'n Proto (Packed)",
+    "Smile",
+    "CBOR",
+    "MessagePack",
+    "UBJSON",
+    "Cap'n Proto (Binary)",
+    "JSON",
+    "FlatBuffers",
+    "FlexBuffers",
+    "BSON"
+  ],
+  "versions": [
+    "Python 3.9.5 avro 1.10.1",
+    "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+    "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+    "Cap'n Proto version 0.7.0",
+    "clojure-1.10.2 cheshire-5.7.1",
+    "Python 3.9.5 cbor2 5.2.0",
+    "Python 3.9.5 msgpack 1.0.0",
+    "Python 3.9.5 ubjson 0.16.1",
+    "Cap'n Proto version 0.7.0",
+    "ECMA-404",
+    "flatc version 1.12.0",
+    "flatc version 1.12.0",
+    "Python 3.9.5 pymongo"
+  ],
+  "datasets": [
+    {
+      "label": "Uncompressed",
+      "version": null,
+      "data": [
+        1500,
+        1561,
+        1581,
+        1755,
+        1983,
+        1990,
+        1995,
+        2171,
+        2216,
+        2259,
+        2268,
+        2320,
+        2386
+      ]
+    },
+    {
+      "label": "GZIP (-9)",
+      "version": "gzip 1.10",
+      "data": [
+        800,
+        848,
+        888,
+        1013,
+        1119,
+        1083,
+        1131,
+        1173,
+        1008,
+        1093,
+        1132,
+        1395,
+        1226
+      ]
+    },
+    {
+      "label": "LZ4 (-12)",
+      "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+      "data": [
+        1060,
+        1108,
+        1149,
+        1280,
+        1473,
+        1477,
+        1482,
+        1571,
+        1362,
+        1519,
+        1512,
+        1766,
+        1658
+      ]
+    },
+    {
+      "label": "LZMA (-9)",
+      "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+      "data": [
+        820,
+        860,
+        903,
+        1009,
+        1138,
+        1099,
+        1143,
+        1178,
+        977,
+        1129,
+        1064,
+        1381,
+        1236
+      ]
+    }
+  ]
+}

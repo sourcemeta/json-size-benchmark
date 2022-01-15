@@ -1,0 +1,113 @@
+{
+  "id": "circleciblank",
+  "title": "CircleCI Definition (Blank)",
+  "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/circleciconfig/version-2.0.json",
+  "labels": [
+    "Apache Avro (unframed)",
+    "Protocol Buffers",
+    "Cap'n Proto (Packed)",
+    "Apache Thrift",
+    "JSON",
+    "CBOR",
+    "MessagePack",
+    "FlatBuffers",
+    "UBJSON",
+    "BSON",
+    "Cap'n Proto (Binary)",
+    "Smile",
+    "FlexBuffers"
+  ],
+  "versions": [
+    "Python 3.9.5 avro 1.10.1",
+    "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+    "Cap'n Proto version 0.7.0",
+    "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+    "ECMA-404",
+    "Python 3.9.5 cbor2 5.2.0",
+    "Python 3.9.5 msgpack 1.0.0",
+    "flatc version 1.12.0",
+    "Python 3.9.5 ubjson 0.16.1",
+    "Python 3.9.5 pymongo",
+    "Cap'n Proto version 0.7.0",
+    "clojure-1.10.2 cheshire-5.7.1",
+    "flatc version 1.12.0"
+  ],
+  "datasets": [
+    {
+      "label": "Uncompressed",
+      "version": null,
+      "data": [
+        4,
+        5,
+        6,
+        10,
+        14,
+        18,
+        18,
+        20,
+        20,
+        22,
+        24,
+        25,
+        32
+      ]
+    },
+    {
+      "label": "GZIP (-9)",
+      "version": "gzip 1.10",
+      "data": [
+        24,
+        25,
+        26,
+        25,
+        34,
+        33,
+        33,
+        32,
+        35,
+        36,
+        33,
+        39,
+        45
+      ]
+    },
+    {
+      "label": "LZ4 (-12)",
+      "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+      "data": [
+        23,
+        24,
+        25,
+        29,
+        33,
+        37,
+        37,
+        39,
+        39,
+        41,
+        41,
+        44,
+        49
+      ]
+    },
+    {
+      "label": "LZMA (-9)",
+      "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+      "data": [
+        26,
+        27,
+        29,
+        28,
+        38,
+        37,
+        37,
+        35,
+        39,
+        39,
+        33,
+        44,
+        48
+      ]
+    }
+  ]
+}

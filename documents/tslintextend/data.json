@@ -1,0 +1,113 @@
+{
+  "id": "tslintextend",
+  "title": "TSLint Linter Definition (Extends Only)",
+  "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/tslint/tslint-test5.json",
+  "labels": [
+    "Apache Avro (unframed)",
+    "Protocol Buffers",
+    "Apache Thrift",
+    "CBOR",
+    "MessagePack",
+    "Smile",
+    "Cap'n Proto (Packed)",
+    "UBJSON",
+    "JSON",
+    "FlexBuffers",
+    "BSON",
+    "Cap'n Proto (Binary)",
+    "FlatBuffers"
+  ],
+  "versions": [
+    "Python 3.9.5 avro 1.10.1",
+    "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+    "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+    "Python 3.9.5 cbor2 5.2.0",
+    "Python 3.9.5 msgpack 1.0.0",
+    "clojure-1.10.2 cheshire-5.7.1",
+    "Cap'n Proto version 0.7.0",
+    "Python 3.9.5 ubjson 0.16.1",
+    "ECMA-404",
+    "flatc version 1.12.0",
+    "Python 3.9.5 pymongo",
+    "Cap'n Proto version 0.7.0",
+    "flatc version 1.12.0"
+  ],
+  "datasets": [
+    {
+      "label": "Uncompressed",
+      "version": null,
+      "data": [
+        47,
+        47,
+        48,
+        55,
+        55,
+        61,
+        62,
+        62,
+        63,
+        70,
+        78,
+        88,
+        88
+      ]
+    },
+    {
+      "label": "GZIP (-9)",
+      "version": "gzip 1.10",
+      "data": [
+        55,
+        55,
+        56,
+        63,
+        63,
+        69,
+        68,
+        70,
+        70,
+        78,
+        79,
+        77,
+        78
+      ]
+    },
+    {
+      "label": "LZ4 (-12)",
+      "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+      "data": [
+        57,
+        57,
+        58,
+        65,
+        65,
+        71,
+        70,
+        72,
+        72,
+        81,
+        85,
+        90,
+        91
+      ]
+    },
+    {
+      "label": "LZMA (-9)",
+      "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+      "data": [
+        58,
+        58,
+        59,
+        65,
+        65,
+        72,
+        73,
+        72,
+        73,
+        80,
+        80,
+        75,
+        78
+      ]
+    }
+  ]
+}

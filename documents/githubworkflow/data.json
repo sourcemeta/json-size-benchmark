@@ -1,0 +1,113 @@
+{
+  "id": "githubworkflow",
+  "title": "GitHub Workflow Definition",
+  "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/github-workflow/919.json",
+  "labels": [
+    "Apache Avro (unframed)",
+    "Apache Thrift",
+    "Protocol Buffers",
+    "Cap'n Proto (Packed)",
+    "MessagePack",
+    "Smile",
+    "CBOR",
+    "UBJSON",
+    "JSON",
+    "FlexBuffers",
+    "BSON",
+    "FlatBuffers",
+    "Cap'n Proto (Binary)"
+  ],
+  "versions": [
+    "Python 3.9.5 avro 1.10.1",
+    "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+    "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+    "Cap'n Proto version 0.7.0",
+    "Python 3.9.5 msgpack 1.0.0",
+    "clojure-1.10.2 cheshire-5.7.1",
+    "Python 3.9.5 cbor2 5.2.0",
+    "Python 3.9.5 ubjson 0.16.1",
+    "ECMA-404",
+    "flatc version 1.12.0",
+    "Python 3.9.5 pymongo",
+    "flatc version 1.12.0",
+    "Cap'n Proto version 0.7.0"
+  ],
+  "datasets": [
+    {
+      "label": "Uncompressed",
+      "version": null,
+      "data": [
+        167,
+        187,
+        189,
+        242,
+        287,
+        287,
+        288,
+        339,
+        356,
+        396,
+        411,
+        440,
+        464
+      ]
+    },
+    {
+      "label": "GZIP (-9)",
+      "version": "gzip 1.10",
+      "data": [
+        153,
+        170,
+        176,
+        232,
+        222,
+        235,
+        208,
+        243,
+        228,
+        309,
+        273,
+        275,
+        241
+      ]
+    },
+    {
+      "label": "LZ4 (-12)",
+      "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+      "data": [
+        164,
+        186,
+        195,
+        247,
+        256,
+        268,
+        257,
+        291,
+        292,
+        369,
+        347,
+        352,
+        299
+      ]
+    },
+    {
+      "label": "LZMA (-9)",
+      "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+      "data": [
+        153,
+        170,
+        175,
+        230,
+        224,
+        240,
+        216,
+        249,
+        247,
+        318,
+        278,
+        256,
+        223
+      ]
+    }
+  ]
+}

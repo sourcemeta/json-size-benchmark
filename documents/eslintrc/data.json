@@ -1,0 +1,113 @@
+{
+  "id": "eslintrc",
+  "title": "ESLint Configuration Document",
+  "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/eslintrc/WebAnalyzer.json",
+  "labels": [
+    "Apache Avro (unframed)",
+    "Cap'n Proto (Packed)",
+    "Apache Thrift",
+    "Protocol Buffers",
+    "Cap'n Proto (Binary)",
+    "FlatBuffers",
+    "MessagePack",
+    "CBOR",
+    "Smile",
+    "UBJSON",
+    "JSON",
+    "BSON",
+    "FlexBuffers"
+  ],
+  "versions": [
+    "Python 3.9.5 avro 1.10.1",
+    "Cap'n Proto version 0.7.0",
+    "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+    "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+    "Cap'n Proto version 0.7.0",
+    "flatc version 1.12.0",
+    "Python 3.9.5 msgpack 1.0.0",
+    "Python 3.9.5 cbor2 5.2.0",
+    "clojure-1.10.2 cheshire-5.7.1",
+    "Python 3.9.5 ubjson 0.16.1",
+    "ECMA-404",
+    "Python 3.9.5 pymongo",
+    "flatc version 1.12.0"
+  ],
+  "datasets": [
+    {
+      "label": "Uncompressed",
+      "version": null,
+      "data": [
+        100,
+        131,
+        150,
+        161,
+        216,
+        320,
+        971,
+        979,
+        979,
+        1070,
+        1141,
+        1184,
+        1201
+      ]
+    },
+    {
+      "label": "GZIP (-9)",
+      "version": "gzip 1.10",
+      "data": [
+        93,
+        130,
+        110,
+        164,
+        136,
+        228,
+        525,
+        504,
+        544,
+        550,
+        488,
+        512,
+        635
+      ]
+    },
+    {
+      "label": "LZ4 (-12)",
+      "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+      "data": [
+        107,
+        141,
+        126,
+        180,
+        177,
+        304,
+        711,
+        716,
+        723,
+        769,
+        700,
+        723,
+        821
+      ]
+    },
+    {
+      "label": "LZMA (-9)",
+      "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+      "data": [
+        91,
+        129,
+        109,
+        155,
+        128,
+        217,
+        546,
+        544,
+        565,
+        563,
+        521,
+        539,
+        636
+      ]
+    }
+  ]
+}

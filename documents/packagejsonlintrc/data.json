@@ -1,0 +1,113 @@
+{
+  "id": "packagejsonlintrc",
+  "title": "NPM Package.json Linter Configuration Manifest",
+  "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/npmpackagejsonlintrc/npmpackagejsonlintrc-test.json",
+  "labels": [
+    "Apache Avro (unframed)",
+    "Apache Thrift",
+    "Protocol Buffers",
+    "Cap'n Proto (Packed)",
+    "Cap'n Proto (Binary)",
+    "FlexBuffers",
+    "FlatBuffers",
+    "MessagePack",
+    "CBOR",
+    "Smile",
+    "UBJSON",
+    "JSON",
+    "BSON"
+  ],
+  "versions": [
+    "Python 3.9.5 avro 1.10.1",
+    "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+    "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+    "Cap'n Proto version 0.7.0",
+    "Cap'n Proto version 0.7.0",
+    "flatc version 1.12.0",
+    "flatc version 1.12.0",
+    "Python 3.9.5 msgpack 1.0.0",
+    "Python 3.9.5 cbor2 5.2.0",
+    "clojure-1.10.2 cheshire-5.7.1",
+    "Python 3.9.5 ubjson 0.16.1",
+    "ECMA-404",
+    "Python 3.9.5 pymongo"
+  ],
+  "datasets": [
+    {
+      "label": "Uncompressed",
+      "version": null,
+      "data": [
+        201,
+        420,
+        454,
+        519,
+        880,
+        942,
+        960,
+        989,
+        993,
+        1002,
+        1117,
+        1159,
+        1295
+      ]
+    },
+    {
+      "label": "GZIP (-9)",
+      "version": "gzip 1.10",
+      "data": [
+        75,
+        91,
+        197,
+        120,
+        131,
+        522,
+        288,
+        366,
+        349,
+        380,
+        374,
+        321,
+        348
+      ]
+    },
+    {
+      "label": "LZ4 (-12)",
+      "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+      "data": [
+        86,
+        102,
+        252,
+        136,
+        165,
+        629,
+        389,
+        476,
+        477,
+        499,
+        489,
+        440,
+        478
+      ]
+    },
+    {
+      "label": "LZMA (-9)",
+      "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+      "data": [
+        78,
+        95,
+        172,
+        119,
+        123,
+        510,
+        248,
+        365,
+        358,
+        388,
+        377,
+        344,
+        366
+      ]
+    }
+  ]
+}

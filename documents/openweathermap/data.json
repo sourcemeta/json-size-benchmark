@@ -1,0 +1,113 @@
+{
+  "id": "openweathermap",
+  "title": "OpenWeatherMap API Example Document",
+  "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/openweather.current/example.json",
+  "labels": [
+    "Apache Avro (unframed)",
+    "Protocol Buffers",
+    "Apache Thrift",
+    "Cap'n Proto (Packed)",
+    "Cap'n Proto (Binary)",
+    "MessagePack",
+    "CBOR",
+    "FlatBuffers",
+    "Smile",
+    "UBJSON",
+    "BSON",
+    "JSON",
+    "FlexBuffers"
+  ],
+  "versions": [
+    "Python 3.9.5 avro 1.10.1",
+    "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+    "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+    "Cap'n Proto version 0.7.0",
+    "Cap'n Proto version 0.7.0",
+    "Python 3.9.5 msgpack 1.0.0",
+    "Python 3.9.5 cbor2 5.2.0",
+    "flatc version 1.12.0",
+    "clojure-1.10.2 cheshire-5.7.1",
+    "Python 3.9.5 ubjson 0.16.1",
+    "Python 3.9.5 pymongo",
+    "ECMA-404",
+    "flatc version 1.12.0"
+  ],
+  "datasets": [
+    {
+      "label": "Uncompressed",
+      "version": null,
+      "data": [
+        148,
+        188,
+        191,
+        206,
+        320,
+        382,
+        383,
+        384,
+        412,
+        439,
+        480,
+        494,
+        660
+      ]
+    },
+    {
+      "label": "GZIP (-9)",
+      "version": "gzip 1.10",
+      "data": [
+        163,
+        199,
+        199,
+        219,
+        236,
+        358,
+        347,
+        307,
+        389,
+        382,
+        394,
+        341,
+        502
+      ]
+    },
+    {
+      "label": "LZ4 (-12)",
+      "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+      "data": [
+        167,
+        207,
+        209,
+        225,
+        288,
+        393,
+        394,
+        367,
+        418,
+        446,
+        471,
+        470,
+        590
+      ]
+    },
+    {
+      "label": "LZMA (-9)",
+      "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+      "data": [
+        166,
+        203,
+        202,
+        220,
+        222,
+        350,
+        339,
+        285,
+        372,
+        379,
+        395,
+        361,
+        483
+      ]
+    }
+  ]
+}

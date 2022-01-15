@@ -1,0 +1,113 @@
+{
+  "id": "jsonresume",
+  "title": "JSON Resume Example",
+  "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/resume/richardhendriks.json",
+  "labels": [
+    "Apache Avro (unframed)",
+    "Protocol Buffers",
+    "Apache Thrift",
+    "Cap'n Proto (Packed)",
+    "Smile",
+    "MessagePack",
+    "CBOR",
+    "UBJSON",
+    "FlexBuffers",
+    "JSON",
+    "FlatBuffers",
+    "Cap'n Proto (Binary)",
+    "BSON"
+  ],
+  "versions": [
+    "Python 3.9.5 avro 1.10.1",
+    "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+    "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+    "Cap'n Proto version 0.7.0",
+    "clojure-1.10.2 cheshire-5.7.1",
+    "Python 3.9.5 msgpack 1.0.0",
+    "Python 3.9.5 cbor2 5.2.0",
+    "Python 3.9.5 ubjson 0.16.1",
+    "flatc version 1.12.0",
+    "ECMA-404",
+    "flatc version 1.12.0",
+    "Cap'n Proto version 0.7.0",
+    "Python 3.9.5 pymongo"
+  ],
+  "datasets": [
+    {
+      "label": "Uncompressed",
+      "version": null,
+      "data": [
+        2155,
+        2218,
+        2223,
+        2542,
+        2613,
+        2742,
+        2747,
+        2970,
+        3041,
+        3043,
+        3108,
+        3136,
+        3276
+      ]
+    },
+    {
+      "label": "GZIP (-9)",
+      "version": "gzip 1.10",
+      "data": [
+        1282,
+        1355,
+        1321,
+        1656,
+        1566,
+        1587,
+        1541,
+        1641,
+        1956,
+        1539,
+        1673,
+        1612,
+        1767
+      ]
+    },
+    {
+      "label": "LZ4 (-12)",
+      "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+      "data": [
+        1764,
+        1824,
+        1805,
+        2155,
+        2161,
+        2155,
+        2156,
+        2266,
+        2554,
+        2196,
+        2283,
+        2213,
+        2438
+      ]
+    },
+    {
+      "label": "LZMA (-9)",
+      "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+      "data": [
+        1307,
+        1360,
+        1343,
+        1661,
+        1612,
+        1605,
+        1574,
+        1656,
+        1929,
+        1579,
+        1617,
+        1562,
+        1755
+      ]
+    }
+  ]
+}

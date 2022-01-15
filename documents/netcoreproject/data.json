@@ -1,0 +1,113 @@
+{
+  "id": "netcoreproject",
+  "title": ".NET Core Project",
+  "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/project/EF-project.json",
+  "labels": [
+    "Apache Avro (unframed)",
+    "Apache Thrift",
+    "Protocol Buffers",
+    "Cap'n Proto (Packed)",
+    "Cap'n Proto (Binary)",
+    "FlatBuffers",
+    "Smile",
+    "FlexBuffers",
+    "MessagePack",
+    "CBOR",
+    "UBJSON",
+    "JSON",
+    "BSON"
+  ],
+  "versions": [
+    "Python 3.9.5 avro 1.10.1",
+    "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+    "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+    "Cap'n Proto version 0.7.0",
+    "Cap'n Proto version 0.7.0",
+    "flatc version 1.12.0",
+    "clojure-1.10.2 cheshire-5.7.1",
+    "flatc version 1.12.0",
+    "Python 3.9.5 msgpack 1.0.0",
+    "Python 3.9.5 cbor2 5.2.0",
+    "Python 3.9.5 ubjson 0.16.1",
+    "ECMA-404",
+    "Python 3.9.5 pymongo"
+  ],
+  "datasets": [
+    {
+      "label": "Uncompressed",
+      "version": null,
+      "data": [
+        242,
+        283,
+        284,
+        376,
+        608,
+        636,
+        870,
+        890,
+        919,
+        923,
+        1008,
+        1049,
+        1084
+      ]
+    },
+    {
+      "label": "GZIP (-9)",
+      "version": "gzip 1.10",
+      "data": [
+        93,
+        113,
+        155,
+        181,
+        195,
+        279,
+        453,
+        559,
+        458,
+        435,
+        464,
+        411,
+        442
+      ]
+    },
+    {
+      "label": "LZ4 (-12)",
+      "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+      "data": [
+        120,
+        136,
+        195,
+        214,
+        266,
+        364,
+        558,
+        664,
+        565,
+        566,
+        581,
+        546,
+        574
+      ]
+    },
+    {
+      "label": "LZMA (-9)",
+      "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+      "data": [
+        98,
+        115,
+        152,
+        180,
+        180,
+        247,
+        450,
+        552,
+        443,
+        434,
+        458,
+        425,
+        453
+      ]
+    }
+  ]
+}

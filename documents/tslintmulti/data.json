@@ -1,0 +1,113 @@
+{
+  "id": "tslintmulti",
+  "title": "TSLint Linter Definition (Multi-rule)",
+  "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/tslint/tslint-test25.json",
+  "labels": [
+    "Apache Avro (unframed)",
+    "Protocol Buffers",
+    "Apache Thrift",
+    "Cap'n Proto (Packed)",
+    "CBOR",
+    "MessagePack",
+    "Smile",
+    "Cap'n Proto (Binary)",
+    "UBJSON",
+    "FlatBuffers",
+    "JSON",
+    "FlexBuffers",
+    "BSON"
+  ],
+  "versions": [
+    "Python 3.9.5 avro 1.10.1",
+    "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+    "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+    "Cap'n Proto version 0.7.0",
+    "Python 3.9.5 cbor2 5.2.0",
+    "Python 3.9.5 msgpack 1.0.0",
+    "clojure-1.10.2 cheshire-5.7.1",
+    "Cap'n Proto version 0.7.0",
+    "Python 3.9.5 ubjson 0.16.1",
+    "flatc version 1.12.0",
+    "ECMA-404",
+    "flatc version 1.12.0",
+    "Python 3.9.5 pymongo"
+  ],
+  "datasets": [
+    {
+      "label": "Uncompressed",
+      "version": null,
+      "data": [
+        7,
+        14,
+        14,
+        23,
+        68,
+        68,
+        78,
+        80,
+        80,
+        84,
+        98,
+        102,
+        104
+      ]
+    },
+    {
+      "label": "GZIP (-9)",
+      "version": "gzip 1.10",
+      "data": [
+        27,
+        34,
+        31,
+        37,
+        80,
+        81,
+        88,
+        44,
+        84,
+        71,
+        90,
+        106,
+        99
+      ]
+    },
+    {
+      "label": "LZ4 (-12)",
+      "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+      "data": [
+        26,
+        33,
+        33,
+        42,
+        87,
+        87,
+        92,
+        59,
+        94,
+        94,
+        99,
+        116,
+        109
+      ]
+    },
+    {
+      "label": "LZMA (-9)",
+      "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+      "data": [
+        29,
+        36,
+        34,
+        41,
+        81,
+        82,
+        92,
+        45,
+        89,
+        69,
+        92,
+        109,
+        100
+      ]
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "id": "tslintbasic",
+  "title": "TSLint Linter Definition (Basic)",
+  "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/tslint/tslint-test19.json",
+  "labels": [
+    "Apache Avro (unframed)",
+    "Protocol Buffers",
+    "Apache Thrift",
+    "Cap'n Proto (Packed)",
+    "Cap'n Proto (Binary)",
+    "CBOR",
+    "MessagePack",
+    "Smile",
+    "UBJSON",
+    "FlatBuffers",
+    "JSON",
+    "BSON",
+    "FlexBuffers"
+  ],
+  "versions": [
+    "Python 3.9.5 avro 1.10.1",
+    "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+    "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+    "Cap'n Proto version 0.7.0",
+    "Cap'n Proto version 0.7.0",
+    "Python 3.9.5 cbor2 5.2.0",
+    "Python 3.9.5 msgpack 1.0.0",
+    "clojure-1.10.2 cheshire-5.7.1",
+    "Python 3.9.5 ubjson 0.16.1",
+    "flatc version 1.12.0",
+    "ECMA-404",
+    "Python 3.9.5 pymongo",
+    "flatc version 1.12.0"
+  ],
+  "datasets": [
+    {
+      "label": "Uncompressed",
+      "version": null,
+      "data": [
+        1,
+        8,
+        8,
+        12,
+        48,
+        51,
+        51,
+        59,
+        59,
+        60,
+        67,
+        71,
+        77
+      ]
+    },
+    {
+      "label": "GZIP (-9)",
+      "version": "gzip 1.10",
+      "data": [
+        21,
+        28,
+        26,
+        29,
+        33,
+        62,
+        62,
+        68,
+        66,
+        53,
+        68,
+        74,
+        76
+      ]
+    },
+    {
+      "label": "LZ4 (-12)",
+      "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+      "data": [
+        20,
+        27,
+        27,
+        31,
+        44,
+        70,
+        70,
+        73,
+        72,
+        64,
+        74,
+        82,
+        88
+      ]
+    },
+    {
+      "label": "LZMA (-9)",
+      "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+      "data": [
+        24,
+        31,
+        28,
+        31,
+        34,
+        63,
+        64,
+        71,
+        67,
+        49,
+        70,
+        74,
+        80
+      ]
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "id": "esmrc",
+  "title": "ECMAScript Module Loader Definition",
+  "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/esmrc/.esmrc_.json",
+  "labels": [
+    "Apache Avro (unframed)",
+    "Protocol Buffers",
+    "Apache Thrift",
+    "Cap'n Proto (Packed)",
+    "CBOR",
+    "MessagePack",
+    "Smile",
+    "UBJSON",
+    "Cap'n Proto (Binary)",
+    "FlatBuffers",
+    "FlexBuffers",
+    "BSON",
+    "JSON"
+  ],
+  "versions": [
+    "Python 3.9.5 avro 1.10.1",
+    "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+    "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+    "Cap'n Proto version 0.7.0",
+    "Python 3.9.5 cbor2 5.2.0",
+    "Python 3.9.5 msgpack 1.0.0",
+    "clojure-1.10.2 cheshire-5.7.1",
+    "Python 3.9.5 ubjson 0.16.1",
+    "Cap'n Proto version 0.7.0",
+    "flatc version 1.12.0",
+    "flatc version 1.12.0",
+    "Python 3.9.5 pymongo",
+    "ECMA-404"
+  ],
+  "datasets": [
+    {
+      "label": "Uncompressed",
+      "version": null,
+      "data": [
+        16,
+        23,
+        24,
+        35,
+        64,
+        64,
+        70,
+        78,
+        80,
+        80,
+        91,
+        96,
+        102
+      ]
+    },
+    {
+      "label": "GZIP (-9)",
+      "version": "gzip 1.10",
+      "data": [
+        36,
+        43,
+        44,
+        55,
+        81,
+        82,
+        87,
+        93,
+        68,
+        77,
+        107,
+        101,
+        101
+      ]
+    },
+    {
+      "label": "LZ4 (-12)",
+      "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+      "data": [
+        35,
+        42,
+        43,
+        54,
+        83,
+        83,
+        89,
+        97,
+        82,
+        94,
+        110,
+        115,
+        117
+      ]
+    },
+    {
+      "label": "LZMA (-9)",
+      "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+      "data": [
+        39,
+        47,
+        48,
+        59,
+        82,
+        85,
+        91,
+        94,
+        67,
+        74,
+        109,
+        105,
+        103
+      ]
+    }
+  ]
+}

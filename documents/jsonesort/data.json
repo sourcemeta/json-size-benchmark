@@ -1,0 +1,113 @@
+{
+  "id": "jsonesort",
+  "title": "JSON-e Templating Engine Sort Example",
+  "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/jsone/sort.json",
+  "labels": [
+    "Apache Avro (unframed)",
+    "Protocol Buffers",
+    "Apache Thrift",
+    "Cap'n Proto (Packed)",
+    "CBOR",
+    "MessagePack",
+    "Smile",
+    "UBJSON",
+    "JSON",
+    "FlexBuffers",
+    "FlatBuffers",
+    "Cap'n Proto (Binary)",
+    "BSON"
+  ],
+  "versions": [
+    "Python 3.9.5 avro 1.10.1",
+    "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+    "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+    "Cap'n Proto version 0.7.0",
+    "Python 3.9.5 cbor2 5.2.0",
+    "Python 3.9.5 msgpack 1.0.0",
+    "clojure-1.10.2 cheshire-5.7.1",
+    "Python 3.9.5 ubjson 0.16.1",
+    "ECMA-404",
+    "flatc version 1.12.0",
+    "flatc version 1.12.0",
+    "Cap'n Proto version 0.7.0",
+    "Python 3.9.5 pymongo"
+  ],
+  "datasets": [
+    {
+      "label": "Uncompressed",
+      "version": null,
+      "data": [
+        9,
+        10,
+        11,
+        18,
+        21,
+        21,
+        27,
+        30,
+        34,
+        39,
+        44,
+        48,
+        65
+      ]
+    },
+    {
+      "label": "GZIP (-9)",
+      "version": "gzip 1.10",
+      "data": [
+        29,
+        30,
+        31,
+        38,
+        41,
+        41,
+        48,
+        48,
+        54,
+        56,
+        51,
+        45,
+        66
+      ]
+    },
+    {
+      "label": "LZ4 (-12)",
+      "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+      "data": [
+        28,
+        29,
+        30,
+        37,
+        40,
+        40,
+        46,
+        49,
+        53,
+        58,
+        63,
+        58,
+        79
+      ]
+    },
+    {
+      "label": "LZMA (-9)",
+      "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+      "data": [
+        32,
+        33,
+        35,
+        41,
+        46,
+        46,
+        52,
+        53,
+        58,
+        60,
+        51,
+        45,
+        66
+      ]
+    }
+  ]
+}

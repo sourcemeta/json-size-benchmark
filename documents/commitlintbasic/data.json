@@ -1,0 +1,113 @@
+{
+  "id": "commitlintbasic",
+  "title": "CommitLint Configuration (Basic)",
+  "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/commitlintrc/commitlintrc-test3.json",
+  "labels": [
+    "Protocol Buffers",
+    "Apache Avro (unframed)",
+    "Apache Thrift",
+    "Cap'n Proto (Packed)",
+    "CBOR",
+    "MessagePack",
+    "UBJSON",
+    "FlatBuffers",
+    "BSON",
+    "Smile",
+    "Cap'n Proto (Binary)",
+    "FlexBuffers",
+    "JSON"
+  ],
+  "versions": [
+    "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+    "Python 3.9.5 avro 1.10.1",
+    "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+    "Cap'n Proto version 0.7.0",
+    "Python 3.9.5 cbor2 5.2.0",
+    "Python 3.9.5 msgpack 1.0.0",
+    "Python 3.9.5 ubjson 0.16.1",
+    "flatc version 1.12.0",
+    "Python 3.9.5 pymongo",
+    "clojure-1.10.2 cheshire-5.7.1",
+    "Cap'n Proto version 0.7.0",
+    "flatc version 1.12.0",
+    "ECMA-404"
+  ],
+  "datasets": [
+    {
+      "label": "Uncompressed",
+      "version": null,
+      "data": [
+        0,
+        1,
+        2,
+        6,
+        17,
+        17,
+        19,
+        20,
+        22,
+        22,
+        24,
+        25,
+        25
+      ]
+    },
+    {
+      "label": "GZIP (-9)",
+      "version": "gzip 1.10",
+      "data": [
+        20,
+        21,
+        22,
+        26,
+        37,
+        37,
+        39,
+        31,
+        41,
+        42,
+        31,
+        45,
+        45
+      ]
+    },
+    {
+      "label": "LZ4 (-12)",
+      "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+      "data": [
+        15,
+        20,
+        21,
+        25,
+        36,
+        36,
+        38,
+        39,
+        41,
+        41,
+        41,
+        44,
+        44
+      ]
+    },
+    {
+      "label": "LZMA (-9)",
+      "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+      "data": [
+        23,
+        24,
+        25,
+        29,
+        41,
+        41,
+        43,
+        34,
+        44,
+        47,
+        31,
+        49,
+        49
+      ]
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "id": "githubfundingblank",
+  "title": "GitHub FUNDING Sponsorship Definition (Empty)",
+  "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/github-funding/ebookfoundation.json",
+  "labels": [
+    "Apache Avro (unframed)",
+    "Protocol Buffers",
+    "Apache Thrift",
+    "Cap'n Proto (Packed)",
+    "Cap'n Proto (Binary)",
+    "FlatBuffers",
+    "CBOR",
+    "MessagePack",
+    "Smile",
+    "BSON",
+    "UBJSON",
+    "FlexBuffers",
+    "JSON"
+  ],
+  "versions": [
+    "Python 3.9.5 avro 1.10.1",
+    "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+    "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+    "Cap'n Proto version 0.7.0",
+    "Cap'n Proto version 0.7.0",
+    "flatc version 1.12.0",
+    "Python 3.9.5 cbor2 5.2.0",
+    "Python 3.9.5 msgpack 1.0.0",
+    "clojure-1.10.2 cheshire-5.7.1",
+    "Python 3.9.5 pymongo",
+    "Python 3.9.5 ubjson 0.16.1",
+    "flatc version 1.12.0",
+    "ECMA-404"
+  ],
+  "datasets": [
+    {
+      "label": "Uncompressed",
+      "version": null,
+      "data": [
+        16,
+        17,
+        18,
+        25,
+        40,
+        68,
+        124,
+        124,
+        129,
+        133,
+        137,
+        152,
+        183
+      ]
+    },
+    {
+      "label": "GZIP (-9)",
+      "version": "gzip 1.10",
+      "data": [
+        36,
+        37,
+        38,
+        45,
+        50,
+        71,
+        114,
+        124,
+        134,
+        125,
+        135,
+        143,
+        134
+      ]
+    },
+    {
+      "label": "LZ4 (-12)",
+      "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+      "data": [
+        35,
+        36,
+        37,
+        44,
+        56,
+        79,
+        143,
+        143,
+        148,
+        152,
+        156,
+        168,
+        167
+      ]
+    },
+    {
+      "label": "LZMA (-9)",
+      "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+      "data": [
+        39,
+        41,
+        42,
+        50,
+        51,
+        71,
+        131,
+        136,
+        139,
+        137,
+        144,
+        148,
+        144
+      ]
+    }
+  ]
+}

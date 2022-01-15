@@ -1,0 +1,113 @@
+{
+  "id": "travisnotifications",
+  "title": "TravisCI Notifications Configuration",
+  "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/travis/notification-secure.json",
+  "labels": [
+    "FlexBuffers",
+    "Apache Avro (unframed)",
+    "Protocol Buffers",
+    "Apache Thrift",
+    "Cap'n Proto (Packed)",
+    "Smile",
+    "CBOR",
+    "MessagePack",
+    "Cap'n Proto (Binary)",
+    "UBJSON",
+    "FlatBuffers",
+    "JSON",
+    "BSON"
+  ],
+  "versions": [
+    "flatc version 1.12.0",
+    "Python 3.9.5 avro 1.10.1",
+    "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+    "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+    "Cap'n Proto version 0.7.0",
+    "clojure-1.10.2 cheshire-5.7.1",
+    "Python 3.9.5 cbor2 5.2.0",
+    "Python 3.9.5 msgpack 1.0.0",
+    "Cap'n Proto version 0.7.0",
+    "Python 3.9.5 ubjson 0.16.1",
+    "flatc version 1.12.0",
+    "ECMA-404",
+    "Python 3.9.5 pymongo"
+  ],
+  "datasets": [
+    {
+      "label": "Uncompressed",
+      "version": null,
+      "data": [
+        228,
+        504,
+        521,
+        521,
+        566,
+        604,
+        627,
+        627,
+        640,
+        658,
+        668,
+        673,
+        699
+      ]
+    },
+    {
+      "label": "GZIP (-9)",
+      "version": "gzip 1.10",
+      "data": [
+        214,
+        90,
+        114,
+        95,
+        125,
+        168,
+        147,
+        157,
+        129,
+        163,
+        175,
+        154,
+        160
+      ]
+    },
+    {
+      "label": "LZ4 (-12)",
+      "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+      "data": [
+        244,
+        103,
+        133,
+        106,
+        135,
+        199,
+        192,
+        192,
+        152,
+        198,
+        215,
+        195,
+        204
+      ]
+    },
+    {
+      "label": "LZMA (-9)",
+      "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+      "data": [
+        207,
+        91,
+        109,
+        96,
+        120,
+        173,
+        160,
+        163,
+        120,
+        169,
+        164,
+        164,
+        167
+      ]
+    }
+  ]
+}

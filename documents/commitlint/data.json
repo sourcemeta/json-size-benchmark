@@ -1,0 +1,113 @@
+{
+  "id": "commitlint",
+  "title": "CommitLint Configuration",
+  "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/commitlintrc/commitlintrc-test5.json",
+  "labels": [
+    "Apache Avro (unframed)",
+    "Apache Thrift",
+    "Protocol Buffers",
+    "CBOR",
+    "MessagePack",
+    "Cap'n Proto (Packed)",
+    "Smile",
+    "FlexBuffers",
+    "UBJSON",
+    "JSON",
+    "BSON",
+    "Cap'n Proto (Binary)",
+    "FlatBuffers"
+  ],
+  "versions": [
+    "Python 3.9.5 avro 1.10.1",
+    "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+    "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
+    "Python 3.9.5 cbor2 5.2.0",
+    "Python 3.9.5 msgpack 1.0.0",
+    "Cap'n Proto version 0.7.0",
+    "clojure-1.10.2 cheshire-5.7.1",
+    "flatc version 1.12.0",
+    "Python 3.9.5 ubjson 0.16.1",
+    "ECMA-404",
+    "Python 3.9.5 pymongo",
+    "Cap'n Proto version 0.7.0",
+    "flatc version 1.12.0"
+  ],
+  "datasets": [
+    {
+      "label": "Uncompressed",
+      "version": null,
+      "data": [
+        40,
+        59,
+        62,
+        74,
+        74,
+        76,
+        84,
+        90,
+        93,
+        96,
+        147,
+        152,
+        156
+      ]
+    },
+    {
+      "label": "GZIP (-9)",
+      "version": "gzip 1.10",
+      "data": [
+        41,
+        53,
+        60,
+        67,
+        68,
+        67,
+        76,
+        97,
+        79,
+        80,
+        97,
+        75,
+        95
+      ]
+    },
+    {
+      "label": "LZ4 (-12)",
+      "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
+      "data": [
+        49,
+        59,
+        70,
+        76,
+        76,
+        75,
+        82,
+        105,
+        86,
+        86,
+        112,
+        96,
+        122
+      ]
+    },
+    {
+      "label": "LZMA (-9)",
+      "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
+      "data": [
+        45,
+        57,
+        63,
+        70,
+        71,
+        71,
+        80,
+        99,
+        83,
+        83,
+        97,
+        73,
+        91
+      ]
+    }
+  ]
+}
