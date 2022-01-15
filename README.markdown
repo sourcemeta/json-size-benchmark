@@ -7,7 +7,11 @@ specifications. This work is based on the research from [A Benchmark of
 JSON-compatible Binary Serialization
 Specifications](https://arxiv.org/abs/2201.03051) from the same author.
 
+***
+
 **See Results**: https://sourcemeta.github.io/json-size-benchmark
+
+***
 
 Running Locally
 ---------------
