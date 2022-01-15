@@ -1,7 +1,5 @@
-JSON Size Benchmark
-===================
-
-> A space-efficiency benchmark of JSON-compatible serialization specifications
+A Space-efficiency Benchmark of JSON-compatible Serialization Specifications
+============================================================================
 
 This is an extensible and open-source research project that aims to measure the
 space-efficiency characteristics of the available JSON-compatible serialization
