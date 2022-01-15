@@ -17,7 +17,7 @@ METADATA_AUTHOR_URL = https://www.jviotti.com
 export METADATA_AUTHOR_URL
 METADATA_EMAIL = jv@jviotti.com
 export METADATA_EMAIL
-METADATA_URL = https://www.sourcemeta.com/json-size-benchmark
+METADATA_URL = https://sourcemeta.github.io/json-size-benchmark/
 export METADATA_URL
 METADATA_GITHUB_URL = https://github.com/sourcemeta/json-size-benchmark
 export METADATA_GITHUB_URL
