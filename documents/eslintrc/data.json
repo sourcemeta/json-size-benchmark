@@ -2,6 +2,7 @@
   "id": "eslintrc",
   "title": "ESLint Configuration Document",
   "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/eslintrc/WebAnalyzer.json",
+  "taxonomy": "Tier 3, Numeric, Redundant, Flat",
   "labels": [
     "Apache Avro (unframed)",
     "Cap'n Proto (Packed)",

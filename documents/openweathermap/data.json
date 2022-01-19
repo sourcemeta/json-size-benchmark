@@ -2,6 +2,7 @@
   "id": "openweathermap",
   "title": "OpenWeatherMap API Example Document",
   "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/openweather.current/example.json",
+  "taxonomy": "Tier 2, Numeric, Non-redundant, Flat",
   "labels": [
     "Apache Avro (unframed)",
     "Protocol Buffers",

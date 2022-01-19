@@ -2,6 +2,7 @@
   "id": "jsonresume",
   "title": "JSON Resume Example",
   "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/resume/richardhendriks.json",
+  "taxonomy": "Tier 3, Textual, Non-redundant, Nested",
   "labels": [
     "Apache Avro (unframed)",
     "Protocol Buffers",

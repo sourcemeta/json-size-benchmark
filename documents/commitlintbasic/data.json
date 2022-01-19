@@ -2,6 +2,7 @@
   "id": "commitlintbasic",
   "title": "CommitLint Configuration (Basic)",
   "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/commitlintrc/commitlintrc-test3.json",
+  "taxonomy": "Tier 1, Boolean, Non-redundant, Flat",
   "labels": [
     "Protocol Buffers",
     "Apache Avro (unframed)",

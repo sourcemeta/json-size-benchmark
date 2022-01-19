@@ -2,6 +2,7 @@
   "id": "circlecimatrix",
   "title": "CircleCI Matrix Definition",
   "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/circleciconfig/matrix-simple.json",
+  "taxonomy": "Tier 1, Numeric, Non-redundant, Nested",
   "labels": [
     "Apache Avro (unframed)",
     "Protocol Buffers",
