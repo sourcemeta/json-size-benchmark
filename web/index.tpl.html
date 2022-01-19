@@ -31,11 +31,26 @@
 
     <details>
       <summary>Table of Contents ({{ data.length }})</summary>
-      <ul>
-        {{#each data}}
-        <li><a href="#{{id}}">{{ title }}</a></li>
-        {{/each}}
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th>JSON Document</th>
+            <th>
+              <a target="_blank" href="https://github.com/sourcemeta/json-taxonomy">JSON Taxonomy</a>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each data}}
+          <tr>
+            <td>
+              <a href="#{{id}}">{{ title }}</a>
+            </td>
+            <td>{{ taxonomy }}</td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
     </details>
 
     {{#each data}}
@@ -44,6 +59,8 @@
 
       <p>The input document, origin and schema definitions for this case can be seen on
       <a target="_blank" href="{{ @root.env.METADATA_GITHUB_URL }}/blob/master/benchmark/{{ id }}">GitHub</a>.</p>
+
+      <p>The input document is a <b>{{taxonomy}}</b> document according to the <a target="_blank" href="https://github.com/sourcemeta/json-taxonomy">JSON Taxonomy</a> project.</p>
 
       <canvas id="canvas-{{id}}"></canvas>
 
