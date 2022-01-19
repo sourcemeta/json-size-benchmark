@@ -167,6 +167,9 @@ $(OUTPUT)/documents/%/result.json: scripts/json-equals.py \
 	$(PYTHON) $< $(word 2,$^) $(word 3,$^)
 	$(INSTALL) -m 0664 $(word 2,$^) $@
 
+$(OUTPUT)/documents/%/TAXONOMY: vendor/json-taxonomy/js/cli.js benchmark/%/document.json | $(OUTPUT)/documents/%
+	exec $(NODE) $< $(word 2,$^) > $@
+
 # This target ensures that the result is validated against the original input
 $(OUTPUT)/documents/%/size.json: scripts/size.js \
 	$(OUTPUT)/documents/%/output.bin $(OUTPUT)/documents/%/NAME $(OUTPUT)/documents/%/VERSION \
@@ -175,13 +178,14 @@ $(OUTPUT)/documents/%/size.json: scripts/size.js \
 	| $(OUTPUT)/documents/%
 	exec $(NODE) $< $(word 2,$^) "$(shell cat $(word 3,$^))" "$(shell cat $(word 4,$^))" $(COMPRESSORS) > $@
 
-$(OUTPUT)/documents/%/data.json: scripts/data.js benchmark/%/NAME benchmark/%/SOURCE \
+$(OUTPUT)/documents/%/data.json: scripts/data.js benchmark/%/NAME \
+	benchmark/%/SOURCE $(OUTPUT)/documents/%/TAXONOMY \
 	$(addsuffix /NAME,$(addprefix compression/,$(COMPRESSORS))) \
 	$(addsuffix /VERSION,$(addprefix output/compressors/,$(COMPRESSORS))) \
 	$(addsuffix /size.json,$(addprefix output/documents/%/,$(FORMATS))) \
 	| $(OUTPUT)/documents/%
 	exec $(NODE) $< "$(shell cat $(word 2,$^))" $(notdir $(realpath $(dir $(word 2,$^)))) \
-		"$(shell cat $(word 3,$^))" \
+		"$(shell cat $(word 3,$^))" "$(shell cat $(word 4,$^))" \
 		$(addsuffix /size.json,$(addprefix $(dir $@),$(FORMATS))) > $@
 
 $(OUTPUT)/documents/aggregate.json: scripts/concat.js \
