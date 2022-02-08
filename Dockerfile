@@ -24,6 +24,7 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
   capnproto \
   flatbuffers-compiler \
   && rm -rf /var/lib/apt/lists/*
+RUN npm install --global jsonbinpack@1.1.2
 
 # Copy benchmark source code
 COPY .eslintrc.json .
