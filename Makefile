@@ -56,6 +56,7 @@ CAPNP ?= capnp
 THRIFT ?= thrift
 FLATC ?= flatc
 PROTOC ?= protoc
+JSONBINPACK ?= jsonbinpack
 
 #################################################
 # VARIABLES
@@ -141,6 +142,8 @@ include formats/cbor/targets.mk
 include formats/bson/targets.mk
 include formats/avro/targets.mk
 include formats/smile/targets.mk
+include formats/jsonbinpack/targets.mk
+include formats/jsonbinpack-schemaless/targets.mk
 
 $(OUTPUT)/documents/%/pre.patch.json: benchmark/%/pre.patch.json | $(OUTPUT)/documents/%
 	$(INSTALL) -m 0664 $< $@
