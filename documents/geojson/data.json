@@ -4,6 +4,8 @@
   "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/geojson/multi-polygon.json",
   "taxonomy": "Tier 2, Numeric, Redundant, Nested",
   "labels": [
+    "JSON BinPack (Schema-driven)",
+    "JSON BinPack (Schema-less)",
     "JSON",
     "Cap'n Proto (Packed)",
     "Apache Thrift",
@@ -19,6 +21,8 @@
     "FlatBuffers"
   ],
   "versions": [
+    "1.1.1",
+    "1.1.1",
     "ECMA-404",
     "Cap'n Proto version 0.7.0",
     "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
@@ -38,6 +42,8 @@
       "label": "Uncompressed",
       "version": null,
       "data": [
+        82,
+        117,
         190,
         228,
         277,
@@ -57,6 +63,8 @@
       "label": "GZIP (-9)",
       "version": "gzip 1.10",
       "data": [
+        69,
+        101,
         121,
         142,
         110,
@@ -76,6 +84,8 @@
       "label": "LZ4 (-12)",
       "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
       "data": [
+        82,
+        122,
         146,
         162,
         136,
@@ -95,6 +105,8 @@
       "label": "LZMA (-9)",
       "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
       "data": [
+        66,
+        100,
         116,
         137,
         104,

@@ -4,6 +4,8 @@
   "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/travis/notification-secure.json",
   "taxonomy": "Tier 2, Textual, Redundant, Flat",
   "labels": [
+    "JSON BinPack (Schema-driven)",
+    "JSON BinPack (Schema-less)",
     "FlexBuffers",
     "Apache Avro (unframed)",
     "Protocol Buffers",
@@ -19,6 +21,8 @@
     "BSON"
   ],
   "versions": [
+    "1.1.1",
+    "1.1.1",
     "flatc version 1.12.0",
     "Python 3.9.5 avro 1.10.1",
     "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
@@ -38,6 +42,8 @@
       "label": "Uncompressed",
       "version": null,
       "data": [
+        89,
+        185,
         228,
         504,
         521,
@@ -57,6 +63,8 @@
       "label": "GZIP (-9)",
       "version": "gzip 1.10",
       "data": [
+        98,
+        175,
         214,
         90,
         114,
@@ -76,6 +84,8 @@
       "label": "LZ4 (-12)",
       "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
       "data": [
+        108,
+        202,
         244,
         103,
         133,
@@ -95,6 +105,8 @@
       "label": "LZMA (-9)",
       "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
       "data": [
+        99,
+        177,
         207,
         91,
         109,

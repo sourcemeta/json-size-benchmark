@@ -4,8 +4,10 @@
   "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/commitlintrc/commitlintrc-test5.json",
   "taxonomy": "Tier 1, Textual, Redundant, Nested",
   "labels": [
+    "JSON BinPack (Schema-driven)",
     "Apache Avro (unframed)",
     "Apache Thrift",
+    "JSON BinPack (Schema-less)",
     "Protocol Buffers",
     "CBOR",
     "MessagePack",
@@ -19,8 +21,10 @@
     "FlatBuffers"
   ],
   "versions": [
+    "1.1.1",
     "Python 3.9.5 avro 1.10.1",
     "Python 3.9.5 thrift 0.13.0 Thrift version 0.13.0",
+    "1.1.1",
     "Python 3.9.5 protobuf 3.12.4 libprotoc 3.12.4",
     "Python 3.9.5 cbor2 5.2.0",
     "Python 3.9.5 msgpack 1.0.0",
@@ -38,8 +42,10 @@
       "label": "Uncompressed",
       "version": null,
       "data": [
+        20,
         40,
         59,
+        60,
         62,
         74,
         74,
@@ -57,8 +63,10 @@
       "label": "GZIP (-9)",
       "version": "gzip 1.10",
       "data": [
+        40,
         41,
         53,
+        72,
         60,
         67,
         68,
@@ -76,8 +84,10 @@
       "label": "LZ4 (-12)",
       "version": "*** LZ4 command line interface 64-bits v1.9.3, by Yann Collet ***",
       "data": [
+        39,
         49,
         59,
+        75,
         70,
         76,
         76,
@@ -95,8 +105,10 @@
       "label": "LZMA (-9)",
       "version": "LZMA command line tool 9.22\nLZMA SDK 9.22",
       "data": [
+        43,
         45,
         57,
+        76,
         63,
         70,
         71,
