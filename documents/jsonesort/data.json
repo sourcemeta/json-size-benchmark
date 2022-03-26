@@ -3,6 +3,7 @@
   "title": "JSON-e Templating Engine Sort Example",
   "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/jsone/sort.json",
   "taxonomy": "Tier 1, Numeric, Redundant, Flat",
+  "originalSize": 34,
   "labels": [
     "JSON BinPack (Schema-driven)",
     "Apache Avro (unframed)",

@@ -3,6 +3,7 @@
   "title": "TravisCI Notifications Configuration",
   "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/travis/notification-secure.json",
   "taxonomy": "Tier 2, Textual, Redundant, Flat",
+  "originalSize": 673,
   "labels": [
     "JSON BinPack (Schema-driven)",
     "JSON BinPack (Schema-less)",

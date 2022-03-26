@@ -4,6 +4,7 @@
     "title": "CircleCI Definition (Blank)",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/circleciconfig/version-2.0.json",
     "taxonomy": "Tier 1, Numeric, Non-redundant, Flat",
+    "originalSize": 14,
     "labels": [
       "JSON BinPack (Schema-driven)",
       "Apache Avro (unframed)",
@@ -130,6 +131,7 @@
     "title": "CircleCI Matrix Definition",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/circleciconfig/matrix-simple.json",
     "taxonomy": "Tier 1, Numeric, Non-redundant, Nested",
+    "originalSize": 95,
     "labels": [
       "JSON BinPack (Schema-driven)",
       "Apache Avro (unframed)",
@@ -256,6 +258,7 @@
     "title": "CommitLint Configuration",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/commitlintrc/commitlintrc-test5.json",
     "taxonomy": "Tier 1, Textual, Redundant, Nested",
+    "originalSize": 96,
     "labels": [
       "JSON BinPack (Schema-driven)",
       "Apache Avro (unframed)",
@@ -382,6 +385,7 @@
     "title": "CommitLint Configuration (Basic)",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/commitlintrc/commitlintrc-test3.json",
     "taxonomy": "Tier 1, Boolean, Non-redundant, Flat",
+    "originalSize": 25,
     "labels": [
       "JSON BinPack (Schema-driven)",
       "Protocol Buffers",
@@ -508,6 +512,7 @@
     "title": "Entry Point Regulation Manifest",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/epr-manifest/official-example.json",
     "taxonomy": "Tier 2, Textual, Redundant, Nested",
+    "originalSize": 520,
     "labels": [
       "JSON BinPack (Schema-driven)",
       "Apache Avro (unframed)",
@@ -634,6 +639,7 @@
     "title": "ESLint Configuration Document",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/eslintrc/WebAnalyzer.json",
     "taxonomy": "Tier 3, Numeric, Redundant, Flat",
+    "originalSize": 1141,
     "labels": [
       "JSON BinPack (Schema-driven)",
       "Apache Avro (unframed)",
@@ -760,6 +766,7 @@
     "title": "ECMAScript Module Loader Definition",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/esmrc/.esmrc_.json",
     "taxonomy": "Tier 2, Boolean, Non-redundant, Flat",
+    "originalSize": 102,
     "labels": [
       "JSON BinPack (Schema-driven)",
       "Apache Avro (unframed)",
@@ -886,6 +893,7 @@
     "title": "GeoJSON Example Document",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/geojson/multi-polygon.json",
     "taxonomy": "Tier 2, Numeric, Redundant, Nested",
+    "originalSize": 190,
     "labels": [
       "JSON BinPack (Schema-driven)",
       "JSON BinPack (Schema-less)",
@@ -1012,6 +1020,7 @@
     "title": "GitHub FUNDING Sponsorship Definition (Empty)",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/github-funding/ebookfoundation.json",
     "taxonomy": "Tier 2, Boolean, Redundant, Flat",
+    "originalSize": 183,
     "labels": [
       "Apache Avro (unframed)",
       "JSON BinPack (Schema-driven)",
@@ -1138,6 +1147,7 @@
     "title": "GitHub Workflow Definition",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/github-workflow/919.json",
     "taxonomy": "Tier 2, Textual, Non-redundant, Nested",
+    "originalSize": 356,
     "labels": [
       "JSON BinPack (Schema-driven)",
       "Apache Avro (unframed)",
@@ -1264,6 +1274,7 @@
     "title": "Grunt.js Clean Task Definition",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/grunt-clean-task/with-options.json",
     "taxonomy": "Tier 1, Textual, Redundant, Flat",
+    "originalSize": 93,
     "labels": [
       "JSON BinPack (Schema-driven)",
       "Apache Avro (unframed)",
@@ -1390,6 +1401,7 @@
     "title": "ImageOptimizer Azure Webjob Configuration",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/imageoptimizer/default.json",
     "taxonomy": "Tier 1, Textual, Non-redundant, Nested",
+    "originalSize": 82,
     "labels": [
       "JSON BinPack (Schema-driven)",
       "Protocol Buffers",
@@ -1516,6 +1528,7 @@
     "title": "JSON-e Templating Engine Reverse Sort Example",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/jsone/reverse-sort.json",
     "taxonomy": "Tier 1, Numeric, Redundant, Nested",
+    "originalSize": 86,
     "labels": [
       "JSON BinPack (Schema-driven)",
       "Apache Avro (unframed)",
@@ -1642,6 +1655,7 @@
     "title": "JSON-e Templating Engine Sort Example",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/jsone/sort.json",
     "taxonomy": "Tier 1, Numeric, Redundant, Flat",
+    "originalSize": 34,
     "labels": [
       "JSON BinPack (Schema-driven)",
       "Apache Avro (unframed)",
@@ -1768,6 +1782,7 @@
     "title": "JSON Feed Example Document",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/feed/microblog.json",
     "taxonomy": "Tier 2, Textual, Non-redundant, Flat",
+    "originalSize": 571,
     "labels": [
       "JSON BinPack (Schema-driven)",
       "Apache Avro (unframed)",
@@ -1894,6 +1909,7 @@
     "title": "JSON Resume Example",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/resume/richardhendriks.json",
     "taxonomy": "Tier 3, Textual, Non-redundant, Nested",
+    "originalSize": 3043,
     "labels": [
       "JSON BinPack (Schema-driven)",
       "Apache Avro (unframed)",
@@ -2020,6 +2036,7 @@
     "title": ".NET Core Project",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/project/EF-project.json",
     "taxonomy": "Tier 3, Textual, Redundant, Nested",
+    "originalSize": 1049,
     "labels": [
       "JSON BinPack (Schema-driven)",
       "Apache Avro (unframed)",
@@ -2146,6 +2163,7 @@
     "title": "Nightwatch.js Test Framework Configuration",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/nightwatch/default.json",
     "taxonomy": "Tier 3, Boolean, Redundant, Flat",
+    "originalSize": 1507,
     "labels": [
       "JSON BinPack (Schema-driven)",
       "Apache Avro (unframed)",
@@ -2272,6 +2290,7 @@
     "title": "OpenWeatherMap API Example Document",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/openweather.current/example.json",
     "taxonomy": "Tier 2, Numeric, Non-redundant, Flat",
+    "originalSize": 494,
     "labels": [
       "JSON BinPack (Schema-driven)",
       "Apache Avro (unframed)",
@@ -2398,6 +2417,7 @@
     "title": "OpenWeather Road Risk API Example",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/openweather.roadrisk/example.json",
     "taxonomy": "Tier 2, Numeric, Non-redundant, Nested",
+    "originalSize": 385,
     "labels": [
       "JSON BinPack (Schema-driven)",
       "Apache Avro (unframed)",
@@ -2524,6 +2544,7 @@
     "title": "NPM Package.json Example Manifest",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/package/package-test.json",
     "taxonomy": "Tier 3, Textual, Non-redundant, Flat",
+    "originalSize": 2259,
     "labels": [
       "JSON BinPack (Schema-driven)",
       "Apache Avro (unframed)",
@@ -2650,6 +2671,7 @@
     "title": "NPM Package.json Linter Configuration Manifest",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/npmpackagejsonlintrc/npmpackagejsonlintrc-test.json",
     "taxonomy": "Tier 3, Textual, Redundant, Flat",
+    "originalSize": 1159,
     "labels": [
       "JSON BinPack (Schema-driven)",
       "Apache Avro (unframed)",
@@ -2776,6 +2798,7 @@
     "title": "SAP Cloud SDK Continuous Delivery Toolkit Configuration",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/cloud-sdk-pipeline-config-schema/empty.json",
     "taxonomy": "Tier 1, Boolean, Redundant, Flat",
+    "originalSize": 44,
     "labels": [
       "Apache Avro (unframed)",
       "JSON BinPack (Schema-driven)",
@@ -2902,6 +2925,7 @@
     "title": "TravisCI Notifications Configuration",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/travis/notification-secure.json",
     "taxonomy": "Tier 2, Textual, Redundant, Flat",
+    "originalSize": 673,
     "labels": [
       "JSON BinPack (Schema-driven)",
       "JSON BinPack (Schema-less)",
@@ -3028,6 +3052,7 @@
     "title": "TSLint Linter Definition (Basic)",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/tslint/tslint-test19.json",
     "taxonomy": "Tier 1, Boolean, Non-redundant, Nested",
+    "originalSize": 67,
     "labels": [
       "Apache Avro (unframed)",
       "JSON BinPack (Schema-driven)",
@@ -3154,6 +3179,7 @@
     "title": "TSLint Linter Definition (Extends Only)",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/tslint/tslint-test5.json",
     "taxonomy": "Tier 1, Textual, Non-redundant, Flat",
+    "originalSize": 63,
     "labels": [
       "JSON BinPack (Schema-driven)",
       "Apache Avro (unframed)",
@@ -3280,6 +3306,7 @@
     "title": "TSLint Linter Definition (Multi-rule)",
     "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/tslint/tslint-test25.json",
     "taxonomy": "Tier 1, Boolean, Redundant, Nested",
+    "originalSize": 98,
     "labels": [
       "JSON BinPack (Schema-driven)",
       "Apache Avro (unframed)",

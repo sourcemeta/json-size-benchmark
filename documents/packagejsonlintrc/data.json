@@ -3,6 +3,7 @@
   "title": "NPM Package.json Linter Configuration Manifest",
   "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/npmpackagejsonlintrc/npmpackagejsonlintrc-test.json",
   "taxonomy": "Tier 3, Textual, Redundant, Flat",
+  "originalSize": 1159,
   "labels": [
     "JSON BinPack (Schema-driven)",
     "Apache Avro (unframed)",

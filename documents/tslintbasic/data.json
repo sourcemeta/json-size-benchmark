@@ -3,6 +3,7 @@
   "title": "TSLint Linter Definition (Basic)",
   "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/tslint/tslint-test19.json",
   "taxonomy": "Tier 1, Boolean, Non-redundant, Nested",
+  "originalSize": 67,
   "labels": [
     "Apache Avro (unframed)",
     "JSON BinPack (Schema-driven)",

@@ -3,6 +3,7 @@
   "title": "TSLint Linter Definition (Multi-rule)",
   "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/tslint/tslint-test25.json",
   "taxonomy": "Tier 1, Boolean, Redundant, Nested",
+  "originalSize": 98,
   "labels": [
     "JSON BinPack (Schema-driven)",
     "Apache Avro (unframed)",

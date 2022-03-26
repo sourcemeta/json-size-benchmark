@@ -3,6 +3,7 @@
   "title": "CircleCI Definition (Blank)",
   "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/circleciconfig/version-2.0.json",
   "taxonomy": "Tier 1, Numeric, Non-redundant, Flat",
+  "originalSize": 14,
   "labels": [
     "JSON BinPack (Schema-driven)",
     "Apache Avro (unframed)",

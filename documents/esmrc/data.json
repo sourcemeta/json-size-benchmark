@@ -3,6 +3,7 @@
   "title": "ECMAScript Module Loader Definition",
   "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/esmrc/.esmrc_.json",
   "taxonomy": "Tier 2, Boolean, Non-redundant, Flat",
+  "originalSize": 102,
   "labels": [
     "JSON BinPack (Schema-driven)",
     "Apache Avro (unframed)",

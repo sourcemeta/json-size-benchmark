@@ -3,6 +3,7 @@
   "title": "GitHub FUNDING Sponsorship Definition (Empty)",
   "source": "https://github.com/SchemaStore/schemastore/blob/0b6bd2a08005e6f7a65a68acaf3064d6e2670872/src/test/github-funding/ebookfoundation.json",
   "taxonomy": "Tier 2, Boolean, Redundant, Flat",
+  "originalSize": 183,
   "labels": [
     "Apache Avro (unframed)",
     "JSON BinPack (Schema-driven)",
