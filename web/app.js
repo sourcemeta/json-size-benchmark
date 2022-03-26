@@ -34,6 +34,10 @@ for (const entry of data) {
       scales: {
         xAxes: [
           {
+            scaleLabel: {
+              display: true,
+              labelString: 'Serialization Format'
+            },
             ticks: {
               minRotation: 90,
               maxRotation: 90
@@ -42,6 +46,10 @@ for (const entry of data) {
         ],
         yAxes: [
           {
+            scaleLabel: {
+              display: true,
+              labelString: 'Byte Size'
+            },
             ticks: {
               beginAtZero: true
             }
