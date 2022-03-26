@@ -8,11 +8,16 @@ const data = process.argv.slice(6).reduce((accumulator, filePath) => {
   return left.data.uncompressed - right.data.uncompressed
 })
 
+const jsonData = data.find((entry) => {
+  return entry.format === 'JSON'
+}).data
+
 const result = {
   id: process.argv[3],
   title: process.argv[2],
   source: process.argv[4],
   taxonomy: process.argv[5],
+  originalSize: jsonData.uncompressed,
   labels: data.map((entry) => {
     return entry.format
   }),
