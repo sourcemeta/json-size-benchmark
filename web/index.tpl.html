@@ -19,7 +19,6 @@
       <a href="{{ env.METADATA_URL }}">Home</a>
       <a href="{{ env.METADATA_GITHUB_URL }}" target="_blank">GitHub</a>
       <a href="mailto:{{ env.METADATA_EMAIL }}">Contact</a>
-      <a href="#citing">Cite</a>
     </nav>
   </header>
   <main>
@@ -122,17 +121,6 @@
       </details>
     </section>
     {{/each}}
-
-    <h2 id="citing">Citations</h2>
-    <p>To cite this work, please use the following <a href="http://www.bibtex.org">BibTeX</a> entry:</p>
-    <pre class="highlight"><code>@online{{ curlyLeft }}{{ env.METADATA_ORGANIZATION }}-json-size-benchmark,
-  title = {{ curlyLeft }}{{ env.METADATA_DESCRIPTION }}{{ curlyRight }},
-  author = {{ curlyLeft }}{{ env.METADATA_AUTHOR }}{{ curlyRight }},
-  organization = {{ curlyLeft }}{{ capitalize env.METADATA_ORGANIZATION }}{{ curlyRight }},
-  year = {{ curlyLeft }}{{ year }}{{ curlyRight }},
-  date = {{ curlyLeft }}{{ timestamp }}{{ curlyRight }},
-  url = {{ curlyLeft }}{{ env.METADATA_URL }}{{ curlyRight }}
-}</code></pre>
   </main>
 
   <footer>
