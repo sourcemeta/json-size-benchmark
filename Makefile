@@ -17,7 +17,7 @@ METADATA_AUTHOR_URL = https://www.jviotti.com
 export METADATA_AUTHOR_URL
 METADATA_EMAIL = jv@jviotti.com
 export METADATA_EMAIL
-METADATA_URL = https://sourcemeta.github.io/json-size-benchmark/
+METADATA_URL = https://benchmark.sourcemeta.com
 export METADATA_URL
 METADATA_GITHUB_URL = https://github.com/sourcemeta/json-size-benchmark
 export METADATA_GITHUB_URL
@@ -88,7 +88,7 @@ clean:
 distclean: clean
 	exec $(RMRF) node_modules
 
-html: $(OUTPUT)/index.html
+html: $(OUTPUT)/index.html $(OUTPUT)/CNAME
 
 docker: Dockerfile clean | $(OUTPUT)
 	$(DOCKER) build --progress plain --tag $(METADATA_ORGANIZATION)/$(METADATA_NAME) \
@@ -211,3 +211,6 @@ $(OUTPUT)/index.html: scripts/template.js \
 	$(OUTPUT)/app.min.js $(OUTPUT)/style.min.css \
 	| $(OUTPUT)
 	exec $(NODE) $< $(word 2,$^) $(word 3,$^) > $@
+
+$(OUTPUT)/CNAME: web/CNAME | $(OUTPUT)
+	exec $(INSTALL) -m 0644 $< $@
