@@ -9,7 +9,7 @@ Specifications](https://arxiv.org/abs/2201.03051) from the same author.
 
 ***
 
-**See Results**: https://sourcemeta.github.io/json-size-benchmark
+**See Results**: https://benchmark.sourcemeta.com
 
 ***
 
