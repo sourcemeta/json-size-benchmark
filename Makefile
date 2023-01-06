@@ -1,5 +1,3 @@
-include vendor/vendorpull/targets.mk
-
 .PHONY: lint clean distclean html docker
 .DEFAULT_GOAL = docker
 
